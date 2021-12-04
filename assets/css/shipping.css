@@ -1,0 +1,214 @@
+@media only screen and (min-width: 768px) {
+  .divPageTitle {
+      margin-bottom: 16px;
+      margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .divPageTitle {
+      margin-bottom: 15px;
+      margin-top: 15px;
+  }
+
+  .no-border-radius{
+      border-radius: 0;
+  }
+}
+
+.boxStep {
+  font-family: "Open Sans",Tahoma;
+  font-size: 16px;
+  padding: 20px 0 20px 0;
+  /* height: 57px; */
+  /* max-height: 57px; */
+}
+.stepBoxImage{
+  display: inline-table;
+}
+.stepBoxImage .stepIcon{
+  height: 26px;
+}
+#stepHeaderPayment .stepBoxImage:before {
+  content: '';
+  position: absolute;
+  width: calc(50% - 25px);
+  height: 1px;
+  top: 30%;
+  left: calc(-3%);
+  transform: translate(0, -50%);
+  z-index: 1;
+}
+#stepHeaderPayment .stepBoxImage:after {
+  content: '';
+  position: absolute;
+  width: calc(50% - 25px);
+  height: 1px;
+  top: 30%;
+  right: calc(-3%);
+  transform: translate(0, -50%);
+  z-index: 1;
+}
+.stepBoxImage:after, #stepHeaderPayment .stepBoxImage:before{
+  background-color: #DDDDDD;
+}
+divShipping, .divPayment, .divSuccess, #stepHeaderPayment{
+  /* color: #DDDDDD; */
+}
+#stepCartShipping.active, #stepHeaderPayment.active, #stepHeaderSuccess.active {
+  /* color: #242424 !important; */
+}
+#stepCartShipping.visited, #stepHeaderPayment.visited, #stepHeaderSuccess.visited {
+  color: #757575 !important;
+}
+.boxText>svg {
+  display: none;
+}
+.boxText.visited>svg{
+  display: inline;
+  /* color: #5FB412; */
+  margin-right: 3px;
+}
+#stepHeaderPayment.active .stepBoxImage:before {
+  background-color: #5FB412;
+}
+#stepHeaderPayment.visited .stepBoxImage:before {
+  background-color: #5FB412;
+}
+#stepHeaderPayment.visited .stepBoxImage:after {
+  background-color: #5FB412;
+}
+.box-shape-icon{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.box-shape-icon.visited{
+  width: 42px;
+  height: 42px;
+  background-color: #5fb412;
+}
+.border-box-icon{
+  border-radius: 50%;
+  padding: 2px;
+  width: min-content;
+}
+.position-icon{
+  position: absolute;
+  top: 16%;
+}
+.position-icon-left-shipping{
+  left: 18%;
+}
+.position-icon-left-payment{
+  left: 21%;
+}
+.icon-check-circle {
+  position: absolute;
+  top: 26%;
+  left: 26%;
+}
+
+.stepBoxImage {
+  display: inline-table;
+}
+
+.box-border-circle-icon-color {
+  border: 1px solid #CDCDCD;
+}
+.box-border-circle-icon-color.active {
+  border: 1px solid #424242;
+}
+
+.box-circle-icon-color.active {
+  color: #FFFFFF;
+  background-color: #424242;
+}
+
+.stepBoxImage .stepIcon {
+  height: 26px;
+  padding-top: 5px;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+
+.shoping-cart-title {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.shiipping-add{
+padding: 0px;
+
+}
+
+.bg-status-color{
+background-color: #5FB412;
+
+}
+.bt-ship {
+  color: rgb(13, 134, 134); 
+  background-color: rgb(0 0 0 / 0%);
+  border-color: #6c757d00;
+
+}
+
+.ulDataBody>li {
+  width: 100%;
+  /* height: auto; */
+  position: relative;
+  display: table;
+  padding: 0 10px;
+}
+
+.ul-body-form-panel li {
+  background-color: transparent;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 5px;
+}
+
+.ulDataBody>li>span {
+  padding: 10px 5px;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.font-shipping-add{
+font-size: 12px;
+
+}
+
+.sh-top{
+  margin-top: 10px;
+}
+
+.span-td-col2 {
+  word-break: break-all;
+  width: 20%;
+}
+.span-td-col3 {
+  word-break: break-all;
+  width: 43%;
+}
+
+.span-td-col7 {
+  word-break: break-all;
+}
+
+.custom-control-label{
+  display: none;
+}
+.id-payment{
+
+  padding-top: 13px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .sh-top-at{
+
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,31 @@
+.about {
+  width: 666px !important;
+  height: 444px !important;
+}
+
+ 
+
+
+
+ @media only screen and (max-width: 600px) {
+  .about {
+    width: 443px !important;
+    height: 295px !important;
+  }
+
+  
+}
+
+@media only screen and (max-width: 800px) {
+  .about {
+    width: 443px !important;
+    height: 295px !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .about {
+    width: 330px !important;
+    height: 200px !important;
+  }
+}

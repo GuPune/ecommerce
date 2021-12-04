@@ -1,0 +1,52 @@
+/*----------------------------------------- footer --------------------------------------------------------------------------------*/
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    height:auto;
+    background-color: #171c24;
+    color: white;
+
+ }
+
+ .row.foot{
+   background-color: #EF7318;
+   height: auto;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+ }
+
+ .row.footer{
+    justify-content: center;
+ }
+
+ .newrelese{
+     width: 100px;
+ }
+
+ hr.solidfooter {
+    border: 1px solid rgb(219, 81, 155);
+
+  }
+
+ .item{
+     margin-top: 20px;
+     margin-bottom: 20px;
+ }
+
+ .flex-content-footer {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+
+ .flex-item {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 50%;
+  }
+
+
+  

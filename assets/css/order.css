@@ -1,0 +1,420 @@
+.container.orderweb{
+    width: 100%;
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    margin-top: 10px;
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.container.allorderweb{
+    
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    margin-top: 30px;
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+
+}
+
+.cart-row .title-top {
+  text-transform: uppercase;
+  font-size: 1em;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+.cart-row {
+  border-bottom: 1px solid #cccccc;
+}
+.title-shoping-cart {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    
+ 
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  
+  
+  }
+
+  .bg-order{
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-bottom: 20px;
+  }
+
+
+
+  .quantity {
+    float: left;
+    margin-right: 15px;
+    background-color: #eee;
+    position: relative;
+    width: 80px;
+    overflow: hidden
+  }
+  
+  .quantity input {
+    margin: 0;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    float: right;
+    color: #000;
+    font-size: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #F6F6F6
+  }
+  
+  .quantity input.qty {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 40px;
+    padding: 10px 25px 10px 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 0;
+    background-clip: padding-box
+  }
+  
+  .quantity .minus, .quantity .plus {
+    line-height: 0;
+    background-clip: padding-box;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-background-size: 6px 30px;
+    -moz-background-size: 6px 30px;
+    color: #bbb;
+    font-size: 20px;
+    position: absolute;
+    height: 50%;
+    border: 0;
+    right: 0;
+    padding: 0;
+    width: 25px;
+    z-index: 3
+  }
+  
+  .quantity .minus:hover, .quantity .plus:hover {
+    background-color: #dad8da
+  }
+  
+  .quantity .minus {
+    bottom: 0
+  }
+  
+  .container.shopcarts{
+    justify-content: center;
+    width: 100%;
+  
+  }
+  .order-name{
+
+    height: 33px;
+  }
+  .shop-name-order{
+    display:none;
+
+  }
+  .ic-order{
+    padding-top: 10px;
+  }
+
+
+  .box-circle-icon-color.actives {
+    color: #FFFFFF;
+    background-color: #19c919;
+  }
+
+  .btn-style-o {
+    color: #c9bbaf;
+    background-color: #FFF;
+    border: 1px solid#c9bbaf;
+}
+
+.btn-style {
+  color: #FFF;
+  background-color: #c9bbaf;
+  border-color: #c9bbaf;
+}
+.button-order{
+
+  padding-top: 15px;
+}
+  
+
+  /* .product-name {
+    /* margin: 20px 0 0; */
+    /* height: 33px;
+    line-height: 33px;
+    overflow: hidden;
+    text-align: center;
+    color: #303030; */
+/* } */ 
+  
+  
+  .card-header{
+    background-color: rgb(205, 228, 255);
+  }
+  .order-header{
+    background-color: rgb(255, 255, 255);
+  }
+  .c-order{
+    margin: 5px;
+
+  }
+  .order-status-buy{
+    padding-left: 8px;
+  }
+
+  .button-order-spac{
+
+    padding-top: 15px;
+  }
+
+  .text-desktop{
+    text-align: center;
+  }
+
+  @media (min-width: 992px) { 
+    .cart-row {
+      border-bottom: 1px solid #cccccc;
+      padding: 30px 0;
+    }
+
+   }
+
+
+
+@media (max-width: 1024px) {
+  .ipad-order {
+    /* flex: 0 0 75%; */
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.ipad-order-input{
+  display: block;
+
+}
+.ipad-order-input-number{
+width: 40%!important;
+
+}
+
+.ipad-order {
+  /* flex: 0 0 75%; */
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+
+ }
+
+ /* @media (max-width: 900px) {
+  
+.ipad-order-input-number{
+width: 50%!important;
+
+}
+
+ }
+
+
+ @media (max-width: 1400px) {
+  
+  .ipad-order-input{
+    display: block;
+  
+  }
+
+  .ipad-order-input-number{
+    width: 37%!important;
+    
+    }
+  
+   }
+
+
+   @media (max-width: 1330px) {
+  
+    .ipad-order-input{
+      display: block;
+    
+    }
+  
+    .ipad-order-input-number{
+      width: 50%!important;
+      
+      }
+    
+     }
+
+     @media (max-width: 1300px) {
+  
+  
+      .ipad-order-input-number{
+        width: 50%!important;
+        
+        }
+      
+       }
+   */
+
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .cart-row {
+    border-bottom: 1px solid #cccccc;
+    padding: 30px 0;
+  }
+
+ }
+  @media screen and (max-width: 600px) {
+    
+    .order-mod{
+      padding-top: 5em;
+    }
+    .text-mobile{
+
+    text-align: center;
+    }
+    .cart-mobile-dis{
+
+      display: none;
+    }
+    .order-picture-mobile{
+
+    height: 200px;
+    width: 200px;
+    }
+
+    .shop-name-order{
+      display:block;
+
+    }
+    .shop-name-order-pc{
+      display:none;
+
+    }
+    .cart-row-order-mobile{
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+    .order-name-mobile-font{
+      font-size: 15px;
+
+    }
+    .order-price-mobile-font{
+      font-size: 20px;
+      color: #0094d9;
+    }
+    .input-number-order{
+
+      padding: 10px;
+    }
+    .text-number-order{
+
+      text-align: center;
+    }
+
+    
+    .shop-name-order-mobile{
+      padding-top: 15px;
+      
+     }
+
+     .bg-order-mobile{
+
+      text-align: left;
+      padding-left:15px;
+      padding-bottom: 10px;
+     }
+     .trash-mobile{
+       text-align: right;
+     }
+
+     .boxSubmitCart {
+      position: fixed;
+      bottom: 0;
+      z-index: 55;
+      left: 0;
+      right: 0;
+      min-height: auto;
+      margin: 0 !important;
+      padding: 0;
+      display: flex;
+      box-shadow: 5px 5px 20px #000000;
+  }
+
+  .buttonShopping {
+    flex: 1;
+    height: 60px;
+    border-radius: 0px;
+    margin: 0;
+    font-size: 16px;
+}
+
+.buttonCheckout {
+  min-width: 200px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.buttonCheckout {
+  flex: 2;
+  height: 60px;
+  border-radius: 0px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.table-order{
+
+  border-top: 0px solid #dee2e6;
+}
+
+.button-order{
+  border-color: #dc354508;
+
+}
+
+
+
+
+
+  }
+
+  

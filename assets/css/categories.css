@@ -1,0 +1,263 @@
+
+/* .row.categoryweb{
+    justify-content: center;
+    top: 10px;
+    background-color: white;
+} */
+
+/* .row.categorymobile{
+    justify-content: center;
+    margin-top: 10px;
+
+} */
+
+.cateimg{
+    width: 100%;
+    /* border-radius: 20px; */
+
+}
+
+
+
+.cateimg:hover{
+    transform: scale(1.1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* .hrsection{
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 30px;
+    width: auto;
+}
+
+.row.categoryweb{
+    justify-content: center;
+}
+
+.row.categorymobile{
+    justify-content: center;
+}
+
+
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    
+}
+
+
+ .img-slider {
+  
+    width: 120px;
+    border: 2px solid whitesmoke;
+    border-radius: 100px;
+    margin-right: 50px;
+
+
+}
+
+.img-slider:hover{
+    transform: scale(1.1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slider::-webkit-scrollbar-thumb {
+    background: #f5b35d;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+.section-slider:hover .slider::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  */
+
+
+  .asx:hover {
+    color: white;
+   }
+  .imgproductcate{
+    border-radius: 50%;
+
+  }
+
+.section-slider {
+    padding: 10px 0;
+}
+.slider {
+    display: flex;
+    /* overflow-x: auto; */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+}
+
+.slidertest {
+    display: flex;
+   
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+}
+
+.slider .img-slider {
+    flex-shrink: 0;
+    width: 140px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: block;
+    border-radius: 50%;
+}
+.slider::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slider::-webkit-scrollbar-thumb {
+    background: #dcdcdc;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+.section-slider:hover .slider::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.myvideo {
+  text-decoration: none;
+  color: #fff;
+  background: red;
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  z-index:100;
+  position: absolute;
+  bottom: 20px;
+}
+.myvideo:hover {
+  color: #000;
+}
+.main-heading-cate{
+
+    padding-top: 30px;
+    font-size: 15px;
+}
+
+.heading-title-cate-mobile h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    color: #446027;
+  }
+  
+  .main-heading-cate-mobile {
+    padding: 30px 0;
+  }
+  
+  .heading-title-cate-mobile h2 em {
+    color: #4c4c4c;
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    font-size: 22px;
+  }
+  
+  .heading-title-cate-mobile h2 span {
+    display: inline-block;
+    border-bottom: 2px solid #446027;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+
+
+  @media (max-width: 420px) {
+    .im-cate-mobile{
+      width: 50px!important;
+      height: 50px!important;
+        }
+
+        .mobile-cate{
+            padding: 0px!important;
+            padding-top: 2px!important;
+        }
+  
+     
+  
+  
+   }
+
+@media screen and (max-width: 600px) {
+
+    .cate-name-mobile-fonts {
+        font-size: 0.83em!important;
+    
+    }
+ 
+.heading-title-cate-mobile h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    color: #446027;
+  }
+  
+  .main-heading-cate-mobile {
+    padding: 30px 0;
+  }
+  
+  .heading-title-cate-mobile h2 em {
+    color: #4c4c4c;
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    font-size: 22px;
+  }
+  
+  .heading-title-cate-mobile h2 span {
+    display: inline-block;
+    border-bottom: 2px solid #446027;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+    
+
+  }
+
+  

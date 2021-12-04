@@ -1,0 +1,59 @@
+.container.confirmorderweb{
+  
+    margin-top: 10px;
+   
+   
+}
+
+.address{
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    width: 100%;
+    
+
+}
+
+.order{
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.pay{
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.bankicon{
+    width: 20px;
+    border-radius: 5px;
+}
+
+.confirm{
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(224, 234, 255);
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+
+
+

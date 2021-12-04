@@ -1,0 +1,195 @@
+.row.productdetailweb {
+    justify-content: center;
+}
+
+
+
+.row.productdetailmobile{
+    justify-content: center;
+    /* margin-top: 50px; */
+}
+
+.productpreview{
+
+  width: 100%;
+}
+
+.social-pro-des{
+    padding: 10px;
+}
+
+
+
+
+  
+.card.productdetail{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+
+.pro-des-button-buy{
+
+    border-radius: 0%;
+}
+.pro-des-btt{
+    width: 200px;
+    border-radius: 0%;
+}
+
+
+
+  .gallery-wrap .img-big-wrap img {
+    height: 380px;
+    width: auto;
+    display: inline-block;
+    cursor: zoom-in;
+    text-align: center;
+}
+
+
+.gallery-wrap .img-small-wrap .item-gallery {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    margin: 7px 2px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gallery-wrap .img-small-wrap {
+    text-align: center;
+}
+.gallery-wrap .img-small-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: zoom-in;
+    text-align: center;
+}
+
+
+.product-details{
+padding-top:100px;
+
+}
+.product-detail-title{
+
+    font-size: 16px;
+    font-weight: normal;
+}
+.product-mini{
+    font-size: 14px;
+}
+.productPrice{
+font-size: 30px;
+
+}
+.product-details-in{
+    padding-top:20px;
+}
+
+.no-margin {
+    margin: 0!important;
+}
+
+.productItemDetail .starRating > .fa-star {
+    color: #EDA100;
+    font-size: 14px;
+    font-family: tahoma;
+}
+
+.rating-box-detail {
+    background: url(https://www.svgroup.co.th/skin/frontend/typologancee/default/images/bg-rating.png) repeat-x scroll 0 0 transparent;
+    display: inline-block;
+    height: 14px;
+    position: relative;
+    vertical-align: top;
+    width: 87px;
+    margin: 0;
+    /* background-size: 10px auto; */
+}
+
+.productName-detail{
+
+    font-size: 25px;
+}
+
+.product-details-bor{
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.rati-bottom{
+    border-bottom: solid;
+
+}
+
+.dividerFix {
+    border-top: 1px solid #CCC;
+}
+
+.btnMainCart {
+    width: 100%;
+    min-height: 44px;
+}
+
+.productItemDetail .button-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.productde-text-ce{
+    text-align: center
+}
+
+.product-detail-tab{
+
+    padding: 20px;
+}
+
+.zoomer-control{
+
+    height: auto;
+    width: auto;
+}
+
+.thumb-list{
+    visibility: visible;
+
+}
+
+
+
+.scroller-at-top .thumb-list .responsive-image[data-v-033bd07e], .scroller-at-bottom .thumb-list .responsive-image[data-v-033bd07e] {
+    height: 40px!important;
+    width: 40px!important;
+}
+
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+    .product-detail-ipad{
+padding-left:30px ;
+
+    }
+
+
+
+  /* Styles */
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .product-detail-ipad{
+        padding-left:50px ;
+        
+            }
+        
+
+ }
