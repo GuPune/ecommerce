@@ -4,29 +4,20 @@
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner/>
-<div class="container">
-<div class ="row">
-  <div class="col-12">
-   <div v-html="content" class="responsive">
-                  </div>
-                  </div>
-                  </div>
-</div>
+
+<Blog/>
+
+        
+                                                </div>
+                          
+
 
 
                 
-</div>
 
  
-            
-      
-
-              
-               
      
-                    
-             
+            
    
 </template>
 
@@ -44,6 +35,7 @@ import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
 import Banner from "@/components/Banner"
+import Blog from "@/components/Blog"
     
     export default {
       components: {
@@ -51,7 +43,8 @@ import Banner from "@/components/Banner"
           Nav,
           Footer,
           Categoriesbyshop,
-          Adsmini
+          Adsmini,
+          Blog
            
               },
 
@@ -72,15 +65,20 @@ url:null
         },
              
        async mounted() {
-   
+
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
    let a = await this.$store.dispatch(GET_ABOUT,this.form);
    this.content = this.about
-   this.loadding = false
+      this.loadding = false
         },
 
          methods: {
+
+            Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return "https://image.makewebeasy.net/makeweb/c_c_409x409/pYN8s1ZiT/Blog/9DB0008E_7979_4605_A62E_DB764FBB6DD8.jpeg";
+            },
      
             success() {
           

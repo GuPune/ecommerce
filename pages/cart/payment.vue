@@ -699,7 +699,7 @@ this.$router.push({ name: names})
     this.formorder.url = window.location.origin
     this.formorder.customer_id = this.profile.id
     this.formorder.shipping = shipping
-    this.formorder.orders_status = 'E'
+    this.formorder.orders_status = 'C'
 
 
   let savedelivery =  await this.$store.dispatch(SAVE_ORDER,this.formorder);

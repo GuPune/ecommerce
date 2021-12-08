@@ -4,11 +4,10 @@
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner/>
-<Blog/>
 
-        
-                                                </div>
+<Map/>
+<Contact/>
+ </div>
                           
 
 
@@ -27,24 +26,19 @@
 import { VueEditor } from "vue2-editor";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import Categoriesbyshop from "@/components/Categoriesbyshop";
-import Productbyshop from "@/components/Productbyshop";
-import { GET_ABOUT } from "@/store/actions.type.js";
-import AdsShop from "@/components/AdsShop"
+import { GET_ABOUT,GET_SYSTEM } from "@/store/actions.type.js";
 import { mapGetters } from "vuex";
-import Adsmini from "@/components/Adsmini"
-import Relation from "@/components/Relation"
+import Contact from "@/components/Contact"
+import Map from "@/components/Map"
 import Banner from "@/components/Banner"
-import Blog from "@/components/Blog"
     
     export default {
       components: {
-          AdsShop,
           Nav,
           Footer,
-          Categoriesbyshop,
-          Adsmini,
-          Blog
+          Contact,
+          Map,
+          Banner
            
               },
 
@@ -60,17 +54,16 @@ url:null
   },
 
         computed: {
-                ...mapGetters(["about"]),
+               
 
         },
              
        async mounted() {
 
-   this.form.url = window.location.origin;
-   this.form.shop_name = this.$route.params;
-   let a = await this.$store.dispatch(GET_ABOUT,this.form);
-   this.content = this.about
-      this.loadding = false
+
+
+  this.loadding = false;
+
         },
 
          methods: {

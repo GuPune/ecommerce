@@ -3,7 +3,9 @@
 <div style="background: white;">
 
  <Nav/>
+  <Banner/>
  <nuxt-child></nuxt-child>
+
  <AdsShop  v-if="currentRouteName == 'index'" />
 
  <Adsmini  v-if="currentRouteName == 'index'"/>
