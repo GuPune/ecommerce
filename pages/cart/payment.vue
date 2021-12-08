@@ -661,9 +661,8 @@
  }
    await this.saveorder();
   await this.sleep(3000);
-   this.loadding = false;
- const Shopid = this.isUrl.id;
-    this.$router.push({ name: names, params: { id: Shopid }})
+this.loadding = false;
+this.$router.push({ name: names})
     
 
     
@@ -687,7 +686,7 @@
 
     },
      async saveorder(){
-         this.loadding = true;
+     this.loadding = true;
     let checkbank = await localStorage.getItem('bank');
     let delivery = await localStorage.getItem('delivery');
     let cart = await localStorage.getItem('cart');

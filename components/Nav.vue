@@ -207,17 +207,12 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-    <b-col cols="12" md="6"  sm="3">
-        <b-form-input placeholder="Search"></b-form-input>
 
-      </b-col>
   
 
       <!-- Right aligned nav items -->
      <b-navbar-nav class="ml-auto">
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item  @click="redirectTo('form-shopregis')">ขายสินค้ากับเรา</b-nav-item>
+
      <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                     <span> ({{ cartTotal }}) </span></b-nav-item>
 

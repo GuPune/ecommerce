@@ -1,64 +1,87 @@
 <template>
+      
+<div style="background: white;">
 
+ <Nav/>
+ <nuxt-child></nuxt-child>
+ <AdsShop  v-if="currentRouteName == 'index'" />
 
+ <Adsmini  v-if="currentRouteName == 'index'"/>
 
-
-<div>
-
-
-
-<Loader v-if="product.loading"/>
-  
-
- <Nav   v-if="currentRouteName != 'salepage-id'"/>
-<nuxt-child></nuxt-child>
-
-
-      <Ads   v-if="currentRouteName == 'index'"/>
-                <!-- <Categories  v-if="currentRouteName == 'index'" /> -->
-                <Test  v-if="currentRouteName == 'index'" />
-               
-<Related v-if="currentRouteName == 'index'"/>
-
-    <ShopRelation v-if="currentRouteName == 'index'"/>
+ <Relation  v-if="currentRouteName == 'index'"/>
+        <div id="content" class="container profileweb col-12 col-md-9">
         
-</div>
+            <div class="row">
+                <div class="col-12">
+         
+   
+                </div>
+                </div>
 
+                <div class="row relatedweb">
+
+     
+  <div class="col-sm-12 col-md-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-9"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
+
+</div>
+</div>
+ 
+                         
+                    
+                </div>
+
+
+
+        </div>
+
+              
+               
+     
+                    
+             
+   
 </template>
 
 
+
 <script>
-import Header from "@/components/Header"
-import Nav from "@/components/Nav"
-import Ads from "@/components/Ads"
-import Categories from "@/components/Categories"
-import Related from "@/components/Related"
-import ShopRelation from "@/components/ShopRelation"
-import Test from "@/components/Test"
-import LongFooter from "@/components/LongFooter"
-import Footer from "@/components/Footer"
-import Loader from '@/components/Loader'
-import { mapState } from 'vuex'
-import { FETCH_ID_URL } from "@/store/actions.type.js";
+  
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import Categoriesbyshop from "@/components/Categoriesbyshop";
+import Productbyshop from "@/components/Productbyshop";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP } from "@/store/actions.type.js";
+import AdsShop from "@/components/AdsShop"
+import { mapGetters } from "vuex";
+import Adsmini from "@/components/Adsmini"
+import Relation from "@/components/Relation"
     
+
+
     export default {
       components: {
-          Header,
-          Nav,Loader
-          },
+          AdsShop,
+          Nav,
+          Footer,
+          Categoriesbyshop,
+          Adsmini
+           
+              },
 
-    data: () => ({
-    
-    form:{
-        url:null
-    }
-    }),
+                  data() {
+    return {
+   form:{
+shop_name:null,
+url:null
+   }
+    };
+  },
 
-    computed: {
-             ...mapState({
-                product: state => state.ProductShell
-            }),
-        currentRouteName() {
+        computed: {
+                ...mapGetters(["cate_by_shop","product_by_shop"]),
+
+                     currentRouteName() {
 
         return this.$route.name;
     },
@@ -66,27 +89,34 @@ import { FETCH_ID_URL } from "@/store/actions.type.js";
                 return this.$store.state.user.url_id;
     },
 
- 
 
-  
+        },
+             
+       async mounted() {
+           this.form.url = window.location.origin;
+        //   console.log('host',host)
+       //   this.$route.params = 1;
+      let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+        let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+        },
+
+         methods: {
      
+          
+            success() {
+          
+            },
+            error($text) {
 
-    },
-     created() {
+           this.$router.push('/error')
 
-        
-    },
-    mounted() {
+          
+            },
+        }
        
-        this.form.url = window.location.origin
-        let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
-       // let clearalert = this.$store.dispatch(CLEARALRET);
-      
-    },
-    methods: {
-      
-    }
-    };
-    
-</script>
+           
 
+     
+    
+    };
+</script>
