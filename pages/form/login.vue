@@ -50,10 +50,11 @@
   
 <div class="row">
     
-   
+   <!-- 
        <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button>
       
-    
+    -->
+
   
       
 
