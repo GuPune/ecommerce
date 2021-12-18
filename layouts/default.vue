@@ -4,7 +4,7 @@
 
  <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
 
-  <Banner  v-if="currentRouteName == 'index'"/>
+  <Banner   v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
  <nuxt-child></nuxt-child>
 
  <AdsShop  v-if="currentRouteName == 'index'" />
