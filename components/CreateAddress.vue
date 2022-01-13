@@ -28,7 +28,6 @@
                                             required
                                             @input="$v.form.tel.$touch()"
                                             @blur="$v.form.tel.$touch()"
-                                             v-on:keypress="isNumber($event)"   :maxlength="max"
                              v-model="form.tel" />
                             <div class="invalid-feedback" id="divError_textPhoneNumber"></div>
                         </div>
@@ -144,7 +143,6 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
     
     data() {
     return {
-         max:10,
       IsLogin: false,
       provin:"",
       pros_id:"",
@@ -181,7 +179,7 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
                 AddressErrors () {
             const errors = []
             if (!this.$v.form.address.$dirty) return errors
-            !this.$v.form.address.required && errors.push('โปรดระบุอีเมล')
+            !this.$v.form.address.required && errors.push('โปรดระบุอีเมล์')
       
             return errors
         },
@@ -222,16 +220,6 @@ console.log(this.profile.id);
       },
 
       methods: {
-
-        async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  
-                    (event.key !== "." || /\./.test(message))  
-                    )  
-                return event.preventDefault();  
-
-                
-        },
          async ChangeProvinces(event){
              this.pros_id = event.target.value;
         let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);

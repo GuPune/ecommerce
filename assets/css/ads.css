@@ -25,6 +25,7 @@
 
 
 
+
 /* 
 ------------------------<web------------------> */
 
@@ -197,11 +198,6 @@ input:checked + .slide-container .nav label { display: block; }
   .ads-emarket{
     padding-top: 59px;
   }
-
-  .ads-emarm{
-    margin-top:40px ;
-  }
-  
 
 }
 

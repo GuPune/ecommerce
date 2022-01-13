@@ -15,7 +15,7 @@
                  <div class="cards product-byshop">
                  
                     <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
-                        <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
+                        <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
                                                             <div class="product-name product-name-byshop">{{item.name_en}}</div>
                                                             <p class="price product-name-byshop">฿{{item.price}}.00</p>
                                       <div class="product-footer product-footer-mobile">
@@ -163,7 +163,7 @@ const names = 'id-form-login'
            async addToCart(item){
 
 
-console.log('shop',item);
+
 
    this.$swal("Add Product!", "Product To Cart!", "success")
   let add_producttocart = await this.$store.dispatch(ADD_CART,item);

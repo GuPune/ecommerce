@@ -12,19 +12,9 @@
 			</h2>
         </div>
  <div>
-          <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-    </div>
-    <div class="col relation-all" >
-      ดูร้านค้าทั้งหมด 
-    </div>
-  </div>
  
-     <VueSlickCarousel v-bind="slickOptions"  v-if="items.length">
-    
-    <div v-for="(i, index) in items" class="img-wrapper">
+    <VueSlickCarousel v-bind="slickOptions">
+    <div v-for="i in items"  class="img-wrapper">
   
              <div class="card c-shopinmy">
                     <div class="cardproduct">
@@ -54,6 +44,7 @@
                         <!-- -------------------------Mobile------------------------------ -->
 
 
+    </div>
 
     <br>
     </section>
@@ -106,7 +97,7 @@
         // ],
         
    
-  slickOptions:{
+ slickOptions:{
   "dots": true,
   "infinite": false,
   "arrows": false,
@@ -118,15 +109,6 @@
   "speed": 500,
   "autoplaySpeed": 500,
   "responsive": [
-      {
-      "breakpoint": 1300,
-      "settings": {
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
-        "infinite": true,
-        "dots": true
-      }
-    },
     {
       "breakpoint": 1024,
       "settings": {
@@ -198,7 +180,7 @@
                     this.$router.push(name)
                   },
         loadcategory(){
-        //  let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
+          let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;

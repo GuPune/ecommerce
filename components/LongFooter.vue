@@ -1,65 +1,103 @@
 <template>
-<section id="long-footer">
-                    <div class="pt-5 pb-5 long-footer navbar-expand-lg navbar-dark bg-dark">
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 col-xs-12 about-company">
-                                 
-                                            <img src="../assets/logohori2.png" class="logofoot">
-                                        <br>
-                                        <p class="font-weight-bold" style="color:#e67825; font-size:30px;">บริษัท ไอดีไดรฟ์ จำกัด</p><br>
-                                            <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
-                                            
-                                      
-                                        
-                                        <!-- <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p> -->
-                                        <!-- <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p> -->
-                                    </div>
-                                    
-                                    <div class="col-lg-3 col-xs-12 links" >
-                                        <h4 class="mt-lg-0 mt-sm-3" style="color:#e67825;">Links</h4>
-                                            <ul class="m-0 p-0">
-                                            <li>- <a href="#">Lorem ipsum</a></li>
-                                            <li>- <a href="#">Nam mauris velit</a></li>
-                                            <li>- <a href="#">Etiam vitae mauris</a></li>
-                                            <li>- <a href="#">Fusce scelerisque</a></li>
-                                            <li>- <a href="#">Sed faucibus</a></li>
-                                            <li>- <a href="#">Mauris efficitur nulla</a></li>
-                                            </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-xs-12">
-                                            <h4 class="mt-lg-0 mt-sm-4" style="color:#e67825;">ช่องทางการติดต่อ</h4><br>
-                                            <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมล : idofficer@iddrives.co.th</p><br>
-                                              <a href="#">
-                                                <i class="fab fa-facebook-f"></i>&nbsp;&nbsp;
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fab fa-youtube"></i>&nbsp;&nbsp;
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fab fa-instagram"></i>&nbsp;&nbsp;
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fab fa-line"></i>
-                                                </a>
+ 
+            <div class="footer">
+         
 
-                                            <!-- <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
-                                            <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมล : idofficer@iddrives.co.th</p> -->
+                    <div class="row footer">
+                    <div class="mx-auto col-9">
+                        <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <img src="img/logo.png" class="logofoot">
+                                        <h5>ID Market Place.</h5>
+                                        <p>ตลาดสินค้าเกษตรเป็นวิธีการแก้ปัญหาจากทางภาครัฐ เพื่อช่วยให้เกษตรกรสามารถลืมตาอ้าปากได้ โดยไม่จำเป็นต้องขายสินค้าทางการเกษตรที่ตนผลิตได้ไปยังพ่อค้าคนกลางอีกต่อไป
+                                            แต่เกษตรกรสามารถนำสินค้ามาวางจำหน่ายได้โดยตรงในตลาดสินค้าเกษตร เป็นการนำสินค้าส่งไปยังมือลูกค้าโดยตรง ทำให้คนในต่างจังหวัดในยุคนี้สามารถมีรายได้มากขึ้นเป็นอีกเท่าตัว
+                                             เพราะนอกจากจะทำการเกษตรเป็นหลักแล้ว ยังสามารถขายสินค้าด้วยตัวเองได้อีกด้วย</p>
+
                                     </div>
-                                </div>
-                        </div>
+
+                                    <div class="col-sm-3 item">
+                                        <h5>ข่าวสาร</h5>
+                                        <!-- <img class="imgproduct" src="https://f.ptcdn.info/827/073/000/qupxhz11a8I27CRh7gqE-o.jpg"> -->
+                                        <a href="https://www.prachachat.net/finance/news-685086" target="_blank">ธ.ก.ส. อนุมัติ “สินเชื่อสู้ภัยโควิด” แล้ว 8.9 พันล้านบาท ช่วยเหลือเกษตรกรเกือบ 9 แสนราย</a> <br>
+                                
+                                        <!-- <hr class="solidfooter"> 
+                                        <img class="newrelese" src="img/killthislove.png">
+                                        <p>Kill This Love</p> -->
+                                
+
+
+
+
+                                    </div>
+
+                                    <div class="col-sm-3 item">
+                                        <h5>ที่ตั้ง</h5>
+                                        <p>Khon Kaen, Thailand, 40000</p>
+                                    
+                                        <h5>ติดตามเรา</h5>
+
+                                        <!-- <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank"><i class="fab fa-facebook-square"></i></a>&nbsp;
+                                        <a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A" target="_blank"><i class="fab fa-youtube"></i></a>&nbsp;
+                                        <a href="https://www.instagram.com/blackpinkofficial/" target="_blank"><i class="fab fa-instagram"></i></a> -->
+
+                                      
+
+                                    </div>
+                            </div>
+
+
+                    </div>
                     </div>
 
-         
-         
             
 
+                </div>
 
-</section>
+
+
+
+
+
+
+
+  
+
+
 </template>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
 
+
+
+
+
+<script>
+  export default {
+
+     computed: {
+           
+   
+
+        },
+        
+        mounted() {
+        //  this.$store.dispatch(ToogleAction);
+        
+         },
+        
+  
+        methods: {
+
+      redirectTo(name) {
+                    this.$router.push(name)
+                  }
+
+        },
+
+        components: {
+
+        },
+
+    }
+</script>

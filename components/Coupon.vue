@@ -1,7 +1,7 @@
 <template>
 
 
-        <div class="card shopping-cart" hidden>
+        <div class="card shopping-cart">
                   <h2 class="title-shoping-cart bg-order"><span>คูปองส่วนลด</span></h2>
                         <div class="card-body">
                         <div class="table table-responsive">

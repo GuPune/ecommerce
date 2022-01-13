@@ -12,12 +12,13 @@
 			</h2>
         </div>
  <div>
+ 
 
       <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i)" style="border-radius: 50%;">
+                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
                                                    <div class="product-footer mobile-cate asx">
                                                    {{i.name_th}}
                                                    </div>
@@ -129,33 +130,6 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
   "speed": 500,
   "autoplaySpeed": 500,
   "responsive": [
-            {
-      "breakpoint": 1700,
-      "settings": {
-        "slidesToShow": 6,
-        "slidesToScroll": 4,
-        "infinite": true,
-        "dots": true
-      }
-    },
-            {
-      "breakpoint": 1500,
-      "settings": {
-        "slidesToShow": 5,
-        "slidesToScroll": 4,
-        "infinite": true,
-        "dots": true
-      }
-    },
-          {
-      "breakpoint": 1440,
-      "settings": {
-        "slidesToShow": 5,
-        "slidesToScroll": 4,
-        "infinite": true,
-        "dots": true
-      }
-    },
       {
       "breakpoint": 1300,
       "settings": {
@@ -168,7 +142,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 1024,
       "settings": {
-        "slidesToShow": 4,
+        "slidesToShow": 6,
         "slidesToScroll": 6,
         "infinite": true,
         "dots": true
@@ -204,16 +178,8 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         
      computed: {
            
- ...mapGetters(["category_shell","shell_cate"]),
+ ...mapGetters(["category_shell"]),
 
-
-      ...mapState({
-                objects: state => state,
-            }),
-
-               ...mapState({
-                objects: state => state.ProductShell.shell_cate,
-            }),
 
          isUrl () {
                 return this.$store.state.user.url_id;
@@ -225,15 +191,6 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         mounted() {
 
         this.Loadcategory()
-
-           if(this.objects == null){
-        this.form.cate = "";
-         }else {
-                
-                  this.form.cate = this.objects.id;
-         }
-console.log('this.form',this.form);
-           let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
         
          },
         
@@ -246,7 +203,6 @@ console.log('this.form',this.form);
 
        async Loadcategory() {
             
-    
                    let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);  
                    this.items = a;
                  
@@ -257,12 +213,9 @@ console.log('this.form',this.form);
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
-        ChangeProduct(i){
+        ChangeProduct(id){
         
-
-        this.form.catagory_id = i.id;
-        this.form.cat = i;
-    
+        this.form.catagory_id = id;
         let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
     
         }

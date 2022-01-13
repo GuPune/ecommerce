@@ -277,8 +277,8 @@ import axios from 'axios';
             EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุ')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
+                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
                 return errors
             },
             
@@ -302,10 +302,10 @@ import axios from 'axios';
             
         methods: {
             checkorder(){
+console.log('this',this.form.cartnumber);
 
-   let public_images = process.env.baseURL;
 
-                      axios.post(public_images+'/checkorder', {
+                      axios.post('http://127.0.0.1:8000/api/checkorder', {
         cartnumber: this.form.cartnumber
       }).then(res => {
 if(res.data == 1){
@@ -386,9 +386,8 @@ this.isCartnumber = true
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-             let public_images = process.env.baseURL;
-             console.log('public_images',public_images);
-                      axios.post(public_images+'/upload', {
+            
+                      axios.post('http://127.0.0.1:8000/api/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
@@ -472,8 +471,8 @@ this.isCartnumber = true
             error($text) {
                 this.$swal({
                     icon: 'error',
-                    title: '',
-                    text: 'ของคุณถูกใช้งานไปแล้ว!',
+                    title: 'อีเมล์',
+                    text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
                     showConfirmButton: true,
                     reverseButtons: true
                 });

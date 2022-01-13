@@ -1,16 +1,17 @@
 <template>
       
 <div style="background: white;">
-<div v-if="loadding">
-<Loader/>
-</div>
- <NavShop/>
- <AdsShop/>
 
- <Adsmini/>
+ <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
 
- <Relation/>
+  <Banner   v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
+ <nuxt-child></nuxt-child>
 
+ <AdsShop  v-if="currentRouteName == 'index'" />
+
+ <Adsmini  v-if="currentRouteName == 'index'"/>
+
+ <Relation  v-if="currentRouteName == 'index'"/>
         <div id="content" class="container profileweb col-12 col-md-9">
         
             <div class="row">
@@ -23,19 +24,19 @@
                 <div class="row relatedweb">
 
      
-  <div class="col-sm-12 col-md-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"/></div>
-  <div class="col-sm-12 col-md-9"> <Productbyshop  :product_by_shop="product_by_shop"/></div>
+  <div class="col-sm-12 col-md-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-9"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
 
 </div>
 </div>
-
-<ProductBestSeller/>
-<ProductRecom/>
-<ProductNew/>
- </div>
-
+ 
+                         
+                    
+                </div>
 
 
+
+        </div>
 
               
                
@@ -49,41 +50,30 @@
 
 <script>
   
-  import NavShop from "@/components/NavbarShop"
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,GET_NAVBAR_SHOP,GET_CHECK_SHOP } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import Banner from "@/components/Banner"
-import ProductBestSeller from "@/components/ProductSeller"
-import ProductNew from "@/components/ProductNew"
-import ProductRecom from "@/components/ProductRecommend"
     
 
 
     export default {
       components: {
           AdsShop,
-          Productbyshop,
           Nav,
           Footer,
           Categoriesbyshop,
-          Adsmini,
-          ProductBestSeller,
-          ProductRecom,
-          ProductNew,
-          NavShop
+          Adsmini
            
               },
 
                   data() {
     return {
-         loadding:true,
    form:{
 shop_name:null,
 url:null
@@ -94,51 +84,34 @@ url:null
         computed: {
                 ...mapGetters(["cate_by_shop","product_by_shop"]),
 
-
-
-
-                        currentRouteName() {
+                     currentRouteName() {
 
         return this.$route.name;
     },
+    isUrl () {
+                return this.$store.state.user.url_id;
+    },
 
-        },
 
-        async created () {
-       
-          //   let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
-          
         },
              
        async mounted() {
-
-         this.form.url = window.location.origin;
-         this.form.shop_name = this.$route.params;
-
-     ///check ร้านค้าว่าเปิดไหม ใช้บน emarket เท่านั้น
-   ///    let checkshop = await this.$store.dispatch(GET_CHECK_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-
-       let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
-
-   
-          let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+           this.form.url = window.location.origin;
+        //   console.log('host',host)
+       //   this.$route.params = 1;
+      let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-
-          this.loadding = false
         },
 
          methods: {
      
-   
-            success() {
           
-            },
             success() {
           
             },
             error($text) {
 
-           this.$router.push('/shoperror')
+           this.$router.push('/error')
 
           
             },

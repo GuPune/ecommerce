@@ -1,6 +1,6 @@
 <template>
       
-<div style="background: white;padding-top: 50px;">
+<div style="background: white;">
 <div v-if="loadding">
 <Loader/>
 </div>

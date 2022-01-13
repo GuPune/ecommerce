@@ -25,7 +25,7 @@
             <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป </b-button>
             </div>
          </div>
-       
+ 
     </div>
     </div>
     </div>
@@ -621,29 +621,11 @@
         isUrl () {
                 return this.$store.state.user.url_id;
         },
-        cart () {
-        return this.$store.state.Cart.cart
-        },
               selectshipping () {
                 return this.$store.shipping;
         },
 
         
-        },
-
-        
-       async created(){
-
-       
-
-if (this.cart.length > 0) {    
-   // not empty  
-    
-} else { 
-    this.$router.push({ name: 'cart-orderlist'});
-} 
-           
-
         },
              
         mounted() {
@@ -670,8 +652,8 @@ if (this.cart.length > 0) {
 
        
          let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-        const Shopid = this.isUrl.id;
-       this.$router.push({ name: names, params: { id: Shopid }})
+    
+       this.$router.push({ name: names})
         },
         error($text) {
                 this.$swal({

@@ -27,7 +27,6 @@ export const CART_SUCCESS = "cart_success";
 
 export const REMOVE_CART = "remove_cart";
 export const GET_CART = "get_cart";
-export const ADD_PRODETAIL = "add_prodetail";
 export const ADD_UP = "add_up";
 export const ADD_DOWN = "add_down";
 export const ADD_INPUT = "add_input";
@@ -75,34 +74,16 @@ export const UPDATE_SLIP = "update_slip";
 export const CHANGEPASSWORD = "change_password";
 
 export const GET_SHOP = "get_shop";
-export const GET_PRODUCT_SALEPAGE = "get_salepage";
 export const GET_SHOP_BY_ITEM = "get_shop_by_item";
 export const GET_CAPTCHA = "get_captcha";
 export const GET_PROVINCES = "get_address_provinces";
-export const GET_PROVINCESSALEPAGE = "get_address_provincessalepage";
-export const GET_DISTRICTSSALEPAGE = "get_address_districtssalepage";
-export const GET_SUBDISTRICTSSALEPAGE = "get_address_subdistrictsalepage";
-export const GET_SALEPAGESUMMARY = "get_salepagesummary";
-export const SAVE_ORDER_SALEPAGE = "save_order_salepage";
-export const GET_TYPE_SHOP = "get_typeshop";
-export const GET_SHOP_LINE = "get_shopline";
 export const GET_DISTRICTS = "get_address_districts";
 export const GET_SUBDISTRICTS = "get_address_subdistricts";
 export const GET_ORDER_LOCAL = "get_order";
 export const GET_ORDER_DATA = "get_order_data";
 export const GET_ORDER_DATA_HISTORY = "get_order_data_history";
-export const GET_CATEGORY_SHELL = "get_category_shell";
-export const GET_PRODUCT_FIND = "get_product_find";
-export const GET_PRODUCT_SHELL_FIND = "get_product_find_shell";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
-
-export const FETCH_FACEBOOK = "fetch_facebook";
-
-export const GET_NAVBAR = "get_navbar";
-export const GET_NAVBAR_SHOP = "get_navbar_shop";
-export const GET_CHECK_SHOP = "get_check_shop";
-
 export const LOG_OUT = "log_out";
 
 

@@ -1,10 +1,10 @@
 <template>
       
-<div style="background: white;padding-top: 50px;">
+<div style="background: white;">
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner2/>
+
 <div class="container">
 <div class ="row">
   <div class="col-12">
@@ -43,7 +43,7 @@ import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import Banner2 from "@/components/Banner2"
+import Banner from "@/components/Banner"
     
     export default {
       components: {
@@ -51,8 +51,7 @@ import Banner2 from "@/components/Banner2"
           Nav,
           Footer,
           Categoriesbyshop,
-          Adsmini,
-          Banner2
+          Adsmini
            
               },
 
@@ -69,11 +68,6 @@ url:null
 
         computed: {
                 ...mapGetters(["about"]),
-
-                        currentRouteName() {
-console.log('this.$route.name',this.$route.name);
-        return this.$route.name;
-    },
 
         },
              

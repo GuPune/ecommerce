@@ -30,7 +30,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-success')">ยืนยันการสั่งซื้อ </b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-success')">ยืนยันการสั่งซื้อ</b-button>
             </div>
          </div>
          
@@ -643,24 +643,10 @@
 
         
         },
-
-       async created(){
-
-       
-
-if (this.cart.length > 0) {    
-   // not empty  
-    
-} else { 
-    this.$router.push({ name: 'cart-orderlist'});
-} 
-           
-
-        },
              
         mounted() {
 
-      
+          
         },
         methods: {
 
@@ -675,9 +661,8 @@ if (this.cart.length > 0) {
  }
    await this.saveorder();
   await this.sleep(3000);
-   this.loadding = false;
- const Shopid = this.isUrl.id;
-    this.$router.push({ name: names, params: { id: Shopid }})
+this.loadding = false;
+this.$router.push({ name: names})
     
 
     
@@ -701,7 +686,7 @@ if (this.cart.length > 0) {
 
     },
      async saveorder(){
-         this.loadding = true;
+     this.loadding = true;
     let checkbank = await localStorage.getItem('bank');
     let delivery = await localStorage.getItem('delivery');
     let cart = await localStorage.getItem('cart');
@@ -714,7 +699,7 @@ if (this.cart.length > 0) {
     this.formorder.url = window.location.origin
     this.formorder.customer_id = this.profile.id
     this.formorder.shipping = shipping
-    this.formorder.orders_status = 'E'
+    this.formorder.orders_status = 'C'
 
 
   let savedelivery =  await this.$store.dispatch(SAVE_ORDER,this.formorder);

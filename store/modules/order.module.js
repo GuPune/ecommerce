@@ -56,7 +56,7 @@ const actions = {
       },
 
       async [CHANGE_TABS](context,payload) { 
-     
+         
         context.commit(SET_TABS,payload);
     
       },
@@ -90,8 +90,7 @@ const mutations = {
       
      },
     [SET_TABS](state,data) {
-  
-       state.tabs = data
+       state.tabs = 2
     },
     [SET_ORDER](state,data) {
         state.order = data.data

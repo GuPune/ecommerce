@@ -1,10 +1,10 @@
 <template>
       
-<div style="background: white;padding-top: 50px;">
+<div style="background: white;">
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner2/>
+
 <Blog/>
 
         
@@ -34,7 +34,7 @@ import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import Banner2 from "@/components/Banner2"
+import Banner from "@/components/Banner"
 import Blog from "@/components/Blog"
     
     export default {
