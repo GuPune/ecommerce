@@ -60,9 +60,7 @@
         
        async mounted() {
           this.form.url = window.location.origin;
-         this.form.shop_name = "";
-      
-   
+         this.form.shop_name = this.$route.params;
      let menu = await this.$store.dispatch(GET_MENU,this.form);
 
        let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
@@ -76,7 +74,7 @@
 
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-            
+                console.log('รูป',public_images)
                 return public_images;
         },
 
@@ -84,7 +82,7 @@
               let path = this.$route.path
                if (path !== names) {
                const Shopid = this.$route.params.id;
-                this.$router.push({ name: names})
+                this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
 

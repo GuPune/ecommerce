@@ -7,7 +7,7 @@
                    <div class="main-heading">
          <div class="heading-title-relat">
             <h2><span>Product Recommend</span>
-	<em class="">สินค้าใหม่</em>
+	<em class="">สินค้าแนะนำ</em>
 			</h2>
         </div>
  <div>

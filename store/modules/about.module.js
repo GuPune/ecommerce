@@ -1,5 +1,5 @@
 
-import { AboutService }  from "../../services/about";
+import { AboutService }  from "@/services/about";
 import {
     GET_ABOUT
 } from "../actions.type.js";
@@ -24,7 +24,7 @@ const getters = {
 const actions = {
     async [GET_ABOUT](context,payload) {
         const { data } = await AboutService.getabout(payload);
-     console.log('data',data);
+     
         context.commit(SET_ABOUT,data);
     },
 

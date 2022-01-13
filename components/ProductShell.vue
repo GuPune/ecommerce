@@ -1,21 +1,16 @@
 <template>
 <div>
   <div class="heading-title-relat" v-if="cate_sel.length == 0 ">
-            <h2><span>PRODUCT  AGRICULTURAL</span>
-	<em class="">สินค้าเกษตรกร</em>
-			</h2>
         </div>
           <div class="heading-title-relat" v-else v-for="item in cate_sel" :value="item.id">
-            <h2><span>{{item.title}}</span>
-	<em class="">{{item.subtitle}}</em>
-			</h2>
+
         </div>
         <div class="product" id="product">
             <div class="row product" >
                  <div class="cards product-byshop">
                  
                     <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
-                        <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
+                        <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
                                                             <div class="product-name product-name-byshop">{{item.name_en}}</div>
                                                             <p class="price product-name-byshop">฿{{item.price}}.00</p>
                                       <div class="product-footer product-footer-mobile">
@@ -70,19 +65,19 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
 
 
      computed: {
-    ...mapGetters(["cate_sel","product_by_shop","authenticated"]),
+    ...mapGetters(["cate_sel","product_shell_find","authenticated"]),
+     
      
       numberOfPages() {
-        return this.product_by_shop.length
+        return this.product_shell_find.length
       },
-
-      
-         isUrl () {
+      isUrl () {
                 return this.$store.state.user.url_id;
         },  
 
         lists () {
-      const items = this.$store.getters.product_by_shop
+      const items = this.$store.getters.product_shell_find
+      console.log('items',items);
       // Return just page of items needed
       return items.slice(
         (this.currentPage - 1) * this.perPage,
@@ -163,7 +158,7 @@ const names = 'id-form-login'
            async addToCart(item){
 
 
-console.log('shop',item);
+
 
    this.$swal("Add Product!", "Product To Cart!", "success")
   let add_producttocart = await this.$store.dispatch(ADD_CART,item);

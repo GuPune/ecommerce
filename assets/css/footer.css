@@ -1,13 +1,5 @@
 /*----------------------------------------- footer --------------------------------------------------------------------------------*/
-.footer {
-    /* position: fixed; */
-    left: 0;
-    bottom: 0;
-    height:auto;
-    background-color: #171c24;
-    color: white;
 
- }
 
  .row.foot{
    background-color: #EF7318;
@@ -48,5 +40,38 @@
     flex: 50%;
   }
 
+  .logofoot{
+   width: 200px;
+   border: 1px red;
+   border-radius: 20px;
+}
 
+.long-footer{
+   background-color: #16192c !important;
+   color:white;
+   padding: 3rem 1.5rem 6rem;
+   margin-top: 50px;
+
+ }
+ .long-footer .links li a {
+   color: white;
+   transition: color 0.2s ease 0s;
+}
+
+
+
+.long-footer .links ul {
+   list-style-type: none;
+}
   
+.logofoot{
+   width: 200px;
+   border: 1px red;
+   border-radius: 20px;
+}
+
+.ema-footer{
+background-color: #EF7318;
+text-align: center;
+
+}

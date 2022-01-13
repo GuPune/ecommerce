@@ -1,10 +1,8 @@
 <template>
       
-<div style="background: white;">
+<div>
 
- <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
-
-  <Banner   v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
+ <NavShop />
  <nuxt-child></nuxt-child>
 
  <AdsShop  v-if="currentRouteName == 'index'" />
@@ -12,26 +10,41 @@
  <Adsmini  v-if="currentRouteName == 'index'"/>
 
  <Relation  v-if="currentRouteName == 'index'"/>
-        <div id="content" class="container profileweb col-12 col-md-9">
+        <div id="content" class="container profileweb col-12 col-md-12">
         
-            <div class="row">
-                <div class="col-12">
-         
-   
-                </div>
-                </div>
-
+          
                 <div class="row relatedweb">
 
      
-  <div class="col-sm-12 col-md-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
-  <div class="col-sm-12 col-md-9"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-2"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-10"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
 
 </div>
 </div>
  
-                         
-                    
+    <ProductBestSeller/>
+        <ProductRecom/>
+            <ProductNew/>                    
+
+   <LongFooter/>
+
+
+
+            <div class="footer ema-footer">
+                      <div class="col-sm">
+                            <small>Copyright © 2022 ID ID-Market Place. All rights reserved Beta 12/1/2565</small>
+                        </div>
+                </div>
+                  <div class="fb-customerchat"  :page_id="pageId">
+ 
+</div>
+  <div
+
+    class="fb-customerchat"
+    :page_id="pageId"
+    theme_color="#4586ff"
+
+  ></div>  
                 </div>
 
 
@@ -49,17 +62,32 @@
 
 
 <script>
-  
+import NavShop from "@/components/NavbarShop"
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,GET_NAVBAR_SHOP  } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
+import { FETCH_ID_URL,FETCH_FACEBOOK } from "@/store/actions.type.js";
+import ProductBestSeller from "@/components/ProductSeller"
+import ProductNew from "@/components/ProductNew"
+import ProductRecom from "@/components/ProductRecommend"
+import Vue from 'vue'
+import VueFbCustomerChat from 'vue-fb-customer-chat'
+import axios from 'axios';
     
+     let checker = localStorage.getItem("pageId");
+
+      Vue.use(VueFbCustomerChat, {
+  page_id: checker, //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
+
 
 
     export default {
@@ -68,12 +96,17 @@ import Relation from "@/components/Relation"
           Nav,
           Footer,
           Categoriesbyshop,
-          Adsmini
+          Adsmini,
+          NavShop,
+                ProductBestSeller,
+          ProductRecom,
+          ProductNew
            
               },
 
                   data() {
     return {
+           pageId:null,
    form:{
 shop_name:null,
 url:null
@@ -94,11 +127,34 @@ url:null
 
 
         },
+
+            async created() {
+
+// console.log('a',a);
+// let b = a.toString;
+
+//     Vue.use(VueFbCustomerChat, {
+//   page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
+//   theme_color: '#333333', // theme color in HEX
+//   locale: 'en_US', // default 'en_US'
+// })
+
+        this.form.url = window.location.origin
+        let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
+        console.log('get_face.facebook',get_face.facebook);
+     //  this.abc = 1697883653756763;
+   //     get_face.facebook
+
+   localStorage.setItem("pageId", get_face.facebook);
+    },
              
        async mounted() {
            this.form.url = window.location.origin;
-        //   console.log('host',host)
-       //   this.$route.params = 1;
+            this.form.shop_name = this.$route.params;
+            
+    
+        
+        let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
       let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         },

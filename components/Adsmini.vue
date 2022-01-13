@@ -2,7 +2,7 @@
 
  <section id="Related">
         <div class="row relatedweb">
-                <div class="col-12 col-md-9 col-lg-9">
+                <div class="col-12 col-md-12 col-lg-12">
                    <div class="main-heading">
          <div class="container-fluid advertisement-three-container">
         <div class="row relatedweb" v-if="ads_semi">

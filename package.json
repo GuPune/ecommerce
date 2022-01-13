@@ -24,6 +24,7 @@
     "vue-axios": "^3.2.5",
     "vue-cookie": "^1.1.4",
     "vue-datetime": "^1.0.0-beta.14",
+    "vue-fb-customer-chat": "^0.2.0",
     "vue-loading-overlay": "^3.4.2",
     "vue-product-zoomer": "^3.0.1",
     "vue-slick-carousel": "^1.0.6",

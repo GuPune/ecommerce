@@ -39,12 +39,11 @@ export const UserService = {
       console.log('update');
       return Apiall.post("update_byid",param);
     },
-
     changepassword(param){
-
       return Apiall.post("changepassword",param);
-    }
+    },
+    gettypeshop() {
+      return Apiall.get("typeshop");
+    },
       
-
-
 };

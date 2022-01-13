@@ -19,6 +19,8 @@ export const SET_ADDDOWN     = "set_add_down";
 export const SET_ADD_INPUT     = "set_add_input";
 export const SET_REMOVE_ALL     = "set_remove_all";
 export const SET_CART_SUCCESS     = "set_cart_success";
+export const SET_CART_DETAIL     = "set_cart_details";
+
 export const SET_ADS_SHOP     = "set_ads_shop";
 export const SET_ADS_SHOP_SEMI     = "set_ads_shop_semi";
 export const SET_BY_PRODUCT_SHOP_ONE_ITEM  = "set_by_product_one_item";
@@ -39,16 +41,22 @@ export const SET_TABS = "set_tabs";
 export const SET_ORDER_HIS = "set_orderhisto";
 export const SET_SELECT_SHIPPING = "set_select_shipping";
 export const SET_IMAGES = "set_images";
-
-
+export const SET_PRODUCTSHELL_FIND = "set_proshell_find";
+export const SET_SHELL_CATE = "set_shell_category";
+export const SET_SALEPAGESUMMARY = "set_salepagesummary";
 export const SET_LINE = "set_line";
 export const SET_MENU = "set_menu";
 export const SET_ABOUT = "set_about";
 export const SET_SYSTEM = "set_system";
 export const SET_PROVINCES = "set_provinces";
 export const SET_FORM_USER = "set_form_user";
+
+export const SET_NAVBAR = "set_nav";
+export const SET_NAVBAR_SHOP = "set_nav_shop";
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";
+
+
 
 
 

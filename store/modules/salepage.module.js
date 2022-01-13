@@ -1,7 +1,7 @@
 
 import { SalePageService }  from "../../services/salepage";
 import {
-    FETCH_SALEPAGE,SAVE_SALEPAGE
+    FETCH_SALEPAGE,SAVE_SALEPAGE,GET_PRODUCT_SALEPAGE
 } from "../actions.type.js";
 import {
 
@@ -29,6 +29,13 @@ const actions = {
         const { data } = await SalePageService.savesale(payload);
         return data;
     },
+
+    async [GET_PRODUCT_SALEPAGE](context,payload) {
+        const { data } = await SalePageService.getproduct(payload);
+        return data;
+    },
+
+
 
 };
 

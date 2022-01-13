@@ -11,7 +11,7 @@
                             <span class="text-secondary" > {{profile.tel}}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><i class="fa fa-envelope" aria-hidden="true"> :</i> อีเมลล์</h6>
+                            <h6 class="mb-0"><i class="fa fa-envelope" aria-hidden="true"> :</i> อีเมล</h6>
                             <span class="text-secondary">{{profile.email}}</span>
                         </li>
                        

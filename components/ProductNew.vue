@@ -3,11 +3,11 @@
 
     <section id="Related">
         <div class="row relatedweb">
-                <div class="col-12 col-md-9 col-lg-9">
+                <div class="col-12 col-md-12 col-lg-12">
                    <div class="main-heading">
          <div class="heading-title-relat">
-            <h2><span>Best Seller</span>
-	<em class="">สินค้าขายดี</em>
+            <h2><span>New Product</span>
+	<em class="">สินค้าใหม่</em>
 			</h2>
         </div>
  <div>

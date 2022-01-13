@@ -1,6 +1,6 @@
 <template>
 
-  <div class="boxStep card card-bg no-border-radius">
+  <div class="boxStep card card-bg no-border-radius sta-mobile">
     <div class="row">
         <!-- Step 1: Shipping -->
         <div id="stepCartShipping" class="col px-1 text-right divShipping active">

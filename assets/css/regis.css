@@ -25,7 +25,14 @@
     justify-content: center;
 }
 
+#undefined-output{
 
+  border: aliceblue;
+}
+
+#datepicker-buttons__dialog_{
+  margin-top: 100px;
+}
 
 
 
@@ -99,9 +106,9 @@ input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
-  background-color: #005dc0;
+  /* background-color: #005dc0;
   color: #fff;
-  border-color: #005dc0;
+  border-color: #005dc0; */
 }
 input[type="checkbox"] {
   display: none;
@@ -150,10 +157,10 @@ select:focus,
 select:active {
   outline: 0;
 }
-select option {
+/* select option {
   background-color: #005dc0;
   color: #fff;
-}
+} */
 .input-group {
   margin-bottom: 1em;
   zoom: 1;
@@ -255,7 +262,7 @@ select option {
 
 .Userregis{
 
-  padding-top: 70px;
+  padding-top: 100px;
 }
 
 .clock-r{
@@ -265,6 +272,11 @@ select option {
   .col-half {
     width: 100%;
     padding-right: 0;
+  }
+
+  .Userregis{
+
+    padding-top: 120px;
   }
 }
 

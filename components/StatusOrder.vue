@@ -5,9 +5,19 @@
 <Loader/>
 </div>
     <div class="row py-3"  v-if="objects">
-                <div class="col-12 text-center">
-                    <h1 class="fs-ta-30 fs-md-ta-36 text-thmLight-1 mb-0">สถานะการสั่งซื้อ</h1>
+                <div class="col-4" style="padding-left: 50px;" @click="cha()">
+                
+                 {{'< กลับ'}}
                 </div>
+                    <div class="col-4 text-center">
+                    <h1 class="fs-ta-30 fs-md-ta-36 text-thmLight-1 mb-0">สถานะการสั่งซื้อ</h1>
+                    
+                </div>
+                    <div class="col-4 text-center">
+                  
+                    
+                </div>
+             
             </div> 
     
             <!-- End Page Title -->
@@ -144,7 +154,10 @@
 
 
 <script>
+
 import { mapGetters,mapState } from "vuex";
+import { CHANGE_TABS } from "@/store/actions.type.js";
+
 export default {
       components: {
       
@@ -154,7 +167,9 @@ export default {
                               data() {
       return {
           loadding:true,
-          slip:true
+          slip:true,
+        tab1:true,
+        tab2:false,
         
       }
     },
@@ -220,6 +235,16 @@ export default {
          else {
                return 'box-shape-icon box-circle-icon-color';
          }
+
+      },
+      async cha(){
+
+
+
+
+              this.tabs = 1;
+             let changetabs = await this.$store.dispatch(CHANGE_TABS,this.tabs);
+
 
       }
     },

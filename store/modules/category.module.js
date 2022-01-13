@@ -1,7 +1,7 @@
 
 import { CategoryService }  from "../../services/category";
 import {
-    FETCH_CATEGORY_SHELL
+    FETCH_CATEGORY_SHELL,GET_CATEGORY_SHELL
 } from "../actions.type.js";
 import {
     SET_CATEGORY_SHELL
@@ -25,6 +25,13 @@ const actions = {
 
         const { data } = await CategoryService.get();
         context.commit(SET_CATEGORY_SHELL,data);
+        return data;
+    },
+
+    async [GET_CATEGORY_SHELL](context) {
+
+        const { data } = await CategoryService.getcateshell();
+
         return data;
     },
 };

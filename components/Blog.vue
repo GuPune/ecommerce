@@ -8,7 +8,7 @@
                         <div class="thumbnail rounded">
                             <div class="contentImage rounded-top">
                                 <a href="#">
-                                               <img loading="lazy" :src="Checkimage(1)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
+                                               <img loading="lazy" :src="Checkimage(data.image)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
                                 </a>
                             </div>
                             <div class="contentCaption">
@@ -78,7 +78,7 @@ import moment from 'moment'
 
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                return "https://image.makewebeasy.net/makeweb/c_c_409x409/pYN8s1ZiT/Blog/9DB0008E_7979_4605_A62E_DB764FBB6DD8.jpeg";
+                return public_images;
             },
 
         covertdate(date){

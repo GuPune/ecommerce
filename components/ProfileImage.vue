@@ -1,6 +1,6 @@
 <template>
 <div>
-           <div class="card" v-if="profile" style="margin-top: 80px;">
+           <div class="card profile-im" v-if="profile">
                         <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center profile-bg-order">
  <img v-if="profile.profile_images" :src="profile.profile_images"  alt="Admin" class="rounded-circle profile" width="150" />
