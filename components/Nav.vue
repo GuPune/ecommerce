@@ -198,61 +198,125 @@
 
 -->
 <div>
- <b-navbar toggleable="sm" type="dark" variant="sat" class="banav navbar-fixed-top" fixed="top">
+
+  <b-container class="bv-example-row nav-first-s" v-if="objectslayout">
+  <b-row>
+    
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-  
-     <img src="../assets/log.jpg" alt=""  class="icon-mobile">
+   <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </b-navbar-brand>
-    <b-navbar-brand href="#" class="cart-mobile"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span style="font-size:14px"> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
+      
+      <b-navbar-nav>
 
-    <b-collapse id="nav-collapse" is-nav>
+   <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
 
-  
+      </b-navbar-nav>
 
-      <!-- Right aligned nav items -->
-     <b-navbar-nav class="ml-auto">
-
-     <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                    <span> ({{ cartTotal }}) </span></b-nav-item>
-
-              
-   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-nav-item>
-          <b-nav-item-dropdown right  v-if="isLogins">
+                <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins" no-caret>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{user.user.name}}</em>
+      
+            <em   style="color:beige;">{{ objects.name.substring(0,7)+".." }}</em>
+           
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
+      
+  
+
+      <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+      </b-col>
+       <b-col cols="3" md="1"  sm="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+   
+
+      </b-col>
+             <b-col cols="1" md="1"  sm="1" class="nav-form-search">
     
 
-    
-      </b-navbar-nav>
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
 
       
-    </b-collapse>
-    
+
+
+       <b-col cols="1" md="1"  sm="2" class="nav-regishop-mobile px-2" style="max-width: 16.7777%">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
+      </b-col>
+        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
+      </b-col>
+
+      <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2 nav-regishop-mobile">
+          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
+
+
+                <b-navbar-nav class="ml-auto cart-desktop">
+
+
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>{{ objects.name}}</em>
+          </template>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+
+      </b-col>
+
+
+     
   </b-navbar>
+
+
+
+  </b-row>
+</b-container>
+
+
   
   
 </div>
+  
+  
+  
+  
+
+
+
 </template>
 
 
 
 
 <script>
-import { mapGetters } from "vuex";
-import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+import { mapGetters,mapState } from "vuex";
+import { CHECK_LOGIN,GET_NAVBAR,GET_MENU,GET_SHOP_BY_ITEM } from "../store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE,GET_PRODUCT_SHELL_FIND } from "@/store/actions.type.js";
   export default {
     data() {
     return {
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
-      name:{}
+      name:{},
+      form:{
+        search:"",
+      },
+      selected: 'a',
+      color:null,
+        options: [
+   
+          { value: 'a', text: 'สินค้า'},
+          { value: 'b', text: 'ร้านค้า' },
+
+        ]
 
     };
   },
@@ -260,6 +324,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
      computed: {
          ...mapGetters(["authenticated"]),
+
+          ...mapState({
+                objects: state => state.user.profile,
+                objectslayout: state => state.Layout.navbar,
+             }),
 			
         isLogins () {
                 return this.$store.state.auth.loggedIn;
@@ -281,8 +350,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
            
 
         },
-        created(){
-           
+        async created(){
+            this.form.url = window.location.origin
+                let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+              
         },
         
 
@@ -290,18 +361,25 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         
       async mounted() {
           let checker = await localStorage.getItem("user");
-       
+              //    let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+
+        this.form.url = window.location.origin
           let cart = await this.$store.dispatch(GET_CART);
+         //    let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+          // this.color = getnav.color;
+           //    console.log('payload',getnav);
           // let profile = await this.$store.dispatch(FETCH_GET_PROFILE);
           // this.name = profile['name']
           // console.log('profile',profile['name']);
 
+
+          
+
       
-          if(this.user.user == null){
-      this.$auth.logout()
-          }
+ 
           if(checker){
             this.IsLogin = true;
+           
                this.$store.dispatch('auth/userstorage');
           }else{
             this.IsLogin = false;
@@ -309,6 +387,32 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
          },
 
       methods: {
+
+       async Search(){
+  if(this.form.search == ''){
+  return   this.$router.push('/');
+
+  }
+          let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+        console.log('search',this.selected);
+        console.log('search',this.search);
+
+                        let path = this.$route.path
+  this.$router.push({ name: 'find' })
+
+
+        
+        
+        },
+
+        Checkstring(x){
+
+
+                
+
+
+return x;
+        },
             redirectTo(names) {
   
                 let path = this.$route.path
@@ -327,6 +431,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
             localStorage.removeItem("shipping");
             localStorage.removeItem("listorder");
             localStorage.removeItem("delivery");
+          localStorage.removeItem("cart");
+        
        
     this.$auth.logout()
      setTimeout(function () {

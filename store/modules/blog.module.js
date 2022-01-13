@@ -28,6 +28,7 @@ const actions = {
     async [FETCH_BLOG](context,payload) {
 
         const { data } = await BlogService.getblog(payload);
+        console.log('blog',data);
         context.commit(SET_BLOG,data);
         return data;
     },

@@ -1,10 +1,10 @@
 
 import { AdsService }  from "../../services/ads";
 import {
-    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,CART_SUCCESS
+    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,CART_SUCCESS,ADD_PRODETAIL
 } from "../actions.type.js";
 import {
-    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT,SET_REMOVE_ALL,SET_CART_SUCCESS
+    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT,SET_REMOVE_ALL,SET_CART_SUCCESS,SET_CART_DETAIL 
 } from "../mutations.type";
 import Vuex from 'vuex'
 import Vue from 'vue'
@@ -35,10 +35,16 @@ const getters = {
 
 const actions = {
     async [ADD_CART](context,payload) {
-
         await context.commit(SET_CART,payload);
         await context.commit(SET_TOTAL);   
     },
+    async [ADD_PRODETAIL](context,payload) {
+     
+        console.log('payload',payload);
+        await context.commit(SET_CART_DETAIL,payload);
+         await context.commit(SET_TOTAL);   
+    },
+
 
     async [REMOVE_CART](context,payload) {
        await context.commit(SET_REMOVECART,payload);
@@ -167,7 +173,7 @@ const mutations = {
 
 let found = state.cart.find(product => product.id == item.id);
 
-;
+
 
 if (found) {
 
@@ -178,7 +184,7 @@ if (found) {
     
     state.cart.push(item);
 
-   
+   console.log('item',item)
     Vue.set(item, 'quantity', 1);
     Vue.set(item, 'totalPrice', item.price);
  
@@ -209,6 +215,41 @@ if (found) {
 let a = localStorage.setItem("cart", JSON.stringify(state.cart));
 
     },
+    [SET_CART_DETAIL](state,item) {
+
+        console.log('item',item);
+
+        let found = state.cart.find(product => product.id == item.id);
+        console.log('found1',found);
+     
+        if (found) {
+            found.quantity  = found.quantity + item.add;
+             found.totalPrice = found.quantity * found.price;
+          
+          
+           } else {
+               
+        
+            console.log('nosum',item);
+             
+
+              var sumprice = item.price * item.add;
+               Vue.set(item, 'quantity', item.add);
+               Vue.set(item, 'totalPrice', sumprice);
+
+
+               console.log('sum',item);
+             state.cart.push(item);
+              // console.log('found else',item.price * item.quantity);
+             
+            
+               state.cartTotal++;
+           }
+           console.log('found2',state.cart);
+           let a = localStorage.setItem("cart", JSON.stringify(state.cart));
+    }
+    
+    ,
     [SET_ADDDOWN](state,item) {
 
         let found = state.cart.find(product => product.id == item.id);

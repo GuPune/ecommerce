@@ -623,8 +623,9 @@ import axios from 'axios';
     },
 
     data() {
-      
+
       return {
+    
         file:null,
           url: null,
           isHiddenUpload:false,
@@ -772,6 +773,7 @@ import axios from 'axios';
 
       async saveform() {
    this.$v.$touch();
+         if (this.$v.form.$pending || this.$v.form.$error) return;
 if(this.url == null){
 this.isHiddenUpload = true;
 }
@@ -839,7 +841,10 @@ this.isHiddenUpload = true;
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
             
-                      axios.post('http://127.0.0.1:8000/api/upload', {
+                   let public_images = process.env.baseURL;
+                 
+                
+                      axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data

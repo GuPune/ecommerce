@@ -137,7 +137,9 @@ input[name="tab"]:checked + .tab-content{
 
 
 
-
+.profile-im{
+  margin-top: 80px;
+    }
 
 
 .row.userprofile{
@@ -147,6 +149,10 @@ input[name="tab"]:checked + .tab-content{
 .profile-desktop{
   padding-top: 70px;
 }
+
+
+
+
 
 
 /* Android 2.3 :checked fix */
@@ -220,7 +226,19 @@ input[name="tab"]:checked + .tab-content{
   display: block;
 }
 
+@media (min-width: 1200px) {
+
+  .profile-con{
+    margin-top: 80px;
+  }
+}
+
 @media (max-width: 600px) {
+
+
+  .profile-im{
+margin-top: 150px;
+  }
   .flex-tabs {
     flex-direction: column;
   }

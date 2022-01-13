@@ -123,7 +123,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
                 PasswordErrors () {
             const errors = []
             if (!this.$v.form.password.$dirty) return errors
-            !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
+            !this.$v.form.password.required && errors.push('โปรดระบุอีเมล')
       
             return errors
         },
@@ -131,7 +131,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
         PasswordConfirmErrors () {
             const errors = []
             if (!this.$v.form.password_confirm.$dirty) return errors
-            !this.$v.form.password_confirm.required && errors.push('โปรดระบุอีเมล์')
+            !this.$v.form.password_confirm.required && errors.push('โปรดระบุอีเมล')
       
             return errors
         },

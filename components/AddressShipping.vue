@@ -144,6 +144,7 @@ this.form.select_shipping = event.target.value
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
+        console.log('this.items',this.items);
 
        await this.checkedaddress(this.items); 
        
@@ -160,8 +161,12 @@ this.form.select_shipping = event.target.value
         const arr2 = checkb.filter(d => d.flag_address === 'F');
         this.selectedAdd = arr2[0].id
         this.detailAddress = arr2[0]
-        console.log('this.selectedAdd',this.selectedAdd);
-             let selectshipping =  this.$store.dispatch(SELECT_SHIPPING,this.selectedAdd);
+
+          this.form.url = window.location.origin;
+          this.form.user_id = this.profile.id;
+          this.form.select_shipping = this.selectedAdd
+
+             let selectshipping =  this.$store.dispatch(SELECT_SHIPPING,this.form);
      }
         let shipping = localStorage.setItem("shipping", this.selectedAdd);
  

@@ -37,8 +37,7 @@
     
       </div>
            <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
-      
-
+    
     </div>
     
 
@@ -50,15 +49,27 @@
   
 <div class="row">
     
-   <!-- 
-       <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button>
+   
+       <!-- <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button> -->
       
-    -->
-
+    
   
       
 
     </div>
+
+
+    <div class="form-group pt-3">
+    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button> 
+     </div>
+    <div class="form-group pt-3"> 
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div>
+
+
+
+                             
+
+
     
 
 </div>
@@ -166,17 +177,17 @@
          v-if="Isshow">
             <div class="popup">
                 <h6>ลืมรหัสผ่านใช่หรือไม่?</h6><br>
-                <small>กรุณายืนยันอีเมลล์</small>
+                <small>กรุณายืนยันอีเมล</small>
                 <a class="close" href="#">&times;</a><br>
                 <div class="content">
                     <div class="alert alert-danger" role="alert" v-if="emailalert">
-                        กรุณณากรอกอีเมลล์
+                        กรุณณากรอกอีเมล
                     </div>
                     <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot">
-                         ส่งไปที่อีเมลล์สำเร็จ
+                         ส่งไปที่อีเมลสำเร็จ
                     </div>
                     <input type="email" class="form-control" placeholder="example@mail.com" required v-model="forms.email"><br>
-                    <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมลล์</button>
+                    <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมล</button>
                 </div>
             </div>
         </div>
@@ -239,16 +250,16 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         PassErrors(){
 
               const errors = []
                 if (!this.$v.form.password.$dirty) return errors
-                !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.password.required && errors.push('โปรดระบุ')
+                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         },
@@ -273,6 +284,14 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
        // let clearalert = this.$store.dispatch(CLEARALRET);
     },
     methods: {
+        socialLogin(service) {
+this.form.url = window.location.hostname;
+
+
+
+       //  window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}`;
+                window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}/con/${this.form.url}`;
+        },
         async loginline(){
    this.$router.push('/1/form/register');   
         },
@@ -294,7 +313,10 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
 
      //   let token = this.$auth.getToken('local')   //get token
-   //  this.$router.push("/")
+          let a = this.$store.dispatch(FETCH_GET_PROFILE)
+ 
+
+  
          
 				})
 				.catch(err => {

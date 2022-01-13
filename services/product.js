@@ -2,14 +2,17 @@ import ApiService from "./api.service";
 
 export const ProductService = {
 
-    get() {
-      return ApiService.get("productshell");
+    getshell(param) {
+      return ApiService.post("productshell",param);
     },
     find(param) {
-      return ApiService.find("productshellfind",param);
+      return ApiService.find("productshellcategory",param);
     },
     getproductbyshop(param) {
       return ApiService.post("productbyshop",param);
+    },
+    getproductshellfind(param) {
+      return ApiService.post("productshellfind",param);
     },
     getcatebyshop(param){
       return ApiService.post("catebyshop",param);

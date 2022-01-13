@@ -2,7 +2,7 @@
 
 <section id="Ads">
 
-    <center><div class="row ads-emarket col-12">
+    <center><div class="row ads-emarket col-12 ads-emarm">
             <div class="carousel">
                 <div>
     <b-carousel

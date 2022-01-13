@@ -13,8 +13,7 @@ if(error.response.status === 401){
   localStorage.removeItem("shipping");
   localStorage.removeItem("listorder");
   localStorage.removeItem("delivery");
-
-
+  localStorage.removeItem("cart");
   this.$auth.logout()
 }
     },

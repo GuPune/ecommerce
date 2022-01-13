@@ -69,7 +69,7 @@
             
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="contactText01 col-12">
-                    <p><img :src="Checkimage(objects.system.icon)"></p><span style="color: #9f8672; line-height: 2; font-size: 20px;" data-mce-style="color: #9f8672; line-height: 2; font-size: 20px;"><strong><span style="font-family: kanit_light, Tahoma;" data-mce-style="font-family: kanit_light, Tahoma;">
+                    <p><img :src="Checkimage(objects.system.icon)" width="120px"></p><span style="color: #9f8672; line-height: 2; font-size: 20px;" data-mce-style="color: #9f8672; line-height: 2; font-size: 20px;"><strong><span style="font-family: kanit_light, Tahoma;" data-mce-style="font-family: kanit_light, Tahoma;">
                      {{objects.system.detail}}</span></strong></span><br><span style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106">&nbsp;<a style="color: #9f8672;" href="tel:0655196249" data-mce-href="tel:0655196249" data-mce-style="color: #9f8672;">
                     </a>
                      <a style="color: #9f8672;" href="tel:0959639153" data-mce-href="tel:0959639153" data-mce-style="color: #9f8672;">
@@ -132,8 +132,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
                 EmailErrors () {
             const errors = []
             if (!this.$v.form.email.$dirty) return errors
-            !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+            !this.$v.form.email.required && errors.push('โปรดระบุอีเมล')
+            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล')
             return errors
         },
 

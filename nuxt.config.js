@@ -14,8 +14,8 @@ export default {
     ],
     script: [
       { src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js' },
-      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
+      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }  
@@ -79,7 +79,7 @@ export default {
    // "~/plugins/mixins/validation.js",
     // { src: '~/plugins/vue2-google-map.js'},
     { src: '~/plugins/vuelidate', ssr: true },
-    
+    // { src: './plugins/vue-fb-customer-chat.js' },
     { src: './plugins/vue-slick-carousel.js' }
   ],
 
@@ -127,15 +127,34 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: "https://cmsecom.idtest.work/api",
-    ImageURL: "https://cmsecom.idtest.work/public/product/",
+    baseURL: "http://127.0.0.1:8000/api",
+    ImageURL: "http://127.0.0.1:8000/public/product/",
+    ImageSoc: "http://127.0.0.1:8000/public/images/",
+      ImageSoc: "http://127.0.0.1:8000/public/images/",
   
   },
 
   env: {
-    ImageURL: "http://cmsecom.idtest.work/public/product/",
-    backend:"https://cmsecom.idtest.work",
+    baseURL: "http://127.0.0.1:8000/api",
+    ImageURL: "http://127.0.0.1:8000/public/product/",
+    ImageSoc: "http://127.0.0.1:8000/public/images/",
+    backend:"http://127.0.0.1:8000",
 },
+
+// axios: {
+//   // See https://github.com/nuxt-community/axios-module#options
+//   baseURL: "https://cmsecom.idtest.work/api",
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+
+//  },
+
+// env: {
+//  baseURL: "https://cmsecom.idtest.work/api",
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+//   backend:"https://cmsecom.idtest.work",
+// },
 
   auth: {
     strategies: {
