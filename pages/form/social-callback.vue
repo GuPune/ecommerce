@@ -16,9 +16,11 @@ export default {
     mounted() {
  
         this.$auth.setToken('local', 'Bearer ' + this.token);
-
         this.$auth.setStrategy('local');
         this.$auth.fetchUser().then( () => {
+
+                  let token = this.$auth.getToken('local')   //get token
+          let a = this.$store.dispatch(FETCH_GET_PROFILE)
 
        
             return this.$router.push('/').catch(err=>err);
