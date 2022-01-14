@@ -306,18 +306,22 @@ this.form.url = window.location.hostname;
         //     data: this.form
         //   })
 
+        
+
           try {
+
+              
         await this.$auth.loginWith('local', {
           data: this.form
         }).then(data => {
-
-
+    this.$router.push('/');
+console.log('login',data)
     //  let token = this.$auth.getToken('local')   //get token
       //    let a = this.$store.dispatch(FETCH_GET_PROFILE)
  
 
-      let token = this.$auth.getToken('local')   //get token
-          let a = this.$store.dispatch(FETCH_GET_PROFILE)
+    //   let token = this.$auth.getToken('local')   //get token
+    //       let a = this.$store.dispatch(FETCH_GET_PROFILE)
          
 				})
 				.catch(err => {

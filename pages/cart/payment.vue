@@ -676,8 +676,8 @@ if (this.cart.length > 0) {
    await this.saveorder();
   await this.sleep(3000);
    this.loadding = false;
- const Shopid = this.isUrl.id;
-    this.$router.push({ name: names, params: { id: Shopid }})
+
+    this.$router.push({ name: names })
     
 
     

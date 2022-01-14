@@ -670,8 +670,8 @@ if (this.cart.length > 0) {
 
        
          let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-        const Shopid = this.isUrl.id;
-       this.$router.push({ name: names, params: { id: Shopid }})
+      
+       this.$router.push({ name: names})
         },
         error($text) {
                 this.$swal({
