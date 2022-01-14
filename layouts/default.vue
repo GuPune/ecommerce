@@ -22,9 +22,9 @@
 </div>
 </div>
  
-    <ProductBestSeller/>
-        <ProductRecom/>
-            <ProductNew/>                    
+    <ProductBestSeller v-if="currentRouteName == 'index'"/>
+        <ProductRecom v-if="currentRouteName == 'index'"/>
+            <ProductNew v-if="currentRouteName == 'index'"/>                    
 
    <LongFooter/>
 
