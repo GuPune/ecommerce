@@ -28,7 +28,7 @@ import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
               },
              
         mounted() {
-  //   let a = this.$store.dispatch(FETCH_GET_PROFILE)
+     let a = this.$store.dispatch(FETCH_GET_PROFILE)
      
         },
        
