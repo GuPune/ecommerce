@@ -1,8 +1,5 @@
 <template>
     <section id="Userprofile">
-        <Nav />
-
-
         <div class="container">
             <div class="main-body">
             

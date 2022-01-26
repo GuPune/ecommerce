@@ -9,7 +9,7 @@
                 
                  {{'< กลับ'}}
                 </div>
-                    <div class="col-4 text-center">
+                    <div class="col-12 text-center">
                     <h1 class="fs-ta-30 fs-md-ta-36 text-thmLight-1 mb-0">สถานะการสั่งซื้อ</h1>
                     
                 </div>

@@ -13,7 +13,7 @@
                   </h2>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
-                        <div class="row cart-mobile-dis"  v-if="cart.length == 0">
+                        <div class="row cart-aamob-dis"  v-if="cart.length == 0">
                             <div class="col-xs-12 col-sm-5 col-md-12 col-lg-12">
                                 <div class="row">
                                        <div class="card-body">
@@ -44,9 +44,7 @@
                                     <div class="col-xs-6 col-sm-12 col-md-5 col-lg-5">
                                         <div class="title-top h4">ชื่อสินค้า</div>
                                     </div>
-                                    <div class="col-xs-6 col-sm-12 col-md-2 col-lg-2">
-                                        <div class="title-top h4">ชื่อร้าน</div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
@@ -71,17 +69,16 @@
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 shop-name-order-pc">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-mobile">
-                        <a href="#"  class="product-image"><img class="img-responsive lazy order-picture-mobile"  :src="Checkimage(item.img_product)" width="100" height="100" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
+                        <a href="#"  class="product-image"><img class="img-responsive lazy order-picture-mobile"  :src="Checkimage(item.img_product)" width="60" height="60" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
                         </div>
                     <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 text-mobile">
                         <h5 class="order-name">{{item.name_en}}</h5></div>
-                        <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 text-mobile shop-name-order-pc">
-                        <h5 class="order-name">{{item.shop_name_title}}</h5></div>
+                 
                 </div>
             </div>
         
 
-            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 ipad-site">
                 <div class="row shop-name-order-pc">
                     <div class="col-xs col-sm-3 col-md-3 col-lg-3">
                                  <div class="tax-excl text-mobile "><span class="cart-price"><span class="price">฿{{formatPrice(item.price)}}
@@ -109,20 +106,20 @@
                         <div class="remove-item-cart"  @click="RemoveToCart(index)">
                          
                      
-                            <img class="img-responsive lazy order-picture-mobile"   width="55" height="55" />
+                            <img class="img-responsive lazy order-picture-mobile"  src="../../assets/delete2.png" width="55" height="55" />
                         </div>
                     </div>
                 </div>
          <div class="row shop-name-order-mobile">
             <div class="row">
                 <div class="col-10 shop-name-order">
-                        <h5>ชื่อร้าน : xxxxxx</h5>
+                     
                  </div>
            
             <div class="col-2 shop-name-order trash-mobile">
                         <div class="remove-item-cart"  @click="RemoveToCart(index)">
                                     
-                                         <img   width="40" height="40" />
+                                         <img  src="../../assets/delete2.png" width="40" height="40" />
                                      </div>
                  </div>
                 <div class="col-5 shop-name-order">

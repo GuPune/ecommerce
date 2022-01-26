@@ -14,6 +14,7 @@
  import Header from "@/components/Header"
  import Categories from '@/components/Categories.vue';
 import Nav from "@/components/Nav"
+import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
 
 
     export default {
@@ -26,7 +27,10 @@ import Nav from "@/components/Nav"
       
               },
              
-        mounted() {},
+        mounted() {
+     let a = this.$store.dispatch(FETCH_GET_PROFILE)
+     
+        },
        
            
 
