@@ -1,13 +1,14 @@
 <template>
  
-            <div class="footer">
-                    <div class="row foot">
-                        <div class="col-sm">
-                            <small>Copyright © 2021 ID ID-Market Place. All rights reserved.</small>
+    
 
+                  <div class="footer" v-if="objects"  :style="{'background-color':objects.color,'text-align':objects.position}">
+                 
+                      <div class="col-sm">
+                            <small>{{objects.details}}</small>
                         </div>
-                    </div>
                 </div>
+
 
 </template>
 
@@ -18,16 +19,33 @@
 
 
 <script>
+import { mapGetters,mapState } from "vuex";
+  import { FETCH_PRODUCT_BY_SHOP,GET_FOOTER } from "@/store/actions.type.js";
   export default {
+       data() {
+    return {
+      form:{
+url:""
+      },
+
+    };
+  },
 
      computed: {
            
-   
+      ...mapState({
+                objects: state => state.Layout.footer,
+            }),
 
         },
         
-        mounted() {
+      async  mounted() {
         //  this.$store.dispatch(ToogleAction);
+
+
+
+
+     
         
          },
         

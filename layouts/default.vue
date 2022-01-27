@@ -30,11 +30,8 @@
 
 
 
-            <div class="footer ema-footer">
-                      <div class="col-sm">
-                            <small>Copyright © 2022 ID ID-Market Place. All rights reserved Beta 12/1/2565</small>
-                        </div>
-                </div>
+                         <Footer/>
+
                   <div class="fb-customerchat"  :page_id="pageId">
  
 </div>
@@ -68,11 +65,12 @@ import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
 import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,GET_NAVBAR_SHOP  } from "@/store/actions.type.js";
+
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import { FETCH_ID_URL,FETCH_FACEBOOK } from "@/store/actions.type.js";
+import { FETCH_ID_URL,FETCH_FACEBOOK,GET_FOOTER } from "@/store/actions.type.js";
 import ProductBestSeller from "@/components/ProductSeller"
 import ProductNew from "@/components/ProductNew"
 import ProductRecom from "@/components/ProductRecommend"
@@ -157,9 +155,20 @@ url:null
         let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
       let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+
+        this.footer();
         },
 
          methods: {
+
+            footer(){
+   
+    this.form.url = window.location.origin;
+         this.form.shop_name = this.$route.params;
+     
+     let footer = this.$store.dispatch(GET_FOOTER,this.form);
+
+},
      
           
             success() {

@@ -11,4 +11,7 @@ export const LayoutService = {
     blogonly(param) {
       return ApiServiceAll.post("blogonly",param);
     },
+    footer(param) {
+      return ApiServiceAll.post("footer",param);
+    },
 };
