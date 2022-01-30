@@ -78,6 +78,7 @@ export default {
    // "~/plugins/axios.js",
    // "~/plugins/mixins/validation.js",
     // { src: '~/plugins/vue2-google-map.js'},
+    { src: '~/plugins/gtag.js'},
     { src: '~/plugins/vuelidate', ssr: true },
   { src: './plugins/vue-fb-customer-chat.js' },
     { src: './plugins/vue-slick-carousel.js' }
