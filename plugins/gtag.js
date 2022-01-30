@@ -7,6 +7,7 @@ let a = window.location.origin;
 axios.post('https://cmsecom.idtest.work/api/gtag', {
     data: a
   }).then(res => {
+    console.log('a',res);
  Vue.use(VueGtag, {
     config: { id: res.data }
   })
