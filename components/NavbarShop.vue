@@ -12,7 +12,7 @@
       <b-navbar-nav class="ml-auto">
      <b-nav-item :href="objectslayoutshop.link_social_face"  target="_blank"><img  :src="Checkimage(objectslayoutshop.image_face)"  alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item  :href="objectslayoutshop.link_social_line"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
-    <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.intra)" alt="" height="20px" width="20px"></b-nav-item>
+    <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_intra)" alt="" height="20px" width="20px"></b-nav-item>
 
       </b-navbar-nav>
 
