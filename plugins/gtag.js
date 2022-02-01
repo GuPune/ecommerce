@@ -4,7 +4,7 @@ import axios from 'axios'
 
 let a = window.location.origin;
 
-axios.post('https://cmsecom.idtest.work/api/gtag', {
+axios.post('https://backoffice.thaionzon.com/api/gtag', {
     data: a
   }).then(res => {
     console.log('a',res);
