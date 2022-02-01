@@ -16,8 +16,8 @@
                  
                     <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
-                                                            <div class="product-name product-name-byshop">{{item.name_en}}</div>
-                                                            <p class="price product-name-byshop">฿{{item.price}}.00</p>
+                                                            <div class="product-name product-name-byshop">{{item.name_th}}</div>
+                                                            <p class="price product-name-byshop">฿{{formatPrice(item.price)}}</p>
                                       <div class="product-footer product-footer-mobile">
                                           <div class="addtocart">
                                                    <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
@@ -115,6 +115,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
          },
 
       methods: {
+
+              formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+        return val;
+        },
 
                async CheckLogin(item){
                  console.log('item',item);
