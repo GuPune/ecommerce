@@ -32,9 +32,7 @@ export default {
 </script>
 
 <style>
-.container {
-    text-align: center;
-}
+
 .loader {
     margin: 20px auto;
     border: 8px solid #f3f3f3;
