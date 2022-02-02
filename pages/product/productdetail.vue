@@ -148,19 +148,7 @@
                         <div class="form-group">
                             <div class="mb-4 mb-md-4">            
                                  
-                                        <div class="divSocilaGroupNew social-pro-des">
-                                             <label class="mr-sm-2" for="inline-form-custom-select-pref">แชร์</label>
-                                            <div class="btn-group social-widget">
-                                            <img src="../../../assets/line.png" style="width:40px;">
-                                            <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989"><i class="fas fa-square colorTwitterBGPD"></i>
-                                                        <i class="fa-inverse fab fa-twitter colorTwitterPD" data-fa-transform="shrink-7"></i></a>
-                                                        <img src="../../../assets/facebook.png" style="width:40px;">
-                                             <a class="faco-top fa-layers fa-fw pinterestSocialPD" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://www.pattanagems.com/product/28463-28068/&media=https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png&description=แหวนไพลิน A4989">
-                                                        <i class="fas fa-square colorPinterestBGPD"></i>
-                                                        <i class="fa-inverse fab fa-pinterest-p colorPinterestPD" data-fa-transform="shrink-7"></i>
-                                                    </a>
-                                                     </div> 
-                                        </div> 
+                                       
                                   
                                      
                             </div>
