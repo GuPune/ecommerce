@@ -19,7 +19,7 @@
 
 <b-container v-if="item.type == 3">
 <div class="video-container">
-  <iframe src="https://www.youtube.com/embed/HAnO5Fb1Jh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+  <iframe :src="item.link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 </div>
 
           
@@ -81,7 +81,16 @@
         </div>
 
 </div>
-  
+
+
+  <div class="p-2 shadow fixed-bottom" style="background-color:#ec7d23;" @click="buy()">
+  <div class="row" style="font-family:Mitr;">
+    <div class="col-12 text-center text-white" style="padding-top:1%;">
+      <a><i class="fa fa-th fa-2x" aria-hidden="true"></i><i class="bi bi-shop-window"></i><br>สั่งซื้อสินค้า</a>
+    </div>
+
+  </div>
+</div>
 </div>
 
 
@@ -89,7 +98,17 @@
    
 </template>
 
-
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+</style>
 
 
 <script>
@@ -126,6 +145,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 
           computed: {
 
+          
             NameErrors() {
             const errors = [];
             if (!this.$v.form.name.$dirty) return errors;
@@ -138,8 +158,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
                 EmailErrors () {
             const errors = []
             if (!this.$v.form.email.$dirty) return errors
-            !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+            !this.$v.form.email.required && errors.push('โปรดระบุ')
+            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
             return errors
         },
 
@@ -149,9 +169,6 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             !this.$v.form.tel.required && errors.push("โปรดระบุชื่อ");
             return errors;
             },
-
-
-
     },
              
             async mounted() {
@@ -164,9 +181,9 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.line = salepage.data.line
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
-
-
-
+      this.form.product_id = salepage.data.product_id
+ 
+    
  
       
       },
@@ -208,13 +225,27 @@ this.send();
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log('public_images',public_images)
                 return public_images;
 
                   // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
+        buy(){
 
-  
-    
+          
+
+  this.product_id = this.form.product_id
+
+ 
+        localStorage.setItem("salepageitem",this.product_id);
+  localStorage.setItem("salepage_id",this.form.id);
+          
+         this.$router.push({ name: 'buy-slug'});
+//this.$router.push({ path: `/buy/${this.product_id}` }) // -> /user/123
+            
+        }
+
+
       }
        
            
