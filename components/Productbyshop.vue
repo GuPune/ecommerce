@@ -15,7 +15,7 @@
                  <div class="cards product-byshop">
                  
                     <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
-                        <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
+                        <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)"  @click="Shop(item)">
                                                             <div class="product-name product-name-byshop">{{item.name_th}}</div>
                                                             <p class="price product-name-byshop">฿{{formatPrice(item.price)}}</p>
                                       <div class="product-footer product-footer-mobile">
@@ -116,6 +116,14 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
 
       methods: {
 
+
+     async Shop(item){
+
+    
+  let name = '/product/productdetail/'+item.id;
+
+    this.$router.push(name)
+        },
               formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
         return val;
