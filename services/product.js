@@ -34,7 +34,14 @@ export const ProductService = {
     },
     getimages(param){
       return ApiService.post("producimages",param);
+    },
+    getproductbyrecomdomain(param){
+      return ApiService.post("productrecomdomain",param);
+    },
+    getimagesdomain(param){
+      return ApiService.post("producimagesdomain",param);
     }
+  
 
-    
+
 };

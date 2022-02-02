@@ -97,6 +97,10 @@ export const GET_PRODUCT_SHELL_FIND = "get_product_find_shell";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
 
+export const FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN = "fetch_product_domain";
+export const FETCH_IMAGE_PRODUCT_DOMAIN = "fetch_product_image_domain";
+
+
 export const FETCH_FACEBOOK = "fetch_facebook";
 
 export const GET_NAVBAR = "get_navbar";

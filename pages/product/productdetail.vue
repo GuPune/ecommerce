@@ -20,7 +20,7 @@
                                                     <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                                                     <a itemscope itemtype="https://schema.org/Thing" itemprop="item"
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
-                                        <span itemprop="name" >/span>
+                                        <span itemprop="name" >{{product_by_item.shop_name_title}}</span>
                                     </a>
                                    
                                  
@@ -33,7 +33,9 @@
 <div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
 
-
+    <client-only>
+   <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions" :key=""key/>
+</client-only>
    </div>
 
 
@@ -148,7 +150,7 @@
                         <div class="form-group">
                             <div class="mb-4 mb-md-4">            
                                  
-                                       
+                                    
                                   
                                      
                             </div>
@@ -193,10 +195,10 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,FETCH_IMAGE_PRODUCT_DOMAIN } from "@/store/actions.type.js";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
-    
+
 
 
     export default {
@@ -252,21 +254,20 @@
              
        async mounted() {
 this.form.product_id = this.$route.params.slug;
+this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
+console.log('this.form',this.form);
+let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,this.form);
+let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.form);
 
-let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
-console.log('productshop_item');
-let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
-console.log('images_product');
 
-        
     this.key++
 
      
         // this.loadding = false;
 
     
-   //  this.zoom(productshop_item);
+     this.zoom(productshop_item);
         },
 
 
