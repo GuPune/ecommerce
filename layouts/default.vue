@@ -5,32 +5,6 @@
  <NavShop  v-if="(currentRouteName != 'salepage-id')" />
  <nuxt-child></nuxt-child>
 
- <AdsShop  v-if="(currentRouteName == 'index') && (currentRouteName != 'salepage-id')" />
-
- <Adsmini  v-if="(currentRouteName == 'index') && (currentRouteName != 'salepage-id')" />
-
- <Relation  v-if="(currentRouteName == 'index') && (currentRouteName != 'salepage-id')"/>
-        <div id="content" class="container profileweb col-12 col-md-12">
-        
-          
-                <div class="row relatedweb">
-
-     
-  <div class="col-sm-12 col-md-2"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')"/></div>
-  <div class="col-sm-12 col-md-10"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')"/></div>
-
-</div>
-</div>
- 
-    <ProductBestSeller v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')"/>
-        <ProductRecom v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')"/>
-            <ProductNew v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')"/>                    
-
-   <LongFooter  v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')" />
-
-
-
-                         <Footer  v-if="(currentRouteName == 'index')  && (currentRouteName != 'salepage-id')" />
 
                   <div class="fb-customerchat"  :page_id="pageId">
  
