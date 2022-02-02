@@ -2,7 +2,6 @@
       
 <div>
 
- <NavShop  v-if="(currentRouteName != 'salepage-id')" />
  <nuxt-child></nuxt-child>
 
 
