@@ -155,15 +155,6 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
     },
              
             async mounted() {
-      this.form.url = window.location.origin;
-      this.form.salepage = this.$route.params.id;
-      let salepage = await this.$store.dispatch(FETCH_SALEPAGE,this.form);
-
-      this.sale_type = salepage.data.salepage_type;
-      this.items = salepage.data.content;
-      this.form.line = salepage.data.line
-      this.form.face_id = salepage.data.face_id
-      this.form.id = salepage.data.id
 
 
 
