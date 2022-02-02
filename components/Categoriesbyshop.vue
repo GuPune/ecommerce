@@ -6,7 +6,7 @@
                                                 <div class="value" v-if="cate_by_shop">
                                                     <select class="form-control" name="items" id="items"  @change="onChange($event)">
                                                      <option value="">Default</option>
-                                                    <option v-for="item in cate_by_shop" :value="item.id">{{item.name_en}}</option>
+                                                    <option v-for="item in cate_by_shop" :value="item.id">{{item.name_th}}</option>
                                                     </select>
                                                 </div>
                                             </li> <br>
