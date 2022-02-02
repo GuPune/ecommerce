@@ -1,7 +1,7 @@
 <template>
 <div class="asd-shop">
 <div v-if="ads_shop">
-  <img loading="lazy" :src="Checkimage(ads_shop.images)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
+  <img loading="lazy" :src="Checkimage(ads_shop.images)" class="col-12 no-padding banner-icon f-adsshop" style="display: block;padding: 0;">
 </div>
 </div>
 </template>
