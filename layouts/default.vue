@@ -2,8 +2,35 @@
       
 <div>
 
+ <NavShop />
  <nuxt-child></nuxt-child>
 
+ <AdsShop  v-if="currentRouteName == 'index'" />
+
+ <Adsmini  v-if="currentRouteName == 'index'"/>
+
+ <Relation  v-if="currentRouteName == 'index'"/>
+        <div id="content" class="container profileweb col-12 col-md-12">
+        
+          
+                <div class="row relatedweb">
+
+     
+  <div class="col-sm-12 col-md-2"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-10"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
+
+</div>
+</div>
+ 
+    <ProductBestSeller v-if="currentRouteName == 'index'"/>
+        <ProductRecom v-if="currentRouteName == 'index'"/>
+            <ProductNew v-if="currentRouteName == 'index'"/>                    
+
+   <LongFooter/>
+
+
+
+                         <Footer/>
 
                   <div class="fb-customerchat"  :page_id="pageId">
  
@@ -127,7 +154,7 @@ url:null
         
         let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
       let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-        let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+ //    let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
 
         this.footer();
         },
