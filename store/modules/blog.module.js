@@ -1,7 +1,7 @@
 
 import { BlogService }  from "../../services/blog";
 import {
-    FETCH_BLOG,FETCH_BLOG_ONLY
+    FETCH_BLOG,FETCH_BLOG_ONLY,FETCH_BLOG_ONLY_DOMAIN
 } from "../actions.type.js";
 import {
     SET_BLOG,SET_BLOG_ONLY
@@ -33,8 +33,15 @@ const actions = {
         return data;
     },
     async [FETCH_BLOG_ONLY](context,payload) {
-
+        console.log('data',payload);
         const { data } = await BlogService.blogonly(payload);
+        context.commit(SET_BLOG_ONLY,data);
+        return data;
+    },
+    async [FETCH_BLOG_ONLY_DOMAIN](context,payload) {
+     
+        const { data } = await BlogService.blogonly_domain(payload);
+        console.log('FETCH_BLOG_ONLY_DOMAIN',data);
         context.commit(SET_BLOG_ONLY,data);
         return data;
     },

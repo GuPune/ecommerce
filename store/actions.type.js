@@ -102,6 +102,8 @@ export const FETCH_IMAGE_PRODUCT_DOMAIN = "fetch_product_image_domain";
 
 
 export const FETCH_FACEBOOK = "fetch_facebook";
+export const FETCH_BLOG_ONLY_DOMAIN = "fetch_blog_onlydomain";
+
 
 export const GET_NAVBAR = "get_navbar";
 export const GET_NAVBAR_SHOP = "get_navbar_shop";

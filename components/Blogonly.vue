@@ -36,7 +36,7 @@
 <script>
   import { mapGetters,mapState } from "vuex";
 import moment from 'moment'
-  import { GET_MENU,FETCH_BLOG,FETCH_BLOG_ONLY } from "@/store/actions.type.js";
+  import { GET_MENU,FETCH_BLOG,FETCH_BLOG_ONLY,FETCH_BLOG_ONLY_DOMAIN } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   export default {
     data() {
@@ -66,7 +66,7 @@ import moment from 'moment'
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
    this.form.blog_id = this.$route.params.blogid;
-   let blogonly = await this.$store.dispatch(FETCH_BLOG_ONLY,this.form);
+   let blogonly = await this.$store.dispatch(FETCH_BLOG_ONLY_DOMAIN,this.form);
    this.content = this.blogonly.details
   this.name = this.blogonly.title
   this.read = this.blogonly.read

@@ -8,4 +8,8 @@ export const BlogService = {
     blogonly(param) {
       return ApiServiceAll.post("blogonly",param);
     },
+    blogonly_domain(param) {
+      return ApiServiceAll.post("blogonlydomain",param);
+    },
+
 };

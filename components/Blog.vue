@@ -22,7 +22,7 @@
                                         <p></p>
                                     </div>
                                                                             <div class="contentAction">
-                                        <a  @click="redirectTo('id-new-blogid',data.id)">
+                                        <a  @click="redirectTo('new-blogid',data.id)">
             ดูเพิ่มเติม&nbsp;<i class="far fa-fw fa-angle-right" data-fa-transform="down-1"></i>
                                         </a>
                                     </div>
