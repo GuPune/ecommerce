@@ -39,9 +39,8 @@ const actions = {
         return data;
     },
     async [FETCH_BLOG_ONLY_DOMAIN](context,payload) {
-     
+    
         const { data } = await BlogService.blogonly_domain(payload);
-        console.log('FETCH_BLOG_ONLY_DOMAIN',data);
         context.commit(SET_BLOG_ONLY,data);
         return data;
     },
