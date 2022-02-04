@@ -242,6 +242,8 @@ padding-left: 15px;
 
 
 
+
+
 @media screen and (max-width: 600px) {
    
     .cards { 
@@ -276,6 +278,8 @@ padding-left: 15px;
 
   @media (max-width: 1400px) {
     .cards-mobile { grid-template-columns: repeat(3, 1fr); }
+    
+ .product-byshop { grid-template-columns: repeat(3, 1fr); }
   }
 
 
@@ -665,3 +669,10 @@ button.addcart:hover {
     grid-template-columns: repeat(2, 1fr);
   }
   }
+  @media (min-width: 350px) and (max-width: 601px) { 
+    .product-byshop{
+      grid-template-columns: repeat(2, 1fr);
+  
+    }
+ 
+    }

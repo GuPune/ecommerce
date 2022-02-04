@@ -16,8 +16,8 @@
                 <div class="row relatedweb">
 
      
-  <div class="col-sm-12 col-md-2"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
-  <div class="col-sm-12 col-md-10"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2"> <Categoriesbyshop :cate_by_shop="cate_by_shop"  v-if="currentRouteName == 'index'"/></div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-10"> <Productbyshop  :product_by_shop="product_by_shop"  v-if="currentRouteName == 'index'"/></div>
 
 </div>
 </div>
