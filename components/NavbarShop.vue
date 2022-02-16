@@ -39,7 +39,7 @@
 
 
     <b-navbar-nav>
-      <b-nav-item href="#" v-for="(item, index) in menu" :key="item.id"  @click="redirectTolink(item.link)"  :class="{'rkknoob': checkPath(item.link)}">{{item.name}}</b-nav-item>
+      <b-nav-item href="#" v-for="(item, index) in menu" :key="item.id"  @click="redirectTolink(item.link_domain)"  :class="{'rkknoob': checkPath(item.link_domain)}">{{item.name}}</b-nav-item>
   
     </b-navbar-nav>
 
