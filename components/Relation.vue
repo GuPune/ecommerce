@@ -77,7 +77,7 @@
                 return a;
         },
         async addToCart(item){
-                 await this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว Cart!", "success")
+                 await this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว", "success")
         },
         async CheckLogin(item){
        if(!this.authenticated){

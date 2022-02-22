@@ -281,7 +281,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.
 item.add = this.add
 
 let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
-   this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว Cart!", "success")
+   this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว", "success")
  
             },
      validateNumber: (event) => {

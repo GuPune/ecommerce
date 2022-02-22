@@ -151,6 +151,10 @@
     padding-top: 10px;
   }
 
+  .te-oreder-cat{
+    font-size: 0.9vw;
+   }
+
 
   .box-circle-icon-color.actives {
     color: #FFFFFF;
@@ -179,7 +183,12 @@
 }
   
 
-
+.te-oreder-carde{
+  font-size: 0.8vw;
+}
+.sum-textas{
+  font-size: 0.8vw;
+}
 
   /* .product-name {
     /* margin: 20px 0 0; */
@@ -434,10 +443,42 @@ margin-top: 30px;
 }
 
 
+  }
 
-
-
+  @media screen and (min-width: 1401px){
+    .orderlist-center-deskop {
+      text-align: center;
+  }
 
   }
 
   
+  @media only screen and (min-width: 720px) and (max-width: 820px)  {
+
+    .te-oreder-carde{
+      padding-right: 5px;
+          }
+    }
+
+
+    @media screen and (max-width: 767px) {
+
+
+     .te-oreder-carde{
+      font-size: 3.5vw;
+     }
+
+     .te-oreder-cat{
+      font-size: 3vw;
+     }
+  
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 720px) {
+      .sum-textas{
+        font-size: 3.5vw;
+      }
+      }
+  
+
+

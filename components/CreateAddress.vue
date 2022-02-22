@@ -28,7 +28,7 @@
                                             required
                                             @input="$v.form.tel.$touch()"
                                             @blur="$v.form.tel.$touch()"
-                                             v-on:keypress="isNumber($event)"   :maxlength="max"
+                                             v-on:keypress="isNumber($event)"  maxlength="10"
                              v-model="form.tel" />
                             <div class="invalid-feedback" id="divError_textPhoneNumber"></div>
                         </div>
