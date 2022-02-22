@@ -14,6 +14,11 @@
   
 }
 
+.changepass-btn{
+  background-color: #EF7318;
+  color: whitesmoke;
+}
+
 /* 
 .container.loginformmobile{
     width:95%;

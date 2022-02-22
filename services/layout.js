@@ -6,7 +6,7 @@ export const LayoutService = {
       return ApiServiceAll.post("navbar",param);
     },
     navbarshop(param) {
-      return ApiServiceAll.post("navbarshop",param);
+      return ApiServiceAll.post("navbarshopdomain",param);
     },
     blogonly(param) {
       return ApiServiceAll.post("blogonly",param);

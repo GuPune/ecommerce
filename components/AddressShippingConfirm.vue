@@ -3,7 +3,7 @@
         <div class="card shopping-cart">
 
         <h2 class="shoping-cart-title bg-order"><span>ที่อยู่ในการจัดส่ง </span>
-          
+
         </h2>
         <div class="card-body">
         <div class="row" id="scrollMemberList">
@@ -11,15 +11,15 @@
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
                     <div class="text-muted" >
-                     {{detailAddress.address}}       ต.{{detailAddress.sub_districts_id}}   อ.{{detailAddress.districts_id}}  จ.{{detailAddress.province_id}} 
+                     {{detailAddress.address}}       ต.{{detailAddress.sub_districts_id}}   อ.{{detailAddress.districts_id}}  จ.{{detailAddress.province_id}} {{detailAddress.zipcode}}
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>    
-    </div>           
+    </div>
+    </div>
 </template>
 
 
@@ -36,7 +36,7 @@ export default {
       computed: {
             ...mapGetters(["address","selectedad"]),
 
-            
+
 
         },
           data() {
@@ -54,36 +54,36 @@ export default {
         detailAddress:''
       }
     },
-      
-      components: {
-      
-           
-              },
-             
-      async mounted() {
- await this.fetchaddress(); 
-      
 
-         
+      components: {
+
+
+              },
+
+      async mounted() {
+ await this.fetchaddress();
+
+
+
         },
 
       methods: {
         changeAdd(event){
-          
+
            var data = event.target.value;
            let selectdata = this.items
-      
+
         if(selectdata.length > 0){
         const arr3 = selectdata.filter(d => d.id == data);
         this.detailAddress = arr3[0]
-           
+
         }
 
-              
-              
+
+
         },
 
-        
+
 
    rowClass(item, type) {
         if (!item || type !== 'row') return
@@ -94,28 +94,28 @@ export default {
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
-     
 
-    await this.checkedaddress(this.items); 
-       
+
+    await this.checkedaddress(this.items);
+
       },
   	showModal() {
-     
-       
+
+
     },
 
     checkedaddress(checkb) {
-  
+
      if(checkb.length > 0){
         const arr2 = checkb.filter(d => d.flag_address === 'F');
         this.selectedAdd = arr2[0].id
         this.detailAddress = arr2[0]
 
-        
+
      }
 
 
- 
+
     },
 
 
@@ -124,8 +124,8 @@ export default {
 
                let selectableTable = this.$refs.selectableTable
    selectableTable.selectRow(0)
-     
-        
+
+
       },
       selectAllRows() {
         this.$refs.selectableTable.selectAllRows()
@@ -135,21 +135,21 @@ export default {
         this.$refs.selectableTable.clearSelected()
       },
       selectThirdRow() {
-         
+
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.selectRow(1)
-          
+
       },
       unselectThirdRow() {
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.unselectRow(2)
       }
-    
-  }
-       
-           
 
-     
-    
+  }
+
+
+
+
+
     };
 </script>

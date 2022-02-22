@@ -9,13 +9,13 @@ export const ProductService = {
       return ApiService.find("productshellcategory",param);
     },
     getproductbyshop(param) {
-      return ApiService.post("productbyshop",param);
+      return ApiService.post("productbyshopdomain",param);
     },
     getproductshellfind(param) {
       return ApiService.post("productshellfind",param);
     },
     getcatebyshop(param){
-      return ApiService.post("catebyshop",param);
+      return ApiService.post("catebyshopdomain",param);
     },
     findcatebyshop(param){
       return ApiService.post("searchproduct",param);

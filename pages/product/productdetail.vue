@@ -33,9 +33,7 @@
 <div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
 
-    <client-only>
-   <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions" :key=""key/>
-</client-only>
+     <product-zoomer :base-images="images"></product-zoomer>
    </div>
 
 
@@ -195,7 +193,7 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,FETCH_IMAGE_PRODUCT_DOMAIN } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,FETCH_IMAGE_PRODUCT_DOMAIN,GET_NAVBAR_SHOP } from "@/store/actions.type.js";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
@@ -257,8 +255,12 @@ this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 console.log('this.form',this.form);
+    let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,this.form);
 let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.form);
+
+
+
 
 
     this.key++
@@ -279,7 +281,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.
 item.add = this.add
 
 let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
-   this.$swal("Add Product!", "Product To Cart!", "success")
+   this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว Cart!", "success")
  
             },
      validateNumber: (event) => {

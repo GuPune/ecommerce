@@ -4,7 +4,7 @@
       <h2 class="profile-cart-title profile-bg-order"><span>ข้อมูลของฉัน </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
       </h2>
-      
+
                         <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -48,7 +48,7 @@
                             <h6 class="mb-0">ที่อยู่</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                       
+
                              <textarea class="form-control" rows="5" name="inputContactMessage" id="inputContactMessage" placeholder="เขียนข้อความ"   v-model="profile.address" ></textarea>
                             </div>
                         </div>
@@ -62,29 +62,29 @@
                              <div
                           class="wrap-input100 validate-input"
                         >
-                       
+
                           <input
                             class="form-control"
                             type="file"
                             name="contact"
                           @change="onFileChange" />
                           <span class="focus-input100"></span>
-                          
+
                         </div>
                             </div>
                         </div>
                         <hr>
-        
+
                         <div class="row">
                             <div class="col-sm-12">
                             <b-button variant="outline-primary"   @click="saveprofile()">บันทึกการเปลี่ยนแปลง</b-button>
-                         
+
                             </div>
                         </div>
                         </div>
                     </div>
 
-              
+
 
 
 </div>
@@ -106,21 +106,19 @@ import 'sweetalert2/dist/sweetalert2.min.css';
   export default {
    props: ['profile'],
      computed: {
-           
-   
+
+
 
             ...mapState({
                 objects: state => state.user.profile,
              }),
         },
             components: {
-     
           CreateAddress,
           Address
-
-           
               },
-        
+
+
          data: () => ({
               url: null,
         value: '',
@@ -133,26 +131,26 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             email:"",
             address:"",
             image:""
-            
+
         },
       }),
 
         mounted() {
         this.setData()
 
-        
+
          },
-        
-  
+
+
         methods: {
 
         async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )  
-                    
-                return event.preventDefault();  
 
-                
+                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )
+
+                return event.preventDefault();
+
+
         },
         onFileChange(e) {
 
@@ -160,26 +158,27 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         this.file = e.target.files[0];
         this.url = URL.createObjectURL(this.file);
 
-      
+
 
         this.profileimage()
 
-        
+
 
         },
         setData(){
 
-    
+
         },
 
         async saveprofile(){
-    
+
+
 
 this.profile.image = this.file;
-   
 
 
-     
+
+
 
         var formData = new FormData(); // Currently empty
 
@@ -191,15 +190,15 @@ this.profile.image = this.file;
            formData.append('name', this.profile.name);
            formData.append('image', this.file);
             formData.append('tel', this.profile.tel);
-       
-   
+
+
 
   let save = await this.$store.dispatch(SAVE_PROFILE,formData);
 
       await this.success()
 
             let a = await this.$store.dispatch(FETCH_GET_PROFILE)
-    
+
         },
          send() {
          let save = this.$store.dispatch(SAVE_PROFILE,this.profile).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
@@ -216,17 +215,17 @@ this.profile.image = this.file;
                     }),
                     1000
                 );
-            
+
             },
-            
-        
+
+
         addbtel(){
              this.$set(this.profile, 'tel',this.profile.tel)
-  
+
         },
         addfname(){
              this.$set(this.profile, 'fname',this.profile.fname)
-  
+
         },
         addlname(){
              this.$set(this.profile, 'lname',this.profile.lname)
@@ -237,17 +236,17 @@ this.profile.image = this.file;
 
         },
         profileimage(){
-            
-          console.log('this.file',this.url);
+
+
              this.$set(this.profile, 'profile_images',this.url)
 
         }
 
-   
-     
-     
+
+
+
         },
-  
+
 
         components: {
 

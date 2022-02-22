@@ -1,5 +1,6 @@
 <template>
-<div>
+<div v-if="objectslayoutshop">
+
    <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
@@ -23,7 +24,7 @@
 
   
 
-   <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
+   <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll" อ>
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
        <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile">
     </div></b-navbar-brand>
@@ -58,8 +59,8 @@
           <template #button-content>
              <em>{{objects.name}} </em>
           </template>
-          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
-          <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">โปรไฟล์</b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">ออกจากระบบ</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -135,14 +136,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           let checker = await localStorage.getItem("user");
           let cart = await this.$store.dispatch(GET_CART);
 
-
-                    this.form.url = window.location.origin;
-         this.form.shop_name = this.$route.params;
-     let menu = await this.$store.dispatch(GET_MENU,this.form);
+  this.timeout = setTimeout(() => this.Navc(), 1500)
+     
 
        let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
         this.shopitem = shopby;
-     console.log('this.shopitem',this.shopitem);
+
 
           if(checker){
             this.IsLogin = true;
@@ -151,10 +150,16 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
             this.IsLogin = false;
           }
         
-          this.colors = this.objectslayoutshop.navbar_menu_color;
+          this.Navc();
+      
          },
 
       methods: {
+
+        Navc(){
+
+             this.colors = this.objectslayoutshop.navbar_menu_color;
+        },
 
             Checkimage(image){
                 let public_images = process.env.ImageSoc+image;

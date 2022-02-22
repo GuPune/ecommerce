@@ -22,7 +22,8 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
 
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป </b-button>
+          
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto buttonCheckout changepass-btn" @click="deliverys('cart-payment')">ถัดไป </b-button>
             </div>
          </div>
        

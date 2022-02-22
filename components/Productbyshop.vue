@@ -105,11 +105,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
     
         
       async mounted() {
-          this.form.url = window.location.origin;
-         this.form.shop_name = this.$route.params;
-      let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+      //    this.form.url = window.location.origin;
+     //    this.form.shop_name = this.$route.params;
+    //  let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+ 
         this.paginatedItems = this.product_by_shop
-        console.log('paginatedItems',this.paginatedItems);
+  
         this.totalRows = this.product_by_shop.length
          await this.paginate(this.perPage, 0);
          },
@@ -168,7 +169,7 @@ const names = 'id-form-login'
             },
             error($text) {
 
-           this.$router.push('/error')
+       //    this.$router.push('/error')
 
           
             },
@@ -176,9 +177,9 @@ const names = 'id-form-login'
            async addToCart(item){
 
 
-console.log('shop',item);
 
-   this.$swal("Add Product!", "Product To Cart!", "success")
+
+   this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว Cart!", "success")
   let add_producttocart = await this.$store.dispatch(ADD_CART,item);
             },
         Checkimage(image){

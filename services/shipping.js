@@ -8,6 +8,9 @@ export const ShippingService = {
     getprovinces() {
       return ApiServiceAll.get("provinces");
     },
+    findprovinces(param) {
+      return ApiServiceAll.post("findprovinces",param);
+    },
     getprovincesalgepage() {
       return ApiServiceAll.get("provincesalepage");
     },

@@ -5,7 +5,7 @@
         <h2 class="profile-cart-title"><span>ที่อยู่ในการจัดส่ง </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
         </h2>
-        
+
         <div class="card-body pt-0">
             <div class="row">
                 <div class="col-12">
@@ -15,19 +15,19 @@
                                 <th class="td-col-1">ชื่อ</th>
                                 <th class="td-col-2">ที่อยู่</th>
                                 <th class="td-col-3">หมายเลขโทรศัพท์</th>
-                            
+
                                 <th class="td-col-4">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                                                                <tr v-for="(item, index) in address" :key="address.id">
                                         <td class="td-col-1">{{item.name}}<br>
-                                        
+
                                         </td>
-                                        <td class="td-col-2">{{item.address}} ,{{item.province_id}} ,{{item.districts_id}} ,{{item.sub_districts_id}}
+                                        <td class="td-col-2">{{item.address}} ต.{{item.sub_districts_id}}  อ.{{item.districts_id}} จ.{{item.province_id}} {{item.zipcode}}
                                         </td>
                                         <td class="td-col-3">{{item.tel}}</td>
-                                       
+
                                         <td class="td-col-4">
                                         <div class="remove-item-cart"  @click="deladdress(item.id)">
                             <i class="fa fa-trash"></i>
@@ -36,7 +36,7 @@
                                         <input type="hidden" name="hiddenShippingAddr[]" class="hiddenShippingAddr" value="2739" />
 
                                     </tr>
-                                                                 
+
                                                         </tbody>
                     </table>
                 </div>
@@ -44,8 +44,8 @@
             <div class="row mt-3">
                 <div class="col-12">
                                             <button type="button" class="btn btn-style" id="btnPlusMemAdrrShipping" style="background-color: coral;" @click="redirectTo('profile-addressshipping')">
-                            <i class="far fa-plus"></i>
-                            เพิ่มที่อยู่ใหม่                        </button>    
+                            <i class="fa fa-home"></i>
+                            เพิ่มที่อยู่ใหม่                        </button>
                                     </div>
             </div>
         </div>
@@ -86,16 +86,16 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID  } fro
      computed: {
    ...mapGetters(["address","profile"]),
         },
-           
 
-   
+
+
         created(){
-           
-        },
-        
 
-    
-        
+        },
+
+
+
+
      async mounted() {
 this.fetchaddress();
       },
@@ -104,26 +104,26 @@ this.fetchaddress();
 
         redirectTo() {
               this.$router.push({ name: 'profile-addressshipping' })
-          
+
         },
 
         async fetchaddress(){
 
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
-       
+
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
 
-    
+
       },
       async deladdress(id){
       this.form.id = id;
-      
+
       this.form.customer_id = this.profile.id;
-  
+
       let del_address = await this.$store.dispatch(DEL_ADDRESS_BY_ID,this.form);
-   
-      await this.fetchaddress(); 
+
+      await this.fetchaddress();
           setTimeout(() =>
                     this.$swal.fire({
                         type: "success",
@@ -134,13 +134,13 @@ this.fetchaddress();
                     1000
                 );
       },
-   
+
 
 
       }
 
 
-           
+
         }
 
 

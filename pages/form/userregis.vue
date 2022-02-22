@@ -107,7 +107,7 @@
                                                                          @blur="$v.form.first_name.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
-
+          <div class="error" v-if="!$v.form.password.minLength" style="color:red;text-align:center">รหัสผ่านต้องมีตัวอักษรอย่างน้อย {{ $v.form.password.$params.minLength.min }} ตัว</div>
    
 
 
@@ -165,7 +165,7 @@
   
 import Nav from "@/components/Nav";
 import { REGISTER,SAVE_SETLINE } from "../../store/actions.type.js";
-import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
+import { required, email, numeric, maxLength,minLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
@@ -181,12 +181,13 @@ import Datepicker from "@/components/TouchDatePicker";
            
               },
           validations: {
-        form: {
+          form: {
             email: { required, email },
-            password: { required },
+            password: { required,minLength: minLength(6) },
             first_name: { required },
             last_name: { required },
             tel: { required },
+           
            
         }
     },

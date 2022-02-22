@@ -17,14 +17,16 @@
                                     </div>
                                     
                                     <div class="col-lg-3 col-xs-12 links" >
-                                        <h4 class="mt-lg-0 mt-sm-3" style="color:#e67825;">Links</h4>
+                                        <h4 class="mt-lg-0 mt-sm-3" style="color:#e67825;"></h4>
                                             <ul class="m-0 p-0">
+                                             <!-- 
                                             <li>- <a href="#">Lorem ipsum</a></li>
                                             <li>- <a href="#">Nam mauris velit</a></li>
                                             <li>- <a href="#">Etiam vitae mauris</a></li>
                                             <li>- <a href="#">Fusce scelerisque</a></li>
                                             <li>- <a href="#">Sed faucibus</a></li>
                                             <li>- <a href="#">Mauris efficitur nulla</a></li>
+                                            -->
                                             </ul>
                                     </div>
                                     <div class="col-lg-4 col-xs-12">
@@ -32,16 +34,16 @@
                                             <p class="mb-0">โทร  : 043-228899</p>
                                             <p>อีเมล : idofficer@iddrives.co.th</p><br>
                                               <a href="#">
-                                                <i class="fab fa-facebook-f"></i>&nbsp;&nbsp;
+                                                <!-- <i class="fab fa-facebook-f"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-youtube"></i>&nbsp;&nbsp;
+                                                    <!-- <i class="fab fa-youtube"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-instagram"></i>&nbsp;&nbsp;
+                                                    <!-- <i class="fab fa-instagram"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-line"></i>
+                                                    <!-- <i class="fab fa-line"></i> -->
                                                 </a>
 
                                             <!-- <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>

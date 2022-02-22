@@ -226,7 +226,7 @@ button.button, a.button {
 }
 
 .product-byshop{
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
 }
 .product-name-byshop{
@@ -678,3 +678,16 @@ button.addcart:hover {
     }
  
     }
+
+    @media (min-width: 1450px) { 
+      .cards-mobile {
+        grid-template-columns: repeat(5, 1fr);
+       }
+
+       .product-byshop{
+        grid-template-columns: repeat(4, 1fr);
+      
+      }
+   
+      }   
+  

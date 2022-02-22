@@ -2,7 +2,7 @@
       <div class="card mb-3" style="margin-top:80px;">
       <div class="boxEditAddressBook theme-main">
     <div class="card boxCard theme-font mb-4">
-          <h2 class="profile-cart-title profile-bg-order"><span>เปลี่ยน Password </span>
+          <h2 class="profile-cart-title profile-bg-order"><span>เปลี่ยนรหัสผ่าน </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
       </h2>
         <div class="card-body pt-0">
@@ -20,13 +20,13 @@
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
                         </div>
                     </div>
-                
+
                 </div>
 
                  <div class="row">
                     <div class="col-12 col-md-12 col-lg-7">
                         <div class="form-group">
-                            <label for="textMemberName" class="font-weight-bold">รหัสผ่านปัจจุบัน <span class="label" style="color:red;">*</span></label>
+                            <label for="textMemberName" class="font-weight-bold">รหัสผ่านใหม่ <span class="label" style="color:red;">*</span></label>
                             <input type="password" class="form-control" id="textMemberName" name="textMemberName" :class="{ 'is-invalid': $v.form.password.$error}"
                                  :error-messages="PasswordErrors"
                                             required
@@ -34,16 +34,16 @@
                                             @blur="$v.form.password.$touch()"
                              v-model="form.password">
 
-                      
-  <div class="error" v-if="!$v.form.password.minLength" style="color:red;">Password must have at least {{ $v.form.password.$params.minLength.min }} letters.</div>
+
+  <div class="error" v-if="!$v.form.password.minLength" style="color:red;">รหัสผ่านต้องมีตัวอักษรอย่างน้อย {{ $v.form.password.$params.minLength.min }} ตัว</div>
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
-                          
-                              
+
+
                         </div>
                     </div>
                 </div>
 
-    
+
                   <div class="row">
                     <div class="col-12 col-md-12 col-lg-7">
                         <div class="form-group">
@@ -51,19 +51,19 @@
                             <input type="password" class="form-control" id="textMemberName" name="textMemberName" :class="{ 'is-invalid': $v.form.password_confirm.$error}"
                                  :error-messages="PasswordConfirmErrors"
                                             required
-                                
+
                              v-model="form.password_confirm" >
-                               <div class="error"  style="color:red;" v-if="!$v.form.password_confirm.sameAsPassword">Passwords must be identical.</div>
+                               <div class="error"  style="color:red;" v-if="!$v.form.password_confirm.sameAsPassword">รหัสผ่านต้องเหมือนกัน</div>
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-style px-4" id="btnSaveAdress"  @click="save()">
+                        <button type="button" class="btn  px-4 changepass-btn" id="btnSaveAdress"  @click="save()">
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn px-4" id="btncancelAdress">
+                        <button type="button" class="btn px-4" id="btncancelAdress" @click="clear()">
                             ยกเลิก                        </button>
                                                     <input type="hidden" name="task" value="saveaddaddressshipform">
                                             </div>
@@ -91,14 +91,14 @@ import VueSweetalert2 from 'vue-sweetalert2';
             password      : { required, minLength: minLength(6)},
             password_confirm: {sameAsPassword: sameAs('password')},
 
-         
+
 
         }
     },
-    
+
     data() {
     return {
-       
+
       form:{
       password_same:"",
       password:"",
@@ -124,7 +124,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
             const errors = []
             if (!this.$v.form.password.$dirty) return errors
             !this.$v.form.password.required && errors.push('โปรดระบุอีเมล')
-      
+
             return errors
         },
 
@@ -132,25 +132,25 @@ import VueSweetalert2 from 'vue-sweetalert2';
             const errors = []
             if (!this.$v.form.password_confirm.$dirty) return errors
             !this.$v.form.password_confirm.required && errors.push('โปรดระบุอีเมล')
-      
+
             return errors
         },
 
-  
-  
-        },
-           
 
-   
+
+        },
+
+
+
        async created(){
-           
-           
-     
-        },
-        
 
-    
-        
+
+
+        },
+
+
+
+
      async mounted() {
  let profile = await this.$store.dispatch(FETCH_GET_PROFILE);
 
@@ -158,13 +158,23 @@ import VueSweetalert2 from 'vue-sweetalert2';
    this.form.url = window.location.origin;
    this.form.user_id = profile.id;
    this.form.email = profile.email;
-       
+
 
       },
 
       methods: {
-      
-   
+
+        async clear(){
+
+    
+             this.form.password = '';
+             this.form.password_same = '';
+             this.form.password_confirm = '';
+
+
+        },
+
+
       async save(){
       this.$v.$touch();
       if (this.$v.form.$error == false){
@@ -176,7 +186,7 @@ this.success();
          }else {
 this.error();
          }
-      } 
+      }
       },
 
     success() {
@@ -187,7 +197,7 @@ this.error();
                     showConfirmButton: false,
                     timer: 1500
                 }),
-                
+
                 1500
             );
 
@@ -196,7 +206,7 @@ this.form.password = null;
 this.form.password_confirm = null;
 
 
-        
+
         },
 
         error() {
@@ -209,11 +219,11 @@ this.form.password_confirm = null;
       },
 
 
-   
+
       }
 
 
-           
+
         }
 
 

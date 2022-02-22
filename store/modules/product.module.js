@@ -74,8 +74,10 @@ const actions = {
         return data;
     },
     async [FETCH_PRODUCT_BY_SHOP](context,payload) {
+        console.log('ก่อนส่ง',payload);
         const { data } = await ProductService.getproductbyshop(payload);
-   
+    
+        console.log('หลังส่ง',data);
         context.commit(SET_PRODUCT_BY_SHOP,data);
         return data;
     },
@@ -96,6 +98,7 @@ const actions = {
     async [FETCH_CATE_BY_SHOP](context,payload) {
         //   const { data } = await ProductService.find(payload);
         const { data } = await ProductService.getcatebyshop(payload);
+        console.log('data',data);
        
            context.commit(SET_CATE_BY_SHOP,data);
            return data;

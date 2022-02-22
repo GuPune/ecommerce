@@ -40,6 +40,7 @@ const actions = {
     },
     async [GET_NAVBAR_SHOP](context,payload) {
 
+        console.log('form_nav',payload)
         const { data } = await LayoutService.navbarshop(payload);
     
         await context.commit(SET_NAVBAR_SHOP,data);  
