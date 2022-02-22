@@ -24,7 +24,7 @@
                             <div class="row pb-3 justify-content-center d-none d-md-flex">
                     <div class="col-auto py-3 bg-yellow">
                         <div class="fs-ta-14 text-pumpkin text-center">
-                            กรุณาชำระเงินก่อนวันที่ <u>2021-10-23</u> เวลา <u>07:56</u> มิฉะนั้นระบบจะยกเลิกคำสั่งซื้อโดยอัตโนมัติ                        </div>
+                     </div>
                     </div>
                 </div>
                         <!-- End Expired Desktop -->

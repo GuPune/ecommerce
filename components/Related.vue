@@ -57,9 +57,9 @@
                                                            
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                   <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
+                                                   <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
-                                                   <span>Add To Cart </span></span>
+                                                   <span>เพิ่มลงตะกร้า </span></span>
                                                    </button></div></div>
                                                   
                                                 </div>

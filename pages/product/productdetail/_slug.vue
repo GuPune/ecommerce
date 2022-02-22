@@ -52,7 +52,7 @@
                   </dl>  <!-- item-property-hor .// -->
 
             
-              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> Add to cart</a>
+              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> เพิ่มลงตะกร้า</a>
             </article> <!-- card-body.// -->
                 </div> <!-- col.// -->
               </div> <!-- row.// -->
@@ -127,7 +127,7 @@
                   </dl>  <!-- item-property-hor .// -->
 
             
-              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> Add to cart</a>
+              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> เพิ่มลงตะกร้า</a>
             </article> <!-- card-body.// -->
                 </div> <!-- col.// -->
               </div> <!-- row.// -->

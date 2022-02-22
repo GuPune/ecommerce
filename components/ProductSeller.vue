@@ -10,7 +10,7 @@
 	<em class="">สินค้าขายดี</em>
 			</h2>
         </div>
- <div>
+ <div v-if="items.length">
  
     <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
@@ -20,7 +20,7 @@
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มสินค้า</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
                                                    </div></div>
                 
                                                 </div>

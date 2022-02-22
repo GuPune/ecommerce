@@ -279,7 +279,7 @@ padding-left: 15px;
   @media (max-width: 1400px) {
     .cards-mobile { grid-template-columns: repeat(3, 1fr); }
     
- .product-byshop { grid-template-columns: repeat(3, 1fr); }
+ .product-byshop { grid-template-columns: repeat(4, 1fr); }
   }
 
 
@@ -407,6 +407,8 @@ padding-left: 15px;
 
 .cardproduct-rela:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border: 1px solid #1fc210; /*1fc210*/
+  color: #1fc210;
 }
 
 
