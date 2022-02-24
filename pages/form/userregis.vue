@@ -183,7 +183,7 @@ import Datepicker from "@/components/TouchDatePicker";
           validations: {
           form: {
             email: { required, email },
-            password: { required,minLength: minLength(6) },
+            password: { required,minLength: minLength(8) },
             first_name: { required },
             last_name: { required },
             tel: { required },

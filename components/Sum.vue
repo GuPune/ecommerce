@@ -7,10 +7,10 @@
                         <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">
                         <tr>
                         <td class="text-left"  width="100%">รวมทั้งหมด (บาท)</td>
-                        <td class='text-right'>{{formatPrice(PriceToTal.PriceToTals)}}</td></tr>
+                        <td class='text-right'>฿{{formatPrice(PriceToTal.PriceToTals)}}</td></tr>
                         <tr>
                         <td class="text-left">ส่วนลด (บาท)</td>
-                        <td class='text-right'>0.00</td>
+                        <td class='text-right'>฿0.00</td>
                         </tr>
                         <tr>
                         <td class="text-left" style="color:red;">ราคาสุทธิที่ต้องชำระ (บาท)</td>
@@ -18,7 +18,7 @@
                         <span style="  border-bottom: 1px solid #cdcdcd;">
                         <span style="  border-bottom: 1px solid #cdcdcd;padding-bottom:2px;">
                         <span style="color:red">
-                        {{formatPrice(PriceToTal.PriceToTals)}}฿ </span>
+                        ฿{{formatPrice(PriceToTal.PriceToTals)}} </span>
                         </span>
                         </span>
                         </td>

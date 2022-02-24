@@ -12,9 +12,9 @@
                     <table class="table tableShipAdress table-hover dt-responsive nowrap" id="tableShipAddress" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="td-col-1">ชื่อ</th>
-                                <th class="td-col-2">ที่อยู่</th>
-                                <th class="td-col-3">หมายเลขโทรศัพท์</th>
+                                <th class="td-col-1" style="text-align: center">ชื่อ</th>
+                                <th class="td-col-2" style="text-align: center">ที่อยู่</th>
+                                <th class="td-col-3" style="text-align: center">หมายเลขโทรศัพท์</th>
 
                                 <th class="td-col-4">&nbsp;</th>
                             </tr>

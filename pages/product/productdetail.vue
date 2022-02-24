@@ -132,7 +132,7 @@
                 </div>
 
                   <div class="col-md-4 col-sm-12 pta-detau">
-    <b-button size="md" variant="danger" class="pro-des-btt">ซื้อสินค้า</b-button>
+    <b-button size="md" variant="danger" class="pro-des-btt"  @click="redirect('cart-orderlist')">ซื้อสินค้า</b-button>
                 </div>
             </div>
     
@@ -303,6 +303,20 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
                 this.$router.push('/'+user_id)
                   },
 
+
+
+       redirect(names) {
+  
+                let path = this.$route.path
+                if (path !== names) {
+
+
+
+            //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
+                //   this.$router.push({ params: { id: '1' } ,name: name})
+                   this.$router.push({ name: names})
+                }
+            },
 
               
               

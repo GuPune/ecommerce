@@ -62,7 +62,7 @@
        async deliverys(){
  let checkbank = await localStorage.getItem('bank');
  if(checkbank == null){
-     this.error('กรุณาเลือกบริการจ่ายเงิน');
+     this.error('กรุณาเลือกวิธีการชำระเงิน');
      return false;
  }
      

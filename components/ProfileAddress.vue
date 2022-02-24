@@ -3,7 +3,7 @@
           <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><i class="fa fa-map-marker" aria-hidden="true"> :</i> ช่องทางติดต่อ</h6>
+                            <h6 class="mb-0"><i class="fa fa-map-marker" aria-hidden="true"> :</i> ที่อยู่</h6>
                             <span class="text-secondary">{{profile.address}}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">

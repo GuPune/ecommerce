@@ -670,7 +670,7 @@ if (this.cart.length > 0) {
  
  
  if(checkbank == null){
-     this.error('กรุณาเลือกบริการจ่ายเงิน');
+     this.error('กรุณาเลือกวิธีการชำระเงิน');
      return false;
  }
    await this.saveorder();
