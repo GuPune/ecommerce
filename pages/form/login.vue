@@ -187,7 +187,7 @@
                     <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot">
                          ส่งไปที่อีเมลสำเร็จ
                     </div>
-                    <input type="email" class="form-control" placeholder="example@mail.com" required v-model="forms.email"><br>
+                    <input type="email" class="form-control" placeholder="example@gmail.com" required v-model="forms.email"><br>
                     <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมล</button>
                 </div>
             </div>
