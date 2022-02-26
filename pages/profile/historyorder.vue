@@ -2,10 +2,10 @@
     <section id="Userprofile">
         <div class="container">
             <div class="main-body">
-            
+
 
                 <!-- /Breadcrumb -->
-            
+
                 <div class="row gutters-sm" v-if="objects == 1">
                     <div class="col-md-4 mb-3">
                     <ProfileImage :profile="profile"/>
@@ -14,14 +14,14 @@
                     <div class="col-md-8" >
                     <ProfileOrder/>
                          <div class="card">
-            
+
                          </div>
 
                     </div>
                 </div>
 
 
-                <div class="container col-12 col-md-12" style="padding-top: 90px;" v-if="objects == 2">
+                <div class="container col-12 col-md-12" style="padding-top: 70px;padding-bottom: 20px;" v-if="objects == 2">
 <StatusOrder/>
     <div style="padding-top: 20px;">
     <div class="row">
@@ -38,12 +38,12 @@
 
 
     </section>
-    
+
 </template>
 
 
 <script>
-  
+
 import Nav from "@/components/Nav";
 import ProfileImage from "@/components/ProfileImage";
 import ProfileAddress from "@/components/ProfileAddress";
@@ -54,7 +54,7 @@ import { mapGetters,mapState } from "vuex";
 import StatusOrder from "@/components/StatusOrder";
 import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "@/store/actions.type.js";
 import Order from "@/components/Order";
-    
+
 
 
     export default {
@@ -68,7 +68,7 @@ import Order from "@/components/Order";
           ProfileOrder,
           Order,
           StatusOrder
-           
+
               },
 
         data: () => ({
@@ -85,19 +85,19 @@ import Order from "@/components/Order";
                 objects: state => state.Order.tabs,
 
             }),
-   
+
         },
-             
+
        async mounted() {
            let a = await this.$store.dispatch(FETCH_GET_PROFILE);
            this.form.id = a.id;
            let address = await this.$store.dispatch(FETCH_ADDRESS,this.form);
-           
-        },
-       
-           
 
-     
-    
+        },
+
+
+
+
+
     };
 </script>

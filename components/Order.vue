@@ -1,7 +1,7 @@
 <template>
 
 <div class="divPageData pageCartSuccess pageConfig">
-    
+
     <div class="card card-theme card-xs-full">
       <div class="row">
                 <div class="col-lg-8">
@@ -42,7 +42,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="tbody">
-                                                 
+
                                                               <div class="tr py-3 px-md-3 border-top border-top-0-first border-thmLight" v-for="(item, index) in objectss.order_item" :key="item.id">
                                                                 <div class="row" >
                                                                     <div class="col-12 col-md-5">
@@ -54,7 +54,7 @@
                                                                                 <div class="row">
                                                                                     <div class="col-12">
                                                                                         <p class="fs-ta-14 text-thmLight-1 mb-0">{{item.name_th}}</p>
-                                                                                                                                                                                   
+
                                                                                                                                                                                                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mt-3 d-flex d-md-none">
@@ -137,8 +137,8 @@
                                                     <div class="col-6 col-md-9 text-right text-md-left">
                                                         <span class="fs-ta-16 text-thmLight-1 mr-3 d-none d-md-inline">:</span>
                                                         <span class="fs-ta-14 fs-md-ta-16 text-thmLight-2 text-md-thmLight-1">
-                                                            <img src="https://webbuilder46.makewebeasy.com/images/orders/channel/browser.png" 
-                                                                data-toggle="tooltip" data-placement="top" title="Website" 
+                                                            <img src="https://webbuilder46.makewebeasy.com/images/orders/channel/browser.png"
+                                                                data-toggle="tooltip" data-placement="top" title="Website"
                                                                 style="height: 30px;">
                                                             Website                                                        </span>
                                                     </div>
@@ -171,7 +171,7 @@
                                                     </div>
                                                     <div class="pl-3 mt-2">
 
-                                              
+
                                                         <span class="fs-ta-16 text-thmLight-1">{{objectss.shipping_address.name}} {{objectss.shipping_address.tel}}</span><br>
                                                         <span class="fs-ta-14 text-thmLight-2">{{objectss.shipping_address.address}}</span><br>
                                                         <span class="fs-ta-14 text-thmLight-2">ตำบล{{objectss.shipping_address.sub_districts_id}} อำเภอ{{objectss.shipping_address.districts_id}} จังหวัด{{objectss.shipping_address.province_id}} {{objectss.shipping_address.zipcode}}</span>
@@ -212,7 +212,7 @@
                                                                 <span class="fs-ta-14 text-thmLight-2 mt-md-2 d-none d-md-block">
                                                                  {{objectss.delivery_details}}
                                                                 </span>
-                                                          
+
                                                                                                                     </div>
                                                                                                                     <div class="col-12 col-md-6 d-none d-md-block">
                                                                 <img :src="Checkimage(objectss.avatar)" style="height: 40px;">
@@ -225,8 +225,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+
+
                         <!-- End ShippingType -->
 
                         <!-- Start PaymentType -->
@@ -292,17 +292,17 @@
                                                             <span class="fs-ta-16 text-thmLight-1">
                                                                 ยอดรวมสินค้า                                                            </span>
                                                             <span class="fs-ta-16 text-thmLight-2">
-                                                                (1ชิ้น)
+
                                                             </span>
                                                         </div>
                                                         <div class="col text-right">
                                                             <span class="fs-ta-16 text-thmLight-1">฿ {{formatPrice(objectss.sumPrice)}}</span>
                                                         </div>
                                                     </div>
-                                                    <!-- End Net price --> 
-                                                    
+                                                    <!-- End Net price -->
+
                                                     <!-- Start Promotion Discount -->
-                                                                                                        <!-- End Promotion Discount --> 
+                                                                                                        <!-- End Promotion Discount -->
 
                                                     <!-- Start Promotion Coupon -->
                                                                                                         <!-- End Promotion Coupon -->
@@ -326,7 +326,7 @@
 
                                                     <!-- Start Promotion Shipping price -->
                                                                                                         <!-- End Promotion Shipping price -->
-                                                    
+
                                                     <!-- Start Total price -->
                                                     <div class="row py-2">
                                                         <div class="col-12">
@@ -344,10 +344,10 @@
                                                     </div>
                                                     <!-- End Total price -->
 
-                                                    
+
                                                 </div>
-                                                
-                                                
+
+
                                                 <!-- Start Promotion List -->
                                                                                                 <!-- End Promotion List -->
 
@@ -380,15 +380,15 @@
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-12 text-center d-block d-md-none">
-                                          
-                                           
+
+
                                         </div>
                                         <div class="col-6" size="sm" v-if="objectss.status == 'N'"> <b-button variant="outline-primary"  lg="4" size="sm" @click="myModel = true" v-if="isHiddenUploadSlip == false">แจ้งชำระเงิน</b-button></div>
                                                                                 <div class="col-6" size="sm"> <b-button variant="outline-primary"  lg="4" size="sm" @click="downloadpdf()" ><i class="fa fa-print"></i>พิมพ์ใบสั่งซื้อ</b-button></div>
 
-                                            
-                                        
-                                        
+
+
+
                                                                                                                         </div>
                                 </div>
                             </div>
@@ -405,7 +405,7 @@
 
     <div>
 
-    
+
 
 
 
@@ -443,16 +443,16 @@
                                         @input="$v.form.total.$touch()"
                                         @blur="$v.form.total.$touch()"
                                         :class="{ 'is-invalid': $v.form.total.$error}"
-                           
+
                           />
-                         </div> 
-                      </div> 
+                         </div>
+                      </div>
 
                        <div>
     <label for="timepicker-sm">วันที่ชำระเงิน <span style="color:red;">*</span></label>
-<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy" 
- :error-messages="TotalErrors" required 
-  :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
+<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy"
+ :error-messages="TotalErrors" required
+  :class="{ 'is-invalid': $v.form.dateavalue.$error}"
 />
   </div>
 
@@ -464,7 +464,7 @@
         id="example-input"
         v-model="form.time"
         type="text"
-        placeholder="HH:mm:ss" 
+        placeholder="HH:mm:ss"
         :disabled="true"
 
           :error-messages="TimeErrors"
@@ -504,7 +504,7 @@
                       </div>
 
                         <div v-if="isHiddenUpload == true">
-    
+
     <span style="color: red;">กรุณาอัพโหลดสลิป </span>
   </div>
 
@@ -516,7 +516,7 @@
   </div>
 
 
-                      
+
 
 
                 </div>
@@ -532,25 +532,25 @@
                       </button>
                     </div>
 
-       
+
           </div>
            </div>
-           
+
             </div>
             </div>
           </div>
       </transition>
   </div>
 
-   
+
 
 </div>
 
-  
+
 </template>
 <style>
- 
-  
+
+
    .modal-mask {
      position: fixed;
      z-index: 1050;
@@ -570,7 +570,7 @@
 
     .modal-mask .modal-wrapper {
      display: -ms-flexbox;
-   
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -617,7 +617,7 @@ import axios from 'axios';
             total: { numeric,required },
             dateavalue: { required },
             time: { required },
-           
+
 
         }
     },
@@ -625,7 +625,7 @@ import axios from 'axios';
     data() {
 
       return {
-    
+
         file:null,
           url: null,
           isHiddenUpload:false,
@@ -644,7 +644,7 @@ import axios from 'axios';
         total:null,
         dateavalue:"",
         time:""
-   
+
         },
         orderlist:{
 
@@ -698,7 +698,7 @@ import axios from 'axios';
             return errors;
             },
 
-        
+
         },
 
      async mounted() {
@@ -715,8 +715,8 @@ import axios from 'axios';
 
       methods: {
         Loaddata() {
-            
-     
+
+
         },
      formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
@@ -728,28 +728,28 @@ import axios from 'axios';
       this.form.dateavalue = date.toISOString();
     },
 
-        
+
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
 
-  
+
         changeBank(event){
            this.selectedBank = event.target.value
            let choosebank =  this.$store.dispatch(CHOOSE_BANK,this.selectedBank);
-    
+
         },
 
          openModel:function(name){
-             
+
          this.myModel = true;
-    
+
             },
 
         closeModel:function(){
          this.myModel = false;
-  
+
       },
       downloadpdf(){
 
@@ -760,14 +760,14 @@ import axios from 'axios';
                 }).then((response) => {
                      var fileURL = window.URL.createObjectURL(new Blob([response.data]));
                      var fileLink = document.createElement('a');
-   
+
                      fileLink.href = fileURL;
                      fileLink.setAttribute('download', 'file.pdf');
                      document.body.appendChild(fileLink);
-   
+
                      fileLink.click();
                 });
-          
+
 
       },
 
@@ -786,10 +786,10 @@ this.isHiddenUpload = true;
            formData.append('time', this.form.time);
            formData.append('image', this.file);
 
-    
+
 
   let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
-        
+
  this.isHiddenUploadSlip = true;
  this.myModel = false;
 
@@ -799,7 +799,7 @@ this.isHiddenUpload = true;
     this.form.cartnumber = this.objectss.cartnumber;
 
        let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
-              
+
       },
 
                   getImg(name) {
@@ -813,7 +813,7 @@ this.isHiddenUpload = true;
 
 
     if(file.type.match(/image.*/)) {
-      
+
 
         // Load the image
         var reader = new FileReader();
@@ -840,42 +840,42 @@ this.isHiddenUpload = true;
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-            
+
                    let public_images = process.env.baseURL;
-                 
-                
+
+
                       axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
       }).catch(function(){
-         
+
               this.$swal({
                 type: "error",
                 title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
                 showConfirmButton: true,
                 reverseButtons: true
             });
-      
+
         });
-          
-                
-                 
+
+
+
             };
             image.src = readerEvent.target.result;
 
-         
+
         }
         reader.readAsDataURL(file);
-     
+
     }
-    
 
 
-     
+
+
     },
         dataURLToBlob(dataURI) {
- 
+
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
   var byteString = atob(dataURI.split(',')[1]);

@@ -6,7 +6,7 @@ color: #9F8672;
 
 display: -webkit-box;
 -webkit-line-clamp: 2;
--webkit-box-orient: vertical;  
+-webkit-box-orient: vertical;
 overflow: hidden;
 
 }
@@ -34,6 +34,11 @@ overflow: hidden;
 }
 
 .blog-margin{
-margin-top: 30px;
+
+}
+
+.blog-image{
+  height: 200px;
+  width: 200px;
 }
 

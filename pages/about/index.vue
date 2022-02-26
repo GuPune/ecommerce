@@ -1,5 +1,5 @@
 <template>
-      
+
 <div style="background: white;">
 <div v-if="loadding">
 <Loader/>
@@ -15,19 +15,19 @@
 </div>
 
 
-                
+
 </div>
 
- 
-            
-      
 
-              
-               
-     
-                    
-             
-   
+
+
+
+
+
+
+
+
+
 </template>
 
 
@@ -38,13 +38,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { GET_ABOUT } from "@/store/actions.type.js";
+import { GET_ABOUT,GET_BACKG } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
 import Banner from "@/components/Banner"
-    
+
     export default {
       components: {
           AdsShop,
@@ -52,7 +52,7 @@ import Banner from "@/components/Banner"
           Footer,
           Categoriesbyshop,
           Adsmini
-           
+
               },
 
                   data() {
@@ -70,35 +70,38 @@ url:null
                 ...mapGetters(["about"]),
 
         },
-             
+
        async mounted() {
-   
+
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
    let a = await this.$store.dispatch(GET_ABOUT,this.form);
    this.content = this.about
    this.loadding = false
+
+
+   let bg = await this.$store.dispatch(GET_BACKG,this.$route.name);
         },
 
          methods: {
-     
+
             success() {
-          
+
             },
             success() {
-          
+
             },
             error($text) {
 
            this.$router.push('/error')
 
-          
+
             },
         }
-       
-           
 
-     
-    
+
+
+
+
     };
 </script>

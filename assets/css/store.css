@@ -1,6 +1,6 @@
 .container.profileweb{
     background-color: white;
-   
+
 }
 
 .profilepic{
@@ -16,9 +16,10 @@
 }
 
 .container.profilemobile{
-    background-color: whitesmoke;
-   
-    
+    /* background-color: whitesmoke; */
+
+background-color: #dcd9ed;
+
 }
 
 .linevertical {

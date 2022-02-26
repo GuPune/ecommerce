@@ -1,10 +1,10 @@
 
 import { LayoutService }  from "../../services/layout";
 import {
-    GET_NAVBAR,GET_NAVBAR_SHOP,GET_FOOTER
+    GET_NAVBAR,GET_NAVBAR_SHOP,GET_FOOTER,GET_BACKG
 } from "../actions.type.js";
 import {
-    SET_NAVBAR,SET_NAVBAR_SHOP,SET_FOOTER
+    SET_NAVBAR,SET_NAVBAR_SHOP,SET_FOOTER,SET_BG
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -13,6 +13,7 @@ const state = {
     navbar:null,
     navbar_shop:null,
     footer:null,
+    colors:'white',
 
 }
 
@@ -26,6 +27,9 @@ const getters = {
     footer: state => {
         return state.footer
     },
+    colors: state => {
+      return state.colors
+  },
 
 };
 
@@ -33,49 +37,66 @@ const getters = {
 const actions = {
     async [GET_NAVBAR](context,payload) {
         const { data } = await LayoutService.navbar(payload);
-      
-        await context.commit(SET_NAVBAR,data);  
+
+        await context.commit(SET_NAVBAR,data);
         return data.data
-    
+
     },
+
+    async [GET_BACKG](context,payload) {
+      await context.commit(SET_BG,payload);
+
+  },
     async [GET_NAVBAR_SHOP](context,payload) {
 
         console.log('form_nav',payload)
         const { data } = await LayoutService.navbarshop(payload);
-    
-        await context.commit(SET_NAVBAR_SHOP,data);  
+
+        await context.commit(SET_NAVBAR_SHOP,data);
         return data.data
-    
+
     },
     async [GET_FOOTER](context,payload) {
         console.log('footer',payload);
         const { data } = await LayoutService.footer(payload);
 
         console.log('footer',data);
-        await context.commit(SET_FOOTER,data);  
+        await context.commit(SET_FOOTER,data);
         return data.data
 
     },
 
-   
+
 };
 
 const mutations = {
-  
+
     [SET_NAVBAR](state,data) {
         state.navbar = data.data;
-      
+
     },
     [SET_NAVBAR_SHOP](state,data) {
         state.navbar_shop = data.data;
-      
+
     },
     [SET_FOOTER](state,data) {
         state.footer = data.data;
-   
-      
-    }
-    
+
+
+    },
+    [SET_BG](state,data) {
+      console.log('bg',data);
+
+
+      if(data == 'index'){
+        state.colors = 'white';
+      }else {
+        state.colors = '#dcd9ed';
+      }
+
+
+  }
+
 };
 
 export default {

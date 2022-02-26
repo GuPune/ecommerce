@@ -180,7 +180,7 @@
 
     </div>
      <div class="row" v-if="cart.length > 0">
-         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 25px;">
          <div  class="float-right button-order boxSubmitCart" >
             <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping" @click="redirectToroot('index')">ซื้อสินค้าต่อ</b-button>
             <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('cart-comfirmorder')">สั่งซื้อสินค้า</b-button>

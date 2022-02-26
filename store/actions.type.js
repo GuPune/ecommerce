@@ -103,8 +103,7 @@ export const FIND_PROVINCES = "find_address_provinces";
 
 export const FETCH_FACEBOOK = "fetch_facebook";
 export const FETCH_BLOG_ONLY_DOMAIN = "fetch_blog_onlydomain";
-
-
+export const GET_BACKG = "get_backg";
 export const GET_NAVBAR = "get_navbar";
 export const GET_NAVBAR_SHOP = "get_navbar_shop";
 export const GET_CHECK_SHOP = "get_check_shop";

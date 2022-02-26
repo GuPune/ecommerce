@@ -8,7 +8,7 @@
                         <div class="thumbnail rounded">
                             <div class="contentImage rounded-top">
                                 <a href="#">
-                                               <img loading="lazy" :src="Checkimage(data.image)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
+                                               <img loading="lazy" :src="Checkimage(data.image)" class="col-12 no-padding banner-icon blog-image" style="display: block;padding: 0;">
                                 </a>
                             </div>
                             <div class="contentCaption">
@@ -23,20 +23,20 @@
                                     </div>
                                                                             <div class="contentAction">
                                         <a  @click="redirectTo('new-blogid',data.id)">
-            ดูเพิ่มเติม&nbsp;<i class="far fa-fw fa-angle-right" data-fa-transform="down-1"></i>
+            ดูเพิ่มเติม&nbsp;<i class="fa fa-arrows-h" data-fa-transform="down-1"></i>
                                         </a>
                                     </div>
                                     </div>
                         </div>
                     </div>
-      
-          
+
+
                 </div>
     </div>
 </div>
         </div>
 
- 
+
 </template>
 
 
@@ -48,7 +48,7 @@ import moment from 'moment'
   export default {
     data() {
     return {
-     
+
       form:{
 
       },
@@ -56,11 +56,11 @@ import moment from 'moment'
   },
 
      computed: {
-           
+
           ...mapGetters(["blog"]),
 
         },
-        
+
       async mounted() {
      this.loadding = false
    this.form.url = window.location.origin;
@@ -68,12 +68,12 @@ import moment from 'moment'
    let blogall = await this.$store.dispatch(FETCH_BLOG,this.form);
 
 
- 
 
-        
+
+
          },
-        
-  
+
+
         methods: {
 
         Checkimage(image){
@@ -88,13 +88,13 @@ import moment from 'moment'
         redirectTo(names,ids){
              this.form.shop_name = this.$route.params.id;
              this.$router.push({ name: names, params: { id: this.form.shop_name,blogid:ids }})
-        } 
+        }
 
 
-     
- 
+
+
         },
-  
+
 
         components: {
 
