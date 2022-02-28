@@ -1,7 +1,7 @@
 <template>
 <div :style="{'background-color':backbg}">
 
- <NavShop />
+ <NavShop  v-if="currentRouteName != 'salepage-id'" />
  <nuxt-child></nuxt-child>
 
  <AdsShop  v-if="currentRouteName == 'index'" />
