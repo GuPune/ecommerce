@@ -1,7 +1,7 @@
 <template>
 <div :style="{'background-color':backbg}">
 
- <NavShop  v-if="currentRouteName != 'salepage-id'" />
+ <NavShop  v-if="currentRouteName != 'salepage-id' || currentRouteName != 'buy-id'" />
  <nuxt-child></nuxt-child>
 
  <AdsShop  v-if="currentRouteName == 'index'" />
@@ -25,7 +25,7 @@
         <ProductRecom v-if="currentRouteName == 'index'"/>
             <ProductNew v-if="currentRouteName == 'index'"/>
 
-   <LongFooter  v-if="currentRouteName != 'salepage-id'"/>
+   <LongFooter    v-if="currentRouteName != 'salepage-id' || currentRouteName != 'buy-id'" />
 
 
 
