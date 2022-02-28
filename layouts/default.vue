@@ -25,7 +25,7 @@
         <ProductRecom v-if="currentRouteName == 'index'"/>
             <ProductNew v-if="currentRouteName == 'index'"/>
 
-   <LongFooter/>
+   <LongFooter  v-if="currentRouteName != 'salepage-id'"/>
 
 
 
