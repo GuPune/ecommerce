@@ -29,7 +29,7 @@
 
 
 
-                         <Footer/>
+                         <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')" />
 
                   <div class="fb-customerchat"  :page_id="pageId">
 
