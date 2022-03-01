@@ -77,7 +77,7 @@ export default {
    // "./plugins/mixins/user.js",
    // "~/plugins/axios.js",
    // "~/plugins/mixins/validation.js",
-    // { src: '~/plugins/vue2-google-map.js'},
+     { src: '~/plugins/vue2-google-map.js'},
     { src: '~/plugins/gtag.js'},
     { src: '~/plugins/vuelidate', ssr: true },
   { src: './plugins/vue-fb-customer-chat.js' },
