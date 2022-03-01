@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group buttonSendPanel">
                         <button type="submit" class="btn btn-style"   @click="save()">
-                            <i class="fas fa-envelope"></i>&nbsp;ส่งข้อความ</button>
+                            <i class="fa fa-comment"></i>&nbsp;ส่งข้อความ</button>
                     </div>
               
             </div>

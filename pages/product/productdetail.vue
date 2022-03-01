@@ -131,7 +131,7 @@
 
                 </div>
 
-                  <div class="col-md-4 col-sm-12 pta-detau">
+                  <div class="col-md-4 col-sm-12 pta-detau" hidden>
     <b-button size="md" variant="danger" class="pro-des-btt"  @click="redirect('cart-orderlist')">ซื้อสินค้า</b-button>
                 </div>
             </div>
@@ -181,7 +181,7 @@
 
 
 
-  </div>   
+
   
 
 
@@ -254,7 +254,7 @@
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
-console.log('this.form',this.form);
+
     let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM_DOMAIN,this.form);
 let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.form);

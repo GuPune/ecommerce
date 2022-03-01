@@ -139,8 +139,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   this.timeout = setTimeout(() => this.Navc(), 1500)
      
 
-       let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
-        this.shopitem = shopby;
+      //  let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
+      //   this.shopitem = shopby;
 
 
           if(checker){
@@ -218,10 +218,21 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
 
 
-          logout() {
-    this.$auth.logout()
+            logout() {
+            localStorage.removeItem("shipping");
+            localStorage.removeItem("listorder");
+            localStorage.removeItem("delivery");
+          localStorage.removeItem("cart");
 
-    
+
+    this.$auth.logout()
+     setTimeout(function () {
+            location.reload();
+            }, 1000);
+
+
+
+
      }
         }
 

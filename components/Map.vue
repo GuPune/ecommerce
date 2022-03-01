@@ -45,7 +45,7 @@ import axios from '@nuxtjs/axios'
     }
       ],
       position : { },
-      apix:'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U',
+      apix:'AIzaSyDtswoRYS9Kbw1Gg5i6lBqBw8xxcPuVOBo',
       IsLogin: false,
       slide: 0,
         sliding: null
@@ -114,7 +114,7 @@ import axios from '@nuxtjs/axios'
   let x  = localStorage.getItem("map");
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U' ,
+    key: 'AIzaSyDtswoRYS9Kbw1Gg5i6lBqBw8xxcPuVOBo' ,
     libraries: 'places', 
 
   },

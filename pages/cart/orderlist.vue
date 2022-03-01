@@ -1,7 +1,7 @@
 <template>
 
 
-   <div class="container col-12" style="padding-top: 50px;background-color: #dcd9ed;">
+   <div class="container col-12" style="padding-top: 50px;background-color: #dcd9ed;padding-bottom: 50px;">
 
 <!-- --------------------------------store 1--------------------------------- -->
 
