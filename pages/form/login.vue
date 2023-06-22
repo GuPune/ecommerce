@@ -14,70 +14,70 @@
         <input class="form-control"
         placeholder="ชื่อผู้ใช้งาน" type="text" v-model="form.email"
             :error-messages="EmailErrors"
-             
+
               :class="{ 'is-invalid': $v.form.email.$error}"
                @input="$v.form.email.$touch()"
              @blur="$v.form.email.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
-        
-      
+
+
       <div class="input-group input-group-icon">
         <input type="password" class="form-control" placeholder="รหัสผ่าน"
         v-model="form.password"
          :error-messages="PassErrors"
-         
+
           :class="{ 'is-invalid': $v.form.password.$error}"
         @input="$v.form.password.$touch()"
         @blur="$v.form.password.$touch()" >
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
 
 
-    
+
       </div>
            <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
-    
+
     </div>
-    
+
 
 
     <center>
     <button class="btn btn-primary" @click="login()"><span>เข้าสู่ระบบ</span></button>
     <p>คุณมีบัญชีแล้วใช่หรือไม่ ?  <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p></center>
 
-  
+
 <div class="row">
-    
-   
+
+
        <!-- <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button> -->
-      
-    
-  
-      
+
+
+
+
 
     </div>
 
 
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button> 
+    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button>
      </div>
-      
-    <div class="form-group pt-3"> 
+
+    <div class="form-group pt-3">
     <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div>
 
 
 
-                             
 
 
-    
+
+
 
 </div>
 
 
 
-    
+
             <!-- <div class="row loginformweb">
                         <div class="container loginformweb">
                          <div class="alert alert-danger" role="alert" v-if="alert.message">
@@ -85,7 +85,7 @@
                         </div>
                             <div class="col-sm">
                             <center><h4>กรุณาเข้าสู่ระบบ</h4></center><br>
-                               
+
                                             <p>ชื่อผู้ใช้งาน :</p>
                                              <input type="text" id="tel" class="form-control" placeholder="email" v-model="form.email"
                                  :error-messages="EmailErrors"
@@ -107,27 +107,27 @@
 
                                             <center><button class="btn btn-success" @click="login()">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
-                                            
+
                                             </center>
 
 
-                                
-
-
-
-                                
 
 
 
 
-                            
+
+
+
+
+
+
                         </div>
 
 
                         </div>
 
-                
-               
+
+
 
               </div> -->
 
@@ -140,7 +140,7 @@
                        <div class="container loginformmobile">
                             <div class="col-sm">
                             <center><h4>กรุณาเข้าสู่ระบบ</h4></center><br>
-                               
+
                                             <p>ชื่อผู้ใช้งาน :</p>
                                             <input type="text" id="email" class="form-control" placeholder="email" v-model="form.email"
                                  :error-messages="EmailErrors"
@@ -158,22 +158,22 @@
                             @input="$v.form.password.$touch()"
                             @blur="$v.form.password.$touch()"
                                 >
-                            
+
                                             <label><a href="#">ลืมรหัสผ่าน?</a></label><br>
-                                        
+
                                             <center><button class="btn btn-success" @click="login()">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
-                                          
+
                                             </center>
 
-                            
+
                         </div>
                         </div>
 
               </div> -->
 
 
-              
+
         <div id="forgotpass" class="overlay"
          v-if="Isshow">
             <div class="popup">
@@ -193,17 +193,17 @@
             </div>
         </div>
 
-    
 
 
 
 
- 
+
+
 
 
 </section>
 </div>
-    
+
 </template>
 
 
@@ -215,14 +215,14 @@ import Vue from 'vue';
 import Vuex from "vuex";
 import Nav from "@/components/Nav";
 import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
-    
+
 
 
     export default {
       middleware: 'guest',
       components: {
           Nav,
-           
+
               },
       validations: {
         form: {
@@ -247,7 +247,7 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
+        },
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
@@ -275,13 +275,13 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
     },
     created() {
-     
+
         console.log(this.$store.state.auth.status);
-        
+
     },
     mounted() {
-    
-     
+
+
        // let clearalert = this.$store.dispatch(CLEARALRET);
     },
     methods: {
@@ -295,12 +295,13 @@ this.form.url = window.location.hostname;
               //    window.location.href = `https://backoffice.thaionzon.com/api/auth/login/${service}/con/${this.form.url}`;
         },
         async loginline(){
-   this.$router.push('/1/form/register');   
+   this.$router.push('/1/form/register');
+
         },
         async login(){
         this.$v.$touch()
             this.form.url = window.location.origin
-           
+
                 if (this.$v.form.$pending || this.$v.form.$error) return;
             //    await this.$store.dispatch('auth/login', this.form);
 
@@ -308,11 +309,11 @@ this.form.url = window.location.hostname;
         //     data: this.form
         //   })
 
-        
+
 
           try {
 
-              
+
         await this.$auth.loginWith('local', {
           data: this.form
         }).then(data => {
@@ -320,11 +321,11 @@ this.form.url = window.location.hostname;
 
     //  let token = this.$auth.getToken('local')   //get token
       //    let a = this.$store.dispatch(FETCH_GET_PROFILE)
- 
+
 
     //   let token = this.$auth.getToken('local')   //get token
-   
-         
+
+
 				})
 				.catch(err => {
         this.alert.message = 1;
@@ -335,13 +336,13 @@ this.form.url = window.location.hostname;
 				});
       } catch (e) {
 //  this.$store.dispatch('alert/error', null, { root: true });
- 
 
 
-      }                         
+
+      }
         },
 
-        
+
 
         async forgot(){
 
@@ -358,13 +359,13 @@ if(this.forms.email == ''){
 //     this.$router.push({
 //     name: 'form-login'
 // });
-}           
+}
         },
         showmodal(){
             this.Isshow = true;
-         
+
         }
     },
     };
-    
+
 </script>
