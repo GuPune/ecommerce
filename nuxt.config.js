@@ -18,7 +18,7 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }  
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -28,7 +28,7 @@ export default {
         href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
       }
     ],
-    
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -65,7 +65,7 @@ export default {
     '@/assets/css/blog.css',
     '@/assets/css/contact.css',
     '@/assets/css/salepage.css',
-    
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -132,7 +132,7 @@ export default {
 //     ImageURL: "http://127.0.0.1:8000/public/product/",
 //     ImageSoc: "http://127.0.0.1:8000/public/images/",
 //       ImageSoc: "http://127.0.0.1:8000/public/images/",
-  
+
 //   },
 
 //   env: {
@@ -142,35 +142,35 @@ export default {
 //     backend:"http://127.0.0.1:8000",
 // },
 
-axios: {
-  // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://cmsecom.idtest.work/api",
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
-
- },
-
-env: {
- baseURL: "https://cmsecom.idtest.work/api",
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
-  backend:"https://cmsecom.idtest.work",
-},
-
 // axios: {
 //   // See https://github.com/nuxt-community/axios-module#options
-//   baseURL: "https://backoffice.thaionzon.com/api",
-//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
-//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+//   baseURL: "https://cmsecom.idtest.work/api",
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
 
 //  },
 
 // env: {
-//  baseURL: "https://backoffice.thaionzon.com/api",
-//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
-//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
-//   backend:"https://backoffice.thaionzon.com",
+//  baseURL: "https://cmsecom.idtest.work/api",
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+//   backend:"https://cmsecom.idtest.work",
 // },
+
+axios: {
+  // See https://github.com/nuxt-community/axios-module#options
+  baseURL: "https://backoffice.thaionzon.com/api",
+  ImageURL: "https://backoffice.thaionzon.com/public/product/",
+  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+
+ },
+
+env: {
+ baseURL: "https://backoffice.thaionzon.com/api",
+  ImageURL: "https://backoffice.thaionzon.com/public/product/",
+  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+  backend:"https://backoffice.thaionzon.com",
+},
 
 
   auth: {
