@@ -159,17 +159,17 @@ export default {
 
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://backoffice.thaionzon.com/api",
-  ImageURL: "https://backoffice.thaionzon.com/public/product/",
-  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+  baseURL: "https://back.halalthaimart.com/api",
+  ImageURL: "https://back.halalthaimart.com/public/product/",
+  ImageSoc: "https://back.halalthaimart.com/public/images/",
 
  },
 
 env: {
- baseURL: "https://backoffice.thaionzon.com/api",
-  ImageURL: "https://backoffice.thaionzon.com/public/product/",
-  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
-  backend:"https://backoffice.thaionzon.com",
+ baseURL: "https://back.halalthaimart.com/api",
+  ImageURL: "https://back.halalthaimart.com/public/product/",
+  ImageSoc: "https://back.halalthaimart.com/public/images/",
+  backend:"https://back.halalthaimart.com",
 },
 
 
