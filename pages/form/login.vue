@@ -59,12 +59,12 @@
     </div>
 
 
-    <div class="form-group pt-3">
+    <!-- <div class="form-group pt-3">
     <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button>
      </div>
 
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div>
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div> -->
 
 
 
