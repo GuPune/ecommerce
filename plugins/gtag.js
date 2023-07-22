@@ -4,7 +4,7 @@ import axios from 'axios'
 
 let a = window.location.origin;
 
-axios.post('https://backoffice.thaionzon.com/api/gtag', {
+axios.post('https://back.halalthaimart.com/api/gtag', {
     data: a
   }).then(res => {
     console.log('a',res);
@@ -12,9 +12,9 @@ axios.post('https://backoffice.thaionzon.com/api/gtag', {
     config: { id: res.data }
   })
   }).catch(function(){
-     
-  
-  
+
+
+
 });
 
 
