@@ -78,11 +78,6 @@ import axios from 'axios';
 
      let checker = localStorage.getItem("pageId");
 
-      Vue.use(VueFbCustomerChat, {
-  page_id: checker, //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
 
 
 
