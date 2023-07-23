@@ -9,7 +9,7 @@
     background-color: white;
     margin-left: 0px;
     margin-right: 0px;
-    
+
 }
 
 .relatedweb-test{
@@ -26,7 +26,7 @@
 }
 .c-shopinmy{
   border: 0px;
- 
+
 }
 .c-shopinmy-tt{
   background-color: #dcd9ed!important;
@@ -63,7 +63,7 @@
   background-size: 20px auto;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-image: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/Vector-Smart-Object-green.png");
+  /* background-image: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/Vector-Smart-Object-green.png"); */
 }
 .item .addtocart {
   display: inline-block;
@@ -130,7 +130,7 @@ button.button, a.button {
   overflow: hidden;
   text-align: center;
   color: #303030;
-  
+
 }
 
 .heading-title-relat h2 {
@@ -160,7 +160,7 @@ button.button, a.button {
   margin-bottom: 5px;
   letter-spacing: 2px;
   font-weight: bold;
-  
+
 }
 
 
@@ -192,14 +192,14 @@ button.button, a.button {
   margin-bottom: 5px;
   letter-spacing: 2px;
   font-weight: bold;
-  
+
 }
 
 
 
 
 /* .buttonn{
-  background-color: rgb(212, 0, 81); 
+  background-color: rgb(212, 0, 81);
   border:0px solid;
   border-radius: 15px;
   color: white;
@@ -208,7 +208,7 @@ button.button, a.button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-    
+
 }
 
 .buttonn:hover{
@@ -245,17 +245,17 @@ padding-left: 15px;
 
 
 @media screen and (max-width: 600px) {
-   
-    .cards { 
-        grid-template-columns: repeat(2, 1fr); 
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
-  
+
   }
 
   @media screen and (max-width: 390px) {
-   
-    .cards { 
-        grid-template-columns: repeat(2, 1fr); 
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
@@ -265,7 +265,7 @@ padding-left: 15px;
       /* background-color: rgba(0, 0, 0, 0.03); */
       /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
     }
-  
+
   }
 
  @media (max-width: 900px) {
@@ -278,7 +278,7 @@ padding-left: 15px;
 
   @media (max-width: 1400px) {
     .cards-mobile { grid-template-columns: repeat(3, 1fr); }
-    
+
  .product-byshop { grid-template-columns: repeat(4, 1fr); }
   }
 
@@ -294,17 +294,17 @@ padding-left: 15px;
     width: 100%;
     padding: 0 10px;
   }
-  
+
   /* Remove extra left and right margins, due to padding */
   /* .row {margin: 0 -5px;} */
-  
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  
+
   /* Responsive columns */
   @media screen and (max-width: 600px) {
     .column {
@@ -334,14 +334,14 @@ padding-left: 15px;
 
 
 
-  
 
-  
+
+
   /* Style the counter cards */
 
 
 
- 
+
 
 
 
@@ -363,7 +363,7 @@ padding-left: 15px;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
- 
+
   background-clip: border-box;
 
 }
@@ -382,7 +382,7 @@ padding-left: 15px;
     height: auto;
     /* border:1px solid rgba(255, 0, 0, 0);
     background-color: rgb(235, 235, 235);
-    border-radius: 5px; 
+    border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
     max-width: 300px;
     margin: auto;
@@ -396,7 +396,7 @@ padding-left: 15px;
   height: auto;
   /* border:1px solid rgba(255, 0, 0, 0);
   background-color: rgb(235, 235, 235);
-  border-radius: 5px; 
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
   max-width: 300px;
   margin: auto;
@@ -417,7 +417,7 @@ padding-left: 15px;
   height: auto;
   /* border:1px solid rgba(255, 0, 0, 0);
   background-color: rgb(235, 235, 235);
-  border-radius: 5px; 
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
   max-width: 300px;
   margin: auto;
@@ -440,7 +440,7 @@ padding-left: 15px;
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
-   
+
   }
 
   .product-name-first{
@@ -467,7 +467,7 @@ font-size: 20px;
   }
 
   /* .buttonn{
-    background-color: rgb(212, 0, 81); 
+    background-color: rgb(212, 0, 81);
     border:0px solid;
     border-radius: 15px;
     color: white;
@@ -476,7 +476,7 @@ font-size: 20px;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-      
+
   }
 
   .buttonn:hover{
@@ -490,7 +490,7 @@ font-size: 20px;
   text-align: left;
   padding-left: 10px;
 }
-  
+
 .price {
   color: grey;
   padding-left: 10px;
@@ -499,7 +499,7 @@ font-size: 20px;
   font-weight: bold;
   /* color: #4c791b; */
   color: #f57224
-  
+
 }
 
 .price-mini {
@@ -553,14 +553,14 @@ button.addcart:hover {
 
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .imgproduct{
     width:200px;
     height:200px;
 
   }
 
-  
+
 
 
  }
@@ -601,7 +601,7 @@ button.addcart:hover {
   .imgproduct-product{
     width:150px;
     height:150px;
-  } 
+  }
   .im-rela-mobile{
     width: 117px;
     height: 100px;
@@ -622,7 +622,7 @@ button.addcart:hover {
       .title-relat-mobile h2 span {
         font-size: 1rem;
         display: inline-block;
-      
+
         padding-bottom: 5px;
         margin-bottom: 5px;
         letter-spacing: 2px;
@@ -633,18 +633,18 @@ button.addcart:hover {
     .product-name-first{
       margin-top: 10px;
       font-size: 16px;
-      
+
         }
-      
+
         .price {
-        
+
         font-size: 14px;
 
-          
+
         }
 
 
-        
+
 .product-footer {
   text-align: center;
   padding: 0.75rem 0.25rem;
@@ -652,7 +652,7 @@ button.addcart:hover {
   /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
 }
 
- 
+
 
 
 
@@ -660,7 +660,7 @@ button.addcart:hover {
 
 
 
- @media (min-width: 602px) and (max-width: 900px) { 
+ @media (min-width: 602px) and (max-width: 900px) {
 
   .imgproduct-product{
     width:400;
@@ -671,23 +671,22 @@ button.addcart:hover {
     grid-template-columns: repeat(2, 1fr);
   }
   }
-  @media (min-width: 350px) and (max-width: 601px) { 
+  @media (min-width: 350px) and (max-width: 601px) {
     .product-byshop{
       grid-template-columns: repeat(2, 1fr);
-  
-    }
- 
+
     }
 
-    @media (min-width: 1450px) { 
+    }
+
+    @media (min-width: 1450px) {
       .cards-mobile {
         grid-template-columns: repeat(5, 1fr);
        }
 
        .product-byshop{
         grid-template-columns: repeat(4, 1fr);
-      
+
       }
-   
-      }   
-  
+
+      }
