@@ -859,7 +859,7 @@ return false;
         },
         formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
-        console.log('val',val);
+
         return val;
         },
       }

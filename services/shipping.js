@@ -20,7 +20,7 @@ export const ShippingService = {
     getdistrictsalgepag(param) {
       return ApiServiceAll.post("districtssalepage",param);
     },
-  
+
     getdistricts(param) {
       return ApiServiceAll.post("districts",param);
     },
@@ -31,7 +31,7 @@ export const ShippingService = {
       return ApiServiceAll.post("defaultshipping",param);
     },
     saveordersalepage(param) {
-      console.log('param',param);
+
       return ApiServiceAll.post("saveordersalepage",param);
     },
 

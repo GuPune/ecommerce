@@ -22,8 +22,8 @@
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
                                         <span itemprop="name" >{{product_by_item.shop_name_title}}</span>
                                     </a>
-                                   
-                                 
+
+
                                     <meta itemprop="position" content="4">
                                                             </li >
                                             </ol>
@@ -63,7 +63,7 @@
                     <div class="form-group">
                         <div class="marginInner">
                             <div class="productPrice">
-                           
+
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
                             <p class="productPrice"> ฿{{formatPrice(product_by_item.price)}}</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                                         <b-input-group-append>
                                         <b-btn variant="outline-secondary"  v-on:click='Addup(product_by_item.stock)'>+</b-btn>
                                         </b-input-group-append>
-                                        </b-input-group>   
+                                        </b-input-group>
                     </div>
                 </div>
                   <div class="col-md-4 attrHeader form-group">มีสินค้าจำนวนทั้งหมด  {{product_by_item.stock}}  </div>
@@ -105,8 +105,8 @@
 
 
 
- 
- 
+
+
  <div class="marginInner mb-4 mb-md-4">
  <div class="dividerFix">
  </div>
@@ -135,59 +135,59 @@
     <b-button size="md" variant="danger" class="pro-des-btt"  @click="redirect('cart-orderlist')">ซื้อสินค้า</b-button>
                 </div>
             </div>
-    
-      
-                    
 
 
-              </div> 
+
+
+
+              </div>
                     </div>
 
                             <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <div class="mb-4 mb-md-4">            
-                                 
-                                    
-                                  
-                                     
+                            <div class="mb-4 mb-md-4">
+
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                  
-                    <div class ="row"> 
+
+                    <div class ="row">
 <div class="col-12">
 
                     <b-tabs class="product-detail-tab"><b-tab active>
-                    <template #title><b-spinner type="grow" small></b-spinner> 
+                    <template #title><b-spinner type="grow" small></b-spinner>
                     ข้อมูลสินค้า
                     </template><p class="p-3" >
-                 
+
                     <p><span v-html="product_by_item.details"></span></p></p>
                     </b-tab></b-tabs>
-                    
+
                   </div>
-     
-                    
+
+
                     </div>
- 
 
-                  
 
-  
+
+
+
     </div>
 
 
 
 
-  
+
 
 
 </section>
 
-    
+
 </template>
 
 
@@ -203,7 +203,7 @@
       data() {
         return {
   key:0,
-   
+
         isHidden:false,
     loadding:true,
       zoomerOptions: {
@@ -220,7 +220,7 @@
       },
       selected: 0,
 
-    
+
             form:{
 
             },
@@ -230,26 +230,26 @@
       components: {
           Nav,
           Footer
-           
+
               },
 
                  computed: {
-           
+
         ...mapGetters(["product_by_item","images","cart"]),
 
         },
 
         async created(){
-  
-            
 
- 
-           
-        
+
+
+
+
+
 
 
         },
-             
+
        async mounted() {
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
@@ -265,10 +265,10 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT_DOMAIN,this.
 
     this.key++
 
-     
+
         // this.loadding = false;
 
-    
+
      this.zoom(productshop_item);
         },
 
@@ -282,31 +282,31 @@ item.add = this.add
 
 let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
    this.$swal("เพิ่มสินค้าเรียบร้อย", "สินค้าอยู่ในตะกร้าแล้ว", "success")
- 
+
             },
      validateNumber: (event) => {
       let keyCode = event.keyCode;
-      console.log('keyCode',event.target.value);
+
       if (keyCode < 48 || keyCode > 57) {
         event.preventDefault();
       }
-    
+
     },
        formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
 
         return val;
         },
-              
+
         redirectTo(user_id) {
-          
+
                 this.$router.push('/'+user_id)
                   },
 
 
 
        redirect(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -318,18 +318,18 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
                 }
             },
 
-              
-              
+
+
         Checkimage(image){
-         
+
                 let public_images = process.env.ImageURL+image;
-                console.log('testtttttttttttttt');
+
                 return public_images;
         },
         async Addup(stock){
             //// logic // จำนวนสินค้าที่มี
           //  let Add_up = await this.$store.dispatch(ADD_UP,item);
-          if(this.add == stock){   
+          if(this.add == stock){
         let keytext = 'สินค้ามีไม่เพียงพอ!'
             return await this.error(keytext);
           }
@@ -339,13 +339,13 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
             if(this.add == 0){
 
             let keytext = 'สินค้าจำกัดจำนวนไม่ต่ำกว่า 0!'
-            
+
                 return await this.error(keytext);
             }
           this.add -= 1;
-          
+
         },
-   
+
         error(keytext) {
                 this.$swal({
                     icon: 'error',
@@ -356,7 +356,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
                 });
         },
         success(keytext) {
-                  
+
                  this.$swal({
                     icon: 'success',
                     title: 'สินค้า',
@@ -364,7 +364,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
                     showConfirmButton: true,
                     reverseButtons: true
                 });
-              
+
         },
          sleep(ms) {
   return new Promise((resolve) => {
@@ -377,12 +377,12 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
 // normal_size
 // thumbs
 
-    
+
      this.images.thumbs = productshop_item.data.thumbs,
      this.images.large_size = productshop_item.data.large_size,
      this.images.normal_size = productshop_item.data.normal_size,
   this.loadding = false;
-         
+
         //       this.images.thumbs = [
         // {
         //     id: 0,
@@ -417,7 +417,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
         //       "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/4.jpeg"
         //   },
         //   ],
-         
+
         //  this.images.large_size = [
         //     {
         //     id: 0,
@@ -436,19 +436,19 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
         //   }
         //   ]
 
-                  
-             
+
+
                    this.loadding = false;
                     this.isHidden = true;
-                   
-        },
-        
-        
-       }
-       
-       
 
-     
-    
+        },
+
+
+       }
+
+
+
+
+
     };
 </script>

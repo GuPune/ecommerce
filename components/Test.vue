@@ -21,7 +21,7 @@
                                                    <div class="product-footer mobile-cate asx">
                                                    {{i.name_th}}
                                                    </div>
-                
+
                                                 </div>
         </div>
       </div>
@@ -29,11 +29,11 @@
 
     </VueSlickCarousel>
   </div>
-  
-                                
 
-                        
-                    </div> 
+
+
+
+                    </div>
       </div>
 
     </div>
@@ -45,7 +45,7 @@
 
     <br>
     </section>
-    
+
 </template>
 
 
@@ -59,10 +59,10 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  
-  
+
+
   export default {
-       
+
         data() {
       return {
          form: {
@@ -115,8 +115,8 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
             src: 'https://cmsecom.idtest.work/public/product/20211012083555GwHsOt7iJXKzzXRyhW0s.jpeg',
           },
         ],
-        
-   
+
+
   slickOptions:{
   "dots": true,
   "infinite": false,
@@ -198,12 +198,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     }
   ]
 }
- 
+
       }
     },
-        
+
      computed: {
-           
+
  ...mapGetters(["category_shell","shell_cate"]),
 
 
@@ -217,11 +217,11 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
          isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         },
-        
+
         mounted() {
 
         this.Loadcategory()
@@ -229,15 +229,15 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
            if(this.objects == null){
         this.form.cate = "";
          }else {
-                
+
                   this.form.cate = this.objects.id;
          }
-console.log('this.form',this.form);
-           let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
-        
+
+           let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);
+
          },
-        
-  
+
+
          methods: {
 
       redirectTo(name) {
@@ -245,30 +245,30 @@ console.log('this.form',this.form);
                   },
 
        async Loadcategory() {
-            
-    
-                   let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);  
+
+
+                   let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);
                    this.items = a;
-                 
-                   
-            
+
+
+
           },
          Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
         ChangeProduct(i){
-        
+
 
         this.form.catagory_id = i.id;
         this.form.cat = i;
-    
-        let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
-    
+
+        let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);
+
         }
 
         },
-  
+
 
         components: {
 

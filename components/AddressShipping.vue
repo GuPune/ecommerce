@@ -351,7 +351,7 @@ export default {
 
               }else {
                    let xxxx = await this.$store.dispatch(FIND_PROVINCES,this.form);
-            
+
                      this.provin = [xxxx];
                      this.disabled = 0;
                      this.pros_id = this.provin[0].id
@@ -438,7 +438,7 @@ this.form.select_shipping = event.target.value
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
-        console.log('ที่อยู่',getaddress);
+
 
 
 

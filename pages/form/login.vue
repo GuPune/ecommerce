@@ -265,18 +265,18 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
         },
         alert () {
-                console.log('this.$store.state.alert',this.$store.state.alert);
+
                 return this.$store.state.alert;
         },
         alertforgot () {
-              console.log('this.$store.state.user',this.$store.state.user);
+
                 return this.$store.state.user;
         }
 
     },
     created() {
 
-        console.log(this.$store.state.auth.status);
+
 
     },
     mounted() {

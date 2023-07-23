@@ -28,18 +28,18 @@ const actions = {
     async [FETCH_BLOG](context,payload) {
 
         const { data } = await BlogService.getblog(payload);
-        console.log('blog',data);
+
         context.commit(SET_BLOG,data);
         return data;
     },
     async [FETCH_BLOG_ONLY](context,payload) {
-        console.log('data',payload);
+
         const { data } = await BlogService.blogonly(payload);
         context.commit(SET_BLOG_ONLY,data);
         return data;
     },
     async [FETCH_BLOG_ONLY_DOMAIN](context,payload) {
-    
+
         const { data } = await BlogService.blogonly_domain(payload);
         context.commit(SET_BLOG_ONLY,data);
         return data;
@@ -53,10 +53,10 @@ const mutations = {
     },
     [SET_BLOG_ONLY](state,data) {
         state.blogonly = data.data;
-        console.log('state.blogonly',state.blogonly);
+
 
     }
-  
+
 };
 
 export default {

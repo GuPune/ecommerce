@@ -5,7 +5,7 @@
         <div class="row relatedweb">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
-   
+
           <div class="heading-title-relat">
             <h2><span>Top Hit Shop</span>
 	<em class="">ร้านค้าสุดฮิต</em>
@@ -18,14 +18,14 @@
     <div class="col">
     </div>
     <div class="col relation-all" >
-      ดูร้านค้าทั้งหมด 
+      ดูร้านค้าทั้งหมด
     </div>
   </div>
- 
+
      <VueSlickCarousel v-bind="slickOptions"  v-if="items.length">
-    
+
     <div v-for="(i, index) in items" class="img-wrapper">
-  
+
              <div class="card c-shopinmy">
                     <div class="cardproduct">
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
@@ -33,7 +33,7 @@
                                                    <div class="addtocart">
                                                        <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">ช้อปเลย</b-button>
                                                    </div></div>
-                
+
                                                 </div>
         </div>
       </div>
@@ -41,11 +41,11 @@
 
     </VueSlickCarousel>
   </div>
-  
-                                
 
-                        
-                    </div> 
+
+
+
+                    </div>
       </div>
 
     </div>
@@ -57,7 +57,7 @@
 
     <br>
     </section>
-    
+
 </template>
 
 
@@ -71,8 +71,8 @@
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  
-  
+
+
   export default {
         data() {
       return {
@@ -104,8 +104,8 @@
         //     src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
         //   },
         // ],
-        
-   
+
+
   slickOptions:{
   "dots": true,
   "infinite": false,
@@ -160,41 +160,41 @@
     }
   ]
 }
- 
+
       }
     },
-        
+
      computed: {
-           
+
      ...mapGetters(["product_shell","authenticated"]),
 
 
          isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         },
-        
+
        async mounted() {
-   
+
 
       let product = await this.$store.dispatch(GET_SHOP);
-     
+
 
       this.items = product;
 
-      console.log('this.items',this.items);
+
 
         this.loadcategory()
-        
+
          },
-        
-  
+
+
         methods: {
 
         redirectTo(name) {
-       
+
                     this.$router.push(name)
                   },
         loadcategory(){
@@ -212,7 +212,7 @@
        if(!this.authenticated){
 
                          let path = this.$route.path
-            
+
 const names = 'id-form-login'
  const Shopid = this.isUrl.id;
 
@@ -222,7 +222,7 @@ const names = 'id-form-login'
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})
-               
+
               //  this.$router.push('/form/login')
        }else{
         this.addToCart(item);
@@ -235,7 +235,7 @@ const names = 'id-form-login'
         },
 
         },
-  
+
 
         components: {
 

@@ -7,7 +7,7 @@
                 <div class="col-12 col-md-4 col-xs-12">
            <label>
    <input type="radio"   name="profileImg"   @change="changeBank($event)"  :value="data.id" v-model="selectedBank">&nbsp; {{data.name}}
-                  
+
                         <div class="pl-3 text-muted offset-lg-0 d-none d-lg-block">{{data.details}}
                         </div>
                     </label>
@@ -16,18 +16,18 @@
                     <div class="text-center">
                     <img class="shippingImage fill" :src="Checkimage(data.images)"  width="300" height="100" />
                                             </div>
-                </div> 
-            
-                
+                </div>
+
+
             </div>
-            
+
             </div>
               <div>
 
    <div>
   </div>
   </div>
-                        </div>    
+                        </div>
             </div>
 </template>
 
@@ -37,7 +37,7 @@ import { mapGetters } from "vuex";
 import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
   export default {
     data() {
-      
+
       return {
         status: 'not_accepted',
         selectedAdd: null,
@@ -57,7 +57,7 @@ import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
                 return this.$store.state.user.url_id;
           },
 
-        
+
         },
 
      async mounted() {
@@ -67,25 +67,25 @@ import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
 
        let sel_bank = await localStorage.getItem('bank');
       if(sel_bank){
-         console.log(sel_bank);
+
          this.selectedBank = sel_bank;
       }
- 
+
         },
 
       methods: {
 
-        
+
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
 
-  
+
         changeBank(event){
            this.selectedBank = event.target.value
            let choosebank =  this.$store.dispatch(CHOOSE_BANK,this.selectedBank);
-    
+
         },
       }
   }

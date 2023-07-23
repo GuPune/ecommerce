@@ -3,14 +3,14 @@
 
 
 
-          
+
 <div class="container forms-pay">
 
     <div class="row">
       <h5 style="color: #171c24;">เลขที่ใบสั่งซื้อ *</h5>
-      
+
       <div class="input-group input-group-icon">
-      
+
            <input type="text"   class="form-control"  placeholder="" v-model="form.cartnumber"   :error-messages="CartErrors"
                                         required
                                         @input="$v.form.cartnumber.$touch()"
@@ -18,8 +18,8 @@
                                         :class="{ 'is-invalid': $v.form.cartnumber.$error}"    v-on:keyup="checkorder"
      />
 
-     
-     
+
+
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
     </div>
@@ -30,16 +30,16 @@
     <div class="row">
     <div class="col-half">
       <div class="input-group input-group-icon">
-           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name" 
+           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name"
 
-           
+
 />
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
       </div>
 <div class="col-half">
        <div class="input-group input-group-icon">
-       <input type="text" class="form-control" placeholder="อีเมล" v-model="form.email" 
+       <input type="text" class="form-control" placeholder="อีเมล" v-model="form.email"
          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -53,20 +53,20 @@
     <div class="row">
     <div class="col-half">
       <div class="input-group input-group-icon">
-           <input type="text"   id="tel" class="form-control"  placeholder="เบอร์โทรศัพท์" v-model="form.tel" 
+           <input type="text"   id="tel" class="form-control"  placeholder="เบอร์โทรศัพท์" v-model="form.tel"
     />
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
       </div>
 <div class="col-half">
        <div class="input-group input-group-icon">
-       <input type="text" class="form-control" placeholder="จำนวนเงิน" v-model="form.total" 
+       <input type="text" class="form-control" placeholder="จำนวนเงิน" v-model="form.total"
           :error-messages="TotalErrors"
                                         required
                                         @input="$v.form.total.$touch()"
                                         @blur="$v.form.total.$touch()"
                                         :class="{ 'is-invalid': $v.form.total.$error}"
-                           
+
                                                                  />
 
       </div>
@@ -76,17 +76,17 @@
 
         <div class="row">
     <div class="col-half clock-r">
-     
+
  <p>วันที่ชำระ *</p>
    <div v-if="dateavalue == true">
   <span style="color:red;">กรุณากรอกวันที่</span>
   </div>
-  <date-picker v-model="form.dateavalue" valueType="format" 
-   :error-messages="TotalErrors" required 
-  :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
+  <date-picker v-model="form.dateavalue" valueType="format"
+   :error-messages="TotalErrors" required
+  :class="{ 'is-invalid': $v.form.dateavalue.$error}"
   ></date-picker>
- 
-     
+
+
       </div>
 <div class="col-half clock-r">
 
@@ -94,18 +94,18 @@
       <div v-if="time == true">
   <span style="color:red;">กรุณากรอกเวลา</span>
   </div>
-  <date-picker v-model="form.time" type="time" placeholder="Select time"></date-picker>                                              
-   
+  <date-picker v-model="form.time" type="time" placeholder="Select time"></date-picker>
+
 </div>
 
     </div>
 
-    
+
 
 
 
     <div class="row clock-r">
-      
+
         <label for="timepicker-sm">หลักฐานการชำระเงิน <span style="color:red;">*</span></label>
          <input class="form-control" type="file" name="contact"  @change="onFileChange"/>
     </div>
@@ -114,10 +114,10 @@
 
 
      <div v-if="isHiddenUpload == true">
-     
+
      </div>
 
-     <center> 
+     <center>
      <div id="preview"><img class="imgtax" v-if="url" :src="url" />
      </div>
      </center>
@@ -130,20 +130,20 @@
     <center class="clock-r">
     <button class="btn btn-primary"  @click="paymentnotification()"><span>แจ้งการชำระเงิน</span></button>
     </center>
- 
+
 </div>
 
-    
-    
+
+
 
 </section>
-    
+
 </template>
 
 
 <style>
- 
-  
+
+
    .modal-mask {
      position: fixed;
      z-index: 1050;
@@ -163,7 +163,7 @@
 
     .modal-mask .modal-wrapper {
      display: -ms-flexbox;
-   
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -209,10 +209,10 @@ import axios from 'axios';
           Nav,
            DatePicker,
     datetime: Datetime
-           
+
               },
           validations: {
-     
+
 
             form: {
             cartnumber: { required },
@@ -222,7 +222,7 @@ import axios from 'axios';
             time: { required },
         }
 
-        
+
     },
       data: () => ({
         isLoading: false,
@@ -244,7 +244,7 @@ import axios from 'axios';
         total:null,
         dateavalue:"",
         time:""
-   
+
         },
       }),
 
@@ -281,28 +281,28 @@ import axios from 'axios';
                 !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
                 return errors
             },
-            
+
 
     },
-             
+
         mounted(){
     // liff.init({
     //   liffId: '1655623618-XrxrgnDw'
     // }).then(() => {
     //   if(liff.isLoggedIn()){
-    //     liff.getProfile().then(profile => {                    
+    //     liff.getProfile().then(profile => {
     //      this.$store.dispatch(SAVE_SETLINE, profile);
     //     })
     //   }else{
     //       liff.login();
     //   }
     // })
-  }, 
+  },
 
-            
+
         methods: {
             checkorder(){
-console.log('this',this.form.cartnumber);
+
 
 
                       axios.post('http://127.0.0.1:8000/api/checkorder', {
@@ -314,37 +314,37 @@ this.isCartnumber = false
 this.isCartnumber = true
 }
       }).catch(function(){
-         
-        
-      
+
+
+
         });
             },
             paymentnotification(){
-              
+
                   this.form.images = this.url;
                 if(this.form.images == '') {
-                    this.isUpload = true;      
+                    this.isUpload = true;
                 }
                 if(this.form.images != '') {
-                    this.isUpload = true;      
+                    this.isUpload = true;
                 }
                 if(this.form.time == '') {
                     this.time = true;
-                    
+
                 }
                 if(this.form.time != '') {
                     this.time = false;
                 }
                 if(this.form.dateavalue == '') {
                     this.dateavalue = true;
-                     
+
                 }
                 if(this.form.dateavalue != '') {
                     this.dateavalue = false;
-                  
+
                 }
                 if(this.form.dateavalue == '' || this.form.time == '' || this.form.url == ''){
-                      
+
                     return false;
                 }
                 this.success();
@@ -359,7 +359,7 @@ this.isCartnumber = true
 
 
     if(file.type.match(/image.*/)) {
-      
+
 
         // Load the image
         var reader = new FileReader();
@@ -386,39 +386,39 @@ this.isCartnumber = true
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-            
+
                       axios.post('http://127.0.0.1:8000/api/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
       }).catch(function(){
-         
+
               this.$swal({
                 type: "error",
                 title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
                 showConfirmButton: true,
                 reverseButtons: true
             });
-      
+
         });
-          
-                
-                 
+
+
+
             };
             image.src = readerEvent.target.result;
 
-         
+
         }
         reader.readAsDataURL(file);
-     
+
     }
-    
 
 
-     
+
+
     },
         dataURLToBlob(dataURI) {
- 
+
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
   var byteString = atob(dataURI.split(',')[1]);
@@ -463,10 +463,10 @@ this.isCartnumber = true
                         showConfirmButton: false,
                         timer: 3000
                     }),
-                    
+
                 );
 
-    
+
             },
             error($text) {
                 this.$swal({
@@ -478,10 +478,10 @@ this.isCartnumber = true
                 });
             },
         }
-       
-           
 
-     
-    
+
+
+
+
     };
 </script>

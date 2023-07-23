@@ -1,14 +1,14 @@
 <template>
-<section class="Shopregis">           
+<section class="Shopregis">
 <div class="container forms">
 <Loader v-if="isLoading"/>
       <h5 style="color: #171c24;">สมัครสมาชิกร้านค้า</h5>
-    
-    
+
+
     <div class="row">
             <div class="input-group input-group-icon">
-        <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name" 
-         :error-messages="firstNameErrors" required 
+        <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name"
+         :error-messages="firstNameErrors" required
          :class="{ 'is-invalid': $v.form.first_name.$error}"
          @input="$v.form.first_name.$touch()"
           @blur="$v.form.first_name.$touch()"/>
@@ -17,26 +17,26 @@
 
 
     <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name" 
+        <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name"
                                                                          :error-messages="lastNameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.last_name.$error}"
                                                                          @input="$v.form.last_name.$touch()"
                                                                          @blur="$v.form.last_name.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
-      
 
-      
+
+
     </div>
 
 
 
 
-      
+
     <div class="row">
-      
+
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"  
+        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"
                                                                          :error-messages="ShopnameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.shop_name.$error}"
                                                                          @input="$v.form.shop_name.$touch()"
@@ -44,10 +44,10 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-shopping-bag"></i></div>
       </div>
 
-   
+
 
        <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
+        <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel"
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
@@ -59,7 +59,7 @@
 
 
          <div class="input-group input-group-icon">
- <b-form-textarea  v-model="form.address" 
+ <b-form-textarea  v-model="form.address"
                                                                  rows="3" max-rows="6"
                                                                        :error-messages="AddressErrors" required
                                                                          :class="{ 'is-invalid': $v.form.address.$error}"
@@ -70,8 +70,8 @@
       </div>
 
       <div class="input-group input-group-icon">
-            
-       
+
+
       </div>
 
     </div>
@@ -83,7 +83,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder=""  v-model="form.email" 
+        <input type="text" class="form-control" placeholder=""  v-model="form.email"
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -93,7 +93,7 @@
 
 
       <div class="input-group input-group-icon">
-        <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password" 
+        <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password"
                                                                          :error-messages="PassErrors" required
                                                                          :class="{ 'is-invalid': $v.form.password.$error}"
                                                                          @input="$v.form.password.$touch()"
@@ -107,7 +107,7 @@
 
     <div class="row">
 
-    
+
     <div class="input-group input-group-icon">
                <select class="form-control" name="x" id="x" @change="ChooseType($event)">
                                 <option value="">- เลือก - </option>
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    
+
 
 
 <!--
@@ -127,9 +127,9 @@
         -->
     <center>
 
-    
 
- 
+
+
     <b-row>
     <b-col cols="12" md="12">    <b-form-checkbox
       id="checkbox-1"
@@ -138,22 +138,22 @@
       value="accepted"
       unchecked-value="not_accepted"
 
-  
+
     >
      ข้าพเจ้าเข้าใจและตกลงตาม
-     
-       
+
+
       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
                                   >เงื่อนไขการให้บริการ </label>
 และ
       <label for="commerce" style="color: red;"  v-on:click="CheckService()"
                                   >นโยบายความเป็นส่วนตัว </label>
-      
+
 
     </b-form-checkbox></b-col>
 
 
-    
+
 
   </b-row>
  <b-row>
@@ -169,14 +169,14 @@
     </div>
 </div>
 </section>
-    
+
 </template>
 
 
 
 
 <script>
-  
+
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
@@ -184,7 +184,7 @@ import { REGISSHOP,GET_TYPE_SHOP } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import Loader from '@/components/Loader'    
+import Loader from '@/components/Loader'
 
 
 
@@ -201,7 +201,7 @@ import Loader from '@/components/Loader'
             shop_name: { required },
             tel: { required },
             address: { required },
-        
+
         }
     },
 
@@ -276,60 +276,60 @@ import Loader from '@/components/Loader'
 
         }
     },
-             
+
        async mounted() {
      let typeshop = await this.$store.dispatch(GET_TYPE_SHOP);
 this.typeshop = typeshop;
         },
-       
+
         methods: {
 
         Checkpolicy(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");
         },
         CheckService(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");
         },
 
-        
-        async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  
-                    (event.key !== "." || /\./.test(message))  
-                    )  
-                return event.preventDefault();  
 
-                
+        async isNumber(event, message) {
+
+                if (!/\d/.test(event.key) &&
+                    (event.key !== "." || /\./.test(message))
+                    )
+                return event.preventDefault();
+
+
         },
 
         async english(event) {
-        
+
              let keyCode = event.keyCode;
-   
+
       if (keyCode < 97  || keyCode > 122) {
        event.preventDefault();
       }
 
 
-                            
+
         },
         async ChooseType(event){
 
                this.form.type_id = event.target.value;
-               console.log(this.type_id);
+
 
 
         },
         async registershop(){
 
- 
-              
+
+
              this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
 
-            
+
             if(this.form.type_id == ''){
-     
+
                  this.errortype()
                 return false;
             }
@@ -338,11 +338,11 @@ this.typeshop = typeshop;
             }
              await this.loader()
               await this.send()
-                
+
         },
             loader() {
                 this.isLoading = true;
-            
+
             },
             send() {
                 this.$store.dispatch(REGISSHOP,this.form).then((response) => response.code_return == "200" ? this.success() : this.error(response)).catch((error) => this.error(error.response))
@@ -357,17 +357,17 @@ this.typeshop = typeshop;
                         timer: 3000
                     }),
                     1000
-                    
+
                 );
                await this.clear();
                await setTimeout(() => this.gotoback(), 4000);
-               
-    
 
-           
+
+
+
             },
             error(response) {
-                console.log(response.data.errors.ShopName);
+
                 this.isLoading = false;
                 this.$swal({
                     icon: 'error',
@@ -403,7 +403,7 @@ this.typeshop = typeshop;
 
             async gotoback(){
 
-             
+
             window.location.href = process.env.backend;
             }
         }

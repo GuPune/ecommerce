@@ -3,16 +3,16 @@
  <ul class="profile-info-list">
    <li>
                                                 <div class="field">ราคา: {{ form.price }}</div>
-                                            
+
     <b-form-input id="range-1" v-model="form.price" type="range" min="0" max="50000" v-on:change="all_price"></b-form-input>
- 
+
                                             </li>
 
                                                                                         <li>
                                                 <div class="field">ค้นหา:</div>
-                                            
+
           <b-form-input v-model="form.search" placeholder="Enter your name"></b-form-input>
- 
+
                                             </li>
                                             <li>
                                                 <div class="field">ประเภทสินค้า:</div>
@@ -40,8 +40,8 @@
         {{ selected }}
                                             </li> <br>
 
-                                          
-                                            
+
+
                                         </ul>
 
     </div>
@@ -74,30 +74,30 @@ import { mapGetters } from "vuex";
 
 
      computed: {
-    
-        },
-           
 
-   
+        },
+
+
+
         created(){
-           
-        },
-        
 
-    
-        
+        },
+
+
+
+
      async mounted() {
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
           this.form.selected = this.selected
 this.options = cateshell;
-console.log('this.cate_by_shop',this.form);
+
   let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
 
          },
 
       methods: {
       async onChange(event) {
-      
+
         },
        async choosecate(){
   this.form.selected = this.selected
@@ -105,14 +105,14 @@ console.log('this.cate_by_shop',this.form);
 
         },
         async all_price(){
-       
-        }
-    
-  
+
         }
 
 
-           
+        }
+
+
+
         }
 
 

@@ -14,12 +14,12 @@
      <b-nav-item href="#"><img src="../assets/insta.png" alt="" height="20px" width="20px"></b-nav-item>
       </b-navbar-nav>
 
-      
+
     </b-collapse>
-    
+
   </b-navbar>
 
-  
+
 
    <b-navbar toggleable="sm"type="light" variant="light" class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
@@ -77,16 +77,16 @@
           <b-dropdown-item href="#" @click="redirectTo('id-form-userregis')" >สมัครสมาชิก</b-dropdown-item>
         </b-nav-item-dropdown>
 
-    
+
       </b-navbar-nav>
 
-      
+
     </b-collapse>
-    
+
   </b-navbar>
 
 
-  
+
 </div>
 </template>
 
@@ -109,20 +109,20 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
 
      computed: {
          ...mapGetters(["authenticated"]),
-			
+
         isLogins () {
                 return this.$store.state.auth.loggedIn;
         },
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         cartTotal () {
         return this.$store.state.Cart.cartTotal
         }
-           
+
 
         },
       created () {
@@ -131,10 +131,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
     destroyed () {
             window.removeEventListener('scroll', this.handleScroll);
     },
-        
 
-    
-        
+
+
+
       async mounted() {
 
           let checker = await localStorage.getItem("user");
@@ -159,11 +159,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
       }else {
         this.position = '-'
       }
-   
-      console.log('calling handleScroll',window.scrollY);
+
+
             },
             redirectTo(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -179,12 +179,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
           logout() {
     this.$auth.logout()
 
-    
+
      }
         }
 
 
-           
+
         }
 
 

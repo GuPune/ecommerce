@@ -14,7 +14,7 @@
    <div v-html="item.details" class="responsive">
     </div>
   </div>
-  
+
 </b-container>
 
 <b-container v-if="item.type == 3">
@@ -22,8 +22,8 @@
   <iframe :src="item.link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 </div>
 
-          
-  
+
+
 </b-container>
 </div>
 
@@ -47,7 +47,7 @@
                                             required
                                             @input="$v.form.name.$touch()"
                                             @blur="$v.form.name.$touch()"
-                                      
+
                         />
                     </div>
               <div class="form-group">
@@ -57,7 +57,7 @@
                                             required
                                             @input="$v.form.email.$touch()"
                                             @blur="$v.form.email.$touch()"
-                                      
+
                         />
                     </div>
                     <div class="form-group">
@@ -69,14 +69,14 @@
                                         maxlength="10"
                                       >
                     </div>
-                 
+
                     <div class="form-group buttonSendPanel">
                         <button type="submit" class="btn btn-style" @click="save()">
                             <i class="fas fa-envelope"></i>&nbsp;ส่งข้อความ</button>
                     </div>
-              
+
             </div>
-           
+
         </div>
         </div>
 
@@ -95,7 +95,7 @@
 
 
 
-   
+
 </template>
 
 <style>
@@ -145,7 +145,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 
           computed: {
 
-          
+
             NameErrors() {
             const errors = [];
             if (!this.$v.form.name.$dirty) return errors;
@@ -170,7 +170,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             return errors;
             },
     },
-             
+
             async mounted() {
       this.form.url = window.location.origin;
       this.form.salepage = this.$route.params.id;
@@ -182,10 +182,10 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
       this.form.product_id = salepage.data.product_id
- 
-    
- 
-      
+
+
+
+
       },
 
              methods: {
@@ -194,7 +194,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             if (this.$v.form.$pending || this.$v.form.$error) return;
 
 this.send();
-           
+
 
               },
 
@@ -216,41 +216,41 @@ this.send();
          this.form.email = ''
          this.form.name = ''
          this.form.tel = ''
-        
-          
-     
+
+
+
         },
 
-        
+
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                console.log('public_images',public_images)
+
                 return public_images;
 
                   // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
         buy(){
 
-          
+
 
   this.product_id = this.form.product_id
 
- 
+
         localStorage.setItem("salepageitem",this.product_id);
   localStorage.setItem("salepage_id",this.form.id);
-          
+
          this.$router.push({ name: 'buy-slug'});
 //this.$router.push({ path: `/buy/${this.product_id}` }) // -> /user/123
-            
+
         }
 
 
       }
-       
-           
 
-     
+
+
+
     };
 </script>
 

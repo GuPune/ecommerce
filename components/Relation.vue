@@ -2,7 +2,7 @@
 
  <section id="Related">
         <div class="row relatedweb">
-    
+
 
         </div>
 
@@ -14,9 +14,9 @@
 
     </section>
 
-    
 
- 
+
+
 </template>
 
 
@@ -36,31 +36,31 @@
   },
 
      computed: {
-           
+
         ...mapGetters(["product_shell","authenticated","ads_semi"]),
 
         },
-        
+
         mounted() {
         //  this.$store.dispatch(ToogleAction);
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
+
         this.loadcategory()
 
 
        let a = window.location.origin
        this.form.url = a;
        this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
-        
+
          },
-        
-  
+
+
         methods: {
 
         Checkimage(image){
-        
+
                 let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
@@ -72,7 +72,7 @@
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
         Checkimage(image){
-        
+
                 let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
@@ -88,7 +88,7 @@
         },
 
         },
-  
+
 
         components: {
 

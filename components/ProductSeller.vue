@@ -11,7 +11,7 @@
 			</h2>
         </div>
  <div v-if="items.length">
- 
+
     <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
 
@@ -22,7 +22,7 @@
                                                    <div class="addtocart">
                                                        <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
                                                    </div></div>
-                
+
                                                 </div>
         </div>
       </div>
@@ -30,11 +30,11 @@
 
     </VueSlickCarousel>
   </div>
-  
-                                
 
-                        
-                    </div> 
+
+
+
+                    </div>
       </div>
 
     </div>
@@ -47,7 +47,7 @@
 
     <br>
     </section>
-    
+
 </template>
 
 
@@ -61,8 +61,8 @@
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  
-  
+
+
   export default {
         data() {
       return {
@@ -71,8 +71,8 @@
             url:null
           },
           items: [],
-        
-   
+
+
  slickOptions:{
   "dots": true,
   "infinite": false,
@@ -118,45 +118,45 @@
     }
   ]
 }
- 
+
       }
     },
-        
+
      computed: {
-           
+
      ...mapGetters(["product_shell","authenticated"]),
 
 
          isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         },
-        
+
        async mounted() {
         //  this.$store.dispatch(ToogleAction);
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
+
 
         this.form.url = window.location.origin;
         this.form.shop_name = this.$route.params;
-       
 
 
 
-      
+
+
           let product = await this.$store.dispatch(GET_PRODUCR_SELLER,this.form);
-          console.log('GET_PRODUCR_SELLER',product.data);
+
 
 this.items = product.data;
 
-        
+
          },
-        
-  
+
+
         methods: {
 
         async addToCart(item){
@@ -182,7 +182,7 @@ this.items = product.data;
        if(!this.authenticated){
 
                          let path = this.$route.path
-            
+
 const names = 'id-form-login'
  const Shopid = this.isUrl.id;
 
@@ -192,7 +192,7 @@ const names = 'id-form-login'
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})
-               
+
               //  this.$router.push('/form/login')
        }else{
         this.addToCart(item);
@@ -205,7 +205,7 @@ const names = 'id-form-login'
         },
 
         },
-  
+
 
         components: {
 

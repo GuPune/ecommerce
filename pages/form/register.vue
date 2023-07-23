@@ -3,14 +3,14 @@
 
 
 
-          
+
 <div class="container forms">
 
     <div class="row">
       <h5 style="color: #171c24;">สมัครสมาชิก</h5>
       <div class="input-group input-group-icon">
-           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name" 
-         :error-messages="firstNameErrors" required 
+           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name"
+         :error-messages="firstNameErrors" required
          :class="{ 'is-invalid': $v.form.first_name.$error}"
          @input="$v.form.first_name.$touch()"
           @blur="$v.form.first_name.$touch()"/>
@@ -18,7 +18,7 @@
       </div>
 
        <div class="input-group input-group-icon">
-       <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name" 
+       <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name"
                                                                          :error-messages="lastNameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.last_name.$error}"
                                                                          @input="$v.form.last_name.$touch()"
@@ -57,7 +57,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-          <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
+          <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel"
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
@@ -67,7 +67,7 @@
 
 
     <div class="input-group input-group-icon">
-         <input type="text" class="form-control" placeholder=""  v-model="form.email" 
+         <input type="text" class="form-control" placeholder=""  v-model="form.email"
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -75,10 +75,10 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
-        
-      
+
+
       <div class="input-group input-group-icon">
-          <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password" 
+          <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password"
                                                                          :error-messages="PassErrors" required
                                                                          :class="{ 'is-invalid': $v.form.first_name.$error}"
                                                                          @input="$v.form.first_name.$touch()"
@@ -93,21 +93,21 @@
     <button class="btn btn-primary"  @click="register()"><span>สมัครสมาชิก</span></button>
     </center>
 
-  
+
   </form>
 </div>
 
-    
+
 
 
 
 </section>
-    
+
 </template>
 
 
 <script>
-  
+
 import Nav from "@/components/Nav";
 import { REGISTER,SAVE_SETLINE,CORE_USER } from "@/store/actions.type.js";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
@@ -115,13 +115,13 @@ import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
-    
+
 
 
     export default {
       components: {
           Nav,
-           
+
               },
           validations: {
         form: {
@@ -130,7 +130,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             first_name: { required },
             last_name: { required },
             tel: { required },
-           
+
         }
     },
       data: () => ({
@@ -154,9 +154,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 
         computed: {
         getLine(){
-      return this.$store.getters.getLine;      
+      return this.$store.getters.getLine;
         },
-                 
+
 
         firstNameErrors () {
             const errors = []
@@ -195,13 +195,13 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
 
     },
-             
+
         mounted(){
     liff.init({
       liffId: '1656516351-3K67gZ9V'
     }).then(() => {
       if(liff.isLoggedIn()){
-        liff.getProfile().then(profile => {                    
+        liff.getProfile().then(profile => {
          this.$store.dispatch(SAVE_SETLINE, profile);
          this.isDone();
         })
@@ -209,14 +209,14 @@ import 'sweetalert2/dist/sweetalert2.min.css';
           liff.login();
       }
     })
-  }, 
+  },
      methods: {
              async isDone(){
-               
+
              this.forms = await this.$store.getters.getLine;
-         
+
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
-        
+
 
         this.form
             if(userline != null){
@@ -230,26 +230,26 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 
 
      //   let token = this.$auth.getToken('local')   //get token
-         
+
 				})
 				.catch(err => {
-				  
+
 				});
 
 
-            
 
 
-            
+
+
             }else{
-             console.log('สมัครซะ');
-        
+
+
             }
 
     },
         async register(){
              this.forms = await this.$store.getters.getLine;
-         
+
           this.form.url = window.location.origin
           this.form.userId = this.forms.userId
           this.form.pictureUrl = this.forms.pictureUrl
@@ -266,7 +266,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                 setTimeout(() => (this.isLoading = false), 1500);
             },
             send() {
-              
+
                 this.$store.dispatch(REGISTER,this.form).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
             success() {
@@ -287,7 +287,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         });
 
      this.$router.push('/');
-    
+
             },
             error($text) {
                 this.$swal({
@@ -299,10 +299,10 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                 });
             },
         }
-       
-           
 
-     
-    
+
+
+
+
     };
 </script>

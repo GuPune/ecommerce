@@ -36,7 +36,7 @@ export const UserService = {
       return Apiall.post("del_address_byid",param);
     },
     update_by_id(param){
-      console.log('update');
+
       return Apiall.post("update_byid",param);
     },
     changepassword(param){
@@ -45,5 +45,5 @@ export const UserService = {
     gettypeshop() {
       return Apiall.get("typeshop");
     },
-      
+
 };

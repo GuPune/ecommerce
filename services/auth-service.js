@@ -12,7 +12,7 @@ class AuthService {
             })
             .then(response => {
                 if (response) {
-            
+
                     localStorage.setItem('user', JSON.stringify(response.data));
                 }
 
@@ -21,14 +21,14 @@ class AuthService {
                 return response.data;
             }).catch(
       function (error) {
-        console.log('Show error notification!')
+
       }
     );
     }
 
     logout() {
         localStorage.removeItem('user');
-        
+
     }
 
     register(user) {

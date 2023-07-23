@@ -2,7 +2,7 @@
 <div>
   <div class="worko-tabs">
 
-                             
+
 {{address}}
 
                                 <input class="state" type="radio" title="tab-one" name="tabs-state" id="tab-one" checked />
@@ -34,7 +34,7 @@
                                                         </i>
                                                         </b-button>
                                                      </td>
-                                                    </tr>            
+                                                    </tr>
                                                 </table>
 
                                     </div>
@@ -43,13 +43,13 @@
 
                                     <div id="tab-two-panel" class="panel">
 
-                                         
-                                                        
+
+
                                                             <div class="row p-2 bg-white border rounded">
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -62,7 +62,7 @@
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -71,14 +71,14 @@
                                                                 </div>
                                                             </div>
 
-  
-                                                         
-                                                          
-                                                          
-                                                           
+
+
+
+
+
                                     </div>
-                                                   
-                        
+
+
                                     <!-- ---------------------tab 3------------------- -->
 
 
@@ -88,7 +88,7 @@
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -101,7 +101,7 @@
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -111,7 +111,7 @@
                                                             </div>
 
 
-                                       
+
                                     </div>
 
 
@@ -119,13 +119,13 @@
 
 
                                     <div id="tab-four-panel" class="panel">
-                                       
-                                       
+
+
                                                         <div class="row p-2 bg-white border rounded">
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -140,7 +140,7 @@
 
                                                                     <a href="#comment" class="btn btn-info btn-sm" type="button">ความคิดเห็น</a>
 
-                                                
+
                                                                 </div>
                                                             </div>
 
@@ -149,7 +149,7 @@
                                                                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
                                                                 <div class="col-md-6 mt-1">
                                                                     <h6>product</h6>
-                                                                 
+
                                                                     <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
                                                                     <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
                                                                 </div>
@@ -236,9 +236,9 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID  } from "../store/actions.type.js";
   export default {
- 
+
      computed: {
-     
+
             ...mapGetters(["address","profile"]),
 
         },
@@ -257,14 +257,14 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
         }
       }
     },
-        
+
         mounted() {
-        console.log('address',this.address);
- 
-        
+
+
+
          },
-        
-  
+
+
         methods: {
 
          checkFormValidity() {
@@ -285,8 +285,8 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
       this.form.id = id;
       this.form.customer_id = this.profile.id;
       let del_address = await this.$store.dispatch(DEL_ADDRESS_BY_ID,this.form);
-   
-      await this.fetchaddress(); 
+
+      await this.fetchaddress();
           setTimeout(() =>
                     this.$swal.fire({
                         type: "success",
@@ -303,17 +303,17 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
 
-    
+
       },
       async handleOk(bvModalEvt) {
-    
+
         bvModalEvt.preventDefault()
-      
+
         if (!this.checkFormValidity()) {
           return
         }
         this.form.customer_id = this.profile.id;
-        
+
        let address = await this.$store.dispatch(SAVE_ADDRESS_BY_ID,this.form);
                  this.$swal.fire({
                         type: "success",
@@ -324,7 +324,7 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
 
                     this.fetchaddress();
 
-                    
+
 
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
@@ -335,15 +335,15 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
 
         this.form.customer_id = this.profile.id;
 
-  
+
        bvModalEvt.preventDefault()
-      
+
         if (!this.checkFormValidity()) {
           return
         }
 
          let address = await this.$store.dispatch(UPDATE_ADDRESS_BY_ID,this.form);
-      
+
           this.$swal.fire({
                         type: "success",
                         title: "บันทึกข้อมูลเรียบร้อยแล้ว",
@@ -357,7 +357,7 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
         })
 
 
-  
+
       },
 
       handleSubmit() {
@@ -370,18 +370,18 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,FETCH_ADDRESS,
         // Push the name to submitted names
         this.submittedNames.push(this.name)
         // Hide the modal manually
-          
-        
+
+
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
       }
 
-   
-     
-     
+
+
+
         },
-  
+
 
         components: {
 

@@ -17,12 +17,12 @@
 
       </b-navbar-nav>
 
-      
+
     </b-collapse>
-    
+
   </b-navbar>
 
-  
+
 
    <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll" อ>
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
@@ -41,7 +41,7 @@
 
     <b-navbar-nav>
       <b-nav-item href="#" v-for="(item, index) in menu" :key="item.id"  @click="redirectTolink(item.link_domain)"  :class="{'rkknoob': checkPath(item.link_domain)}">{{item.name}}</b-nav-item>
-  
+
     </b-navbar-nav>
 
 
@@ -101,43 +101,43 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
                 objectslayoutshop: state => state.Layout.navbar_shop,
              }),
 
-             
 
-             
-			
+
+
+
         isLogins () {
                 return this.$store.state.auth.loggedIn;
         },
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         cartTotal () {
         return this.$store.state.Cart.cartTotal
         }
-           
+
 
         },
       created () {
-        
+
             window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
             window.removeEventListener('scroll', this.handleScroll);
     },
-        
 
-    
-        
+
+
+
       async mounted() {
     let a = this.$store.dispatch(FETCH_GET_PROFILE)
           let checker = await localStorage.getItem("user");
           let cart = await this.$store.dispatch(GET_CART);
 
   this.timeout = setTimeout(() => this.Navc(), 1500)
-     
+
 
       //  let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
       //   this.shopitem = shopby;
@@ -149,9 +149,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           }else{
             this.IsLogin = false;
           }
-        
+
           this.Navc();
-      
+
          },
 
       methods: {
@@ -163,7 +163,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
             Checkimage(image){
                 let public_images = process.env.ImageSoc+image;
-         
+
                 return public_images;
           },
 
@@ -172,17 +172,17 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       if(window.scrollY > 100){
      this.colors = this.objectslayoutshop.navbar_menu_color_scroll;
-  
+
         this.position = 'top'
       }else {
      this.colors = this.objectslayoutshop.navbar_menu_color;
       this.position = '-'
       }
-   
-   
+
+
             },
             redirectTo(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -197,8 +197,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
               let path = this.$route.path
                if (path !== names) {
                const Shopid = this.$route.params.id;
-               console.log('Shopid',Shopid);
-                console.log('Shopid',names);
+
              this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
@@ -208,7 +207,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
 
  if (name === path) {
-   console.log('true');
+
                         return true
                     } else {
                         return false
@@ -237,7 +236,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         }
 
 
-           
+
         }
 
 

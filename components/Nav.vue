@@ -4,44 +4,44 @@
     <section class="header-main border-bottom webnav">
         <div class="container-fluid">
             <div class="row mx-auto col-sm-9">
-                <div class="col-sm-4"> 
+                <div class="col-sm-4">
                   <a href="#" class="brand-wrap" data-abc="true">
-                       
+
                         <span class="logo">
                           E-MARKET PLACE {{authenticated}}
-                          
-                          </span> 
-                  </a> 
+
+                          </span>
+                  </a>
                 </div>
 
                 <div class="col-sm-3">
-                  
+
 
                 </div>
                 <div class="col-sm-5">
-                    <div class="d-flex justify-content-end"> 
+                    <div class="d-flex justify-content-end">
 
                             <div class="nav-link nav-user-img">
                                <img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px">ไทย
                             </div>
 
-                                 
+
                             <div class="nav-link nav-user-img">
                                <img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px">อังกฤษ
                             </div>
 
-                            <span class="vl"></span> 
+                            <span class="vl"></span>
                             <div  @click="redirectTo('/form/shopregis')" class="nav-link nav-user-img">
                               <span class="login" style="font-size:14px;" >ขายสินค้ากับเรา</span>
                             </div>
 
-                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header"> 
+                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header">
                               <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                               <span> ({{ cartTotal }}) </span>
                             </nuxt-link><span class="vl"></span>
 
-                            <span class="vl"></span> 
-                           
+                            <span class="vl"></span>
+
                             <div class="nav-link nav-user-img">
                               <span class="login">
                                 <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
@@ -68,8 +68,8 @@
 
 
 
-                            
-                            <span class="vl"></span> 
+
+                            <span class="vl"></span>
                             <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login">
                                 <div class="dropdown"> <i class="fas fa fa-globe" aria-hidden="true"></i>
@@ -84,11 +84,11 @@
 
 
 
-                   
+
 
 
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -112,41 +112,41 @@
     <section class="header-main border-bottom mobilenav">
         <div class="container-fluid">
             <div class="row mx-auto">
-                <div class="col-sm-4"> 
+                <div class="col-sm-4">
                   <a href="#" class="brand-wrap" data-abc="true">
-                       
+
                         <span class="logo">
                           E-MARKET PLACE
-                       
-                          </span> 
-                  </a> 
+
+                          </span>
+                  </a>
                 </div>
 
                 <div class="col-sm-4">
 
                 </div>
                 <div class="col-sm-4">
-                    <div class="d-flex justify-content-end"> 
+                    <div class="d-flex justify-content-end">
 
-                            <span class="vl"></span> 
+                            <span class="vl"></span>
                             <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login" style="font-size:14px;">หน้าหลัก</span>
                             </a>
 
 
-                            <span class="vl"></span> 
+                            <span class="vl"></span>
                             <nuxt-link to="form/shopregis" class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login" style="font-size:14px;" >ขายสินค้ากับเรา</span>
                             </nuxt-link>
 
-                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header"> 
+                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header">
                               <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                                 <span> (5) </span>
                             </nuxt-link><span class="vl"></span>
 
 
 
-                            <span class="vl"></span> 
+                            <span class="vl"></span>
                             <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login">
                                 <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
@@ -164,8 +164,8 @@
 
 
 
-                            
-                            <span class="vl"></span> 
+
+                            <span class="vl"></span>
                             <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login">
                                 <div class="dropdown"> <i class="fas fa fa-globe" aria-hidden="true"></i>
@@ -182,17 +182,17 @@
 
 
 
-                   
+
 
 
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
     </section>
-   
+
 </header>
 
 
@@ -201,13 +201,13 @@
 
   <b-container class="bv-example-row nav-first-s" v-if="objectslayout">
   <b-row>
-    
+
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
    <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </b-navbar-brand>
     <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span style="font-size:14px"> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
-      
+
       <b-navbar-nav>
 
    <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
@@ -217,32 +217,32 @@
                 <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins" no-caret>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-      
+
             <em   style="color:beige;">{{ objects.name.substring(0,7)+".." }}</em>
-           
+
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-      
-  
+
+
 
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
       </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
-   
+
 
       </b-col>
              <b-col cols="1" md="1"  sm="1" class="nav-form-search">
-    
+
 
   <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
 
       </b-col>
 
-      
+
 
 
        <b-col cols="1" md="1"  sm="2" class="nav-regishop-mobile px-2" style="max-width: 16.7777%">
@@ -272,7 +272,7 @@
       </b-col>
 
 
-     
+
   </b-navbar>
 
 
@@ -281,13 +281,13 @@
 </b-container>
 
 
-  
-  
+
+
 </div>
-  
-  
-  
-  
+
+
+
+
 
 
 
@@ -312,7 +312,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       selected: 'a',
       color:null,
         options: [
-   
+
           { value: 'a', text: 'สินค้า'},
           { value: 'b', text: 'ร้านค้า' },
 
@@ -329,36 +329,36 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
                 objects: state => state.user.profile,
                 objectslayout: state => state.Layout.navbar,
              }),
-			
+
         isLogins () {
                 return this.$store.state.auth.loggedIn;
         },
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
+        },
         user () {
                 return this.$auth.user;
-        }, 
+        },
 
-    
-  
+
+
 
         cartTotal () {
         return this.$store.state.Cart.cartTotal
         }
-           
+
 
         },
         async created(){
             this.form.url = window.location.origin
                 let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
-              
-        },
-        
 
-    
-        
+        },
+
+
+
+
       async mounted() {
           let checker = await localStorage.getItem("user");
               //    let a = await this.$store.dispatch(FETCH_GET_PROFILE)
@@ -373,13 +373,13 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           // console.log('profile',profile['name']);
 
 
-          
 
-      
- 
+
+
+
           if(checker){
             this.IsLogin = true;
-           
+
                this.$store.dispatch('auth/userstorage');
           }else{
             this.IsLogin = false;
@@ -394,27 +394,25 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
   }
           let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
-        console.log('search',this.selected);
-        console.log('search',this.search);
 
                         let path = this.$route.path
   this.$router.push({ name: 'find' })
 
 
-        
-        
+
+
         },
 
         Checkstring(x){
 
 
-                
+
 
 
 return x;
         },
             redirectTo(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -432,21 +430,21 @@ return x;
             localStorage.removeItem("listorder");
             localStorage.removeItem("delivery");
           localStorage.removeItem("cart");
-        
-       
+
+
     this.$auth.logout()
      setTimeout(function () {
             location.reload();
             }, 1000);
 
 
- 
-    
+
+
      }
         }
 
 
-           
+
         }
 
 

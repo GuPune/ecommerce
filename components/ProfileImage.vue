@@ -30,7 +30,7 @@
                                                                                 <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-changepassword')}"  @click="redirectTo('profile-changepassword')">
                                             <p>ตั้งค่ารหัสผ่าน</p>
                                         </li>
-                                      
+
                                     </ul>
                                 </div>
                             </div>
@@ -51,36 +51,36 @@ import 'sweetalert2/dist/sweetalert2.min.css';
   export default {
     props: ['profile'],
      computed: {
-            
-   
+
+
         },
-        
+
         mounted() {
 
 
          },
-        
-  
+
+
         methods: {
 
         Checkimage(image){
-            
+
                 let public_images = process.env.Upload+image;
-            
+
                 return public_images;
         },
 
-   
+
         redirectTo(names) {
               this.$router.push({ name: names })
-          
+
         },
         checkPath(name) {
                 let path = this.$nuxt.$route.name
 
 
  if (name === path) {
-   console.log('true');
+
                         return true
                     } else {
                         return false
@@ -88,9 +88,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
               //  return (name === path)
             },
 
-     
+
         },
-  
+
 
         components: {
 
