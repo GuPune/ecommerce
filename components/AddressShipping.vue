@@ -516,7 +516,7 @@ this.send();
 
           await  this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
             .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
-            .catch((error) => console.log(error))
+            .catch((error) => error)
 
 
 

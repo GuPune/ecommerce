@@ -17,7 +17,7 @@
                                             required
                                             @input="$v.form.name.$touch()"
                                             @blur="$v.form.name.$touch()"
-                                      
+
                         />
                     </div>
               <div class="form-group">
@@ -27,7 +27,7 @@
                                             required
                                             @input="$v.form.email.$touch()"
                                             @blur="$v.form.email.$touch()"
-                                      
+
                         />
                     </div>
                     <div class="form-group">
@@ -42,13 +42,13 @@
                                         <div class="form-group">
                         <label for="inputContactMessage" class="font-weight-bold">ข้อความ<span class="text-danger"> * </span></label>
                         <textarea class="form-control" rows="5" name="inputContactMessage" id="inputContactMessage" placeholder="เขียนข้อความ"  v-model="form.details"
-        
+
                                     :error-messages="detailErrors"
                                     label="รายละเอียดที่ติดต่อ"
                                     required
                                     @input="$v.form.details.$touch()"
                                     @blur="$v.form.details.$touch()"
-                        
+
                         ></textarea>
                     </div>
                            <div class="form-group">
@@ -64,9 +64,9 @@
                         <button type="submit" class="btn btn-style"   @click="save()">
                             <i class="fa fa-comment"></i>&nbsp;ส่งข้อความ</button>
                     </div>
-              
+
             </div>
-            
+
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="contactText01 col-12">
                     <p><img :src="Checkimage(objects.system.icon)" width="120px"></p><span style="color: #9f8672; line-height: 2; font-size: 20px;" data-mce-style="color: #9f8672; line-height: 2; font-size: 20px;"><strong><span style="font-family: kanit_light, Tahoma;" data-mce-style="font-family: kanit_light, Tahoma;">
@@ -74,7 +74,7 @@
                     </a>
                      <a style="color: #9f8672;" href="tel:0959639153" data-mce-href="tel:0959639153" data-mce-style="color: #9f8672;">
                       {{objects.system.contact}}</a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.facebook.com/iddrives" data-mce-href="https://www.facebook.com/iddrives" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106">&nbsp;
-                     {{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://lin.ee/xxxxx" data-mce-href="https://lin.ee/bD1xgwu" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.instagram.com/iddrives/" data-mce-href="https://www.instagram.com/pattana_gems/" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span>          
+                     {{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://lin.ee/xxxxx" data-mce-href="https://lin.ee/bD1xgwu" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.instagram.com/iddrives/" data-mce-href="https://www.instagram.com/pattana_gems/" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span>
                            </div>
                 <div class="contactText02 col-12">
                     <br data-mce-bogus="1"></div>
@@ -137,8 +137,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             return errors
         },
 
-            
-         
+
+
             TelErrors() {
             const errors = [];
             if (!this.$v.form.tel.$dirty) return errors;
@@ -167,13 +167,13 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
      this.loadding = false
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
- 
+
    await this.gencapcha();
          },
     methods: {
     Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-    
+
                 return public_images;
       },
         gencapcha() {
@@ -188,7 +188,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       send() {
             this.$store.dispatch(SAVE_CONTACT, this.form)
             .then((response) => response == "success" ? this.success() : this.error())
-            .catch((error) => console.log(error))
+            .catch((error) => error)
         },
         success() {
            setTimeout(() =>
@@ -202,7 +202,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             );
               this.clear()
               this.gencapcha()
-     
+
         },
 
           clear () {
@@ -231,10 +231,10 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             });
       },
       checkcap() {
-      
 
-  
- 
+
+
+
         if(this.captcha.reply == this.form.captcha){
    this.send();
 

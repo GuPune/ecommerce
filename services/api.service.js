@@ -16,7 +16,7 @@ Vue.use(VueAxios, axios)
 
 function logout() {
     // remove user from local storage to log user out
-    console.log('ออก');
+
     localStorage.removeItem('user');
 }
 
@@ -34,7 +34,7 @@ const ApiService = {
           "Authorization"
         ] = `Token ${JwtService.getToken()}`;
       },
-      
+
      get(resource, slug = "") {
         // console.log('เข้า getxxxxxxxxxx','http://127.0.0.1:8000/api/admin/auth/'+resource)
        return axios.get(`${API_URL}/${resource}/${slug}`, { headers: authHeader()}).catch(function(error) {
@@ -82,7 +82,7 @@ const ApiService = {
       return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader() });
     },
 
-    
+
     find(resource, params) {
         return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader() });
         },
@@ -94,8 +94,8 @@ const ApiService = {
         return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader() });
     },
     registerbyshop(resource, params) {
-      return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader() 
-    });  
+      return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader()
+    });
   },
 
 

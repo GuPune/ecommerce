@@ -66,14 +66,14 @@
                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
-                                จังหวัด                            
+                                จังหวัด
                             </label>
                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" :disabled="disabled == 1" v-if="provin">
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" :selected="true">{{province.name_th}}</option>
                              </select>
                              <select class="form-control" name="customerRegionsID" id="customerRegionsID" v-else disabled>
                                  <option :selected="true">- เลือก-</option>
-                                 
+
                              </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
@@ -243,23 +243,23 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
                     let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);
                      this.distri = districts;
                      this.disabledaum = 0;
-                
+
               }
-           
-   
+
+
           }else {
               this.provin = null;
               this.distri = null;
                 this.subdis = null;
               this.selecteded = true;
-           
+
               this.selectedDay = '0';
                  this.disabled = 1;
               this.disabledaum = 1;
-     
+
           this.disabledtumbon = 1;
           }
-               
+
         },
 
         async isNumber(event, message) {
@@ -318,7 +318,7 @@ this.send();
 
             this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
             .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
-            .catch((error) => console.log(error))
+            .catch((error) => error)
         },
 
     error() {
