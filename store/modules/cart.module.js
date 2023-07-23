@@ -179,12 +179,12 @@ if (found) {
 
  found.quantity ++;
  found.totalPrice = found.quantity * found.price;
- console.log('if',found.totalPrice);
+
 } else {
 
     state.cart.push(item);
 
-   console.log('item',item)
+
     Vue.set(item, 'quantity', 1);
     Vue.set(item, 'totalPrice', item.price);
 
@@ -201,7 +201,7 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
 
 
 if (found) {
- console.log('if');
+
 
  found.quantity ++;
  found.totalPrice = found.quantity * found.price;
@@ -217,10 +217,10 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     [SET_CART_DETAIL](state,item) {
 
-        console.log('item',item);
+
 
         let found = state.cart.find(product => product.id == item.id);
-        console.log('found1',found);
+
 
         if (found) {
             found.quantity  = found.quantity + item.add;
@@ -230,7 +230,7 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
            } else {
 
 
-            console.log('nosum',item);
+
 
 
               var sumprice = item.price * item.add;
@@ -238,14 +238,14 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
                Vue.set(item, 'totalPrice', sumprice);
 
 
-               console.log('sum',item);
+
              state.cart.push(item);
               // console.log('found else',item.price * item.quantity);
 
 
                state.cartTotal++;
            }
-           console.log('found2',state.cart);
+
            let a = localStorage.setItem("cart", JSON.stringify(state.cart));
     }
 

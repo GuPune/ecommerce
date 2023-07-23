@@ -27,13 +27,13 @@ const actions = {
         context.commit(SET_MENU,data);
     },
 
-   
+
 };
 
 const mutations = {
     [SET_MENU](state,data) {
         state.menu = data.data;
-        console.log('state.menu',state.menu);
+
     }
 };
 

@@ -73,7 +73,7 @@ const actions = {
      },
 
      async [REGISTER](context,payload) {
-      
+
         const { data } = await UserService.registerbyshop(payload);
         return data;
        },
@@ -84,26 +84,26 @@ const actions = {
         if (typeof data === 'undefined') {
             this.$auth.logout();
             }
-     
+
         context.commit(SET_PROFILE,data);
-       
+
         return data;
        },
 
        async [SAVE_PROFILE](contex,payload) {
-      
+
       const { data } = await UserService.saveprofile(payload);
      // return data;
     },
     async [FETCH_ADDRESS](context,payload) {
-     
+
       const { data } = await UserService.address(payload);
       if (typeof data === 'undefined') {
         this.$auth.logout();
         }
 
-   
-   
+
+
 
       context.commit(SET_ADDRESS,data);
       return data;
@@ -124,7 +124,7 @@ const actions = {
      return data;
       },
 
-      
+
       async [DEL_ADDRESS_BY_ID](context,payload) {
         const { data } = await UserService.del_by_id(payload);
         if (typeof data === 'undefined') {
@@ -138,7 +138,7 @@ const actions = {
      if (typeof data === 'undefined') {
         this.$auth.logout();
     }
-   
+
         return data;
       },
 
@@ -149,32 +149,32 @@ const actions = {
     },
 
     async [CHANGEPASSWORD](context,payload) {
-    
+
       const { data } = await UserService.changepassword(payload);
       return data;
 
     },
     async [GET_TYPE_SHOP](context) {
-    
+
         const { data } = await UserService.gettypeshop();
         return data;
-  
+
       },
 
-    
 
-    
+
+
 
       async [LOGOUT](context,payload) {
 
-     
-    
+
+
 
          },
-         
 
 
-      
+
+
 
 };
 
@@ -192,11 +192,11 @@ alert('okkkk');
             ...state.line,
             ...data
           }
-          console.log('state.line',state.line);
-    
+
+
     },
     [SET_CHECK_LOGIN](state) {
-        
+
     },
      [SET_ALERT](state,data) {
        if(data.code_return == 200){
@@ -206,18 +206,18 @@ alert('okkkk');
         state.typeforgot = 'alert alert-danger';
         state.messageforgot = 1;
        }
-       
+
     },
     [SET_CLEARALERT](state) {
         state.messageforgot = null;
      },
      [SET_PROFILE](state,data) {
         state.profile = data;
-      
+
      },
      [SET_FORM_USER](state,data) {
         state.profile = data;
-      
+
      },
      [SET_ADDRESS](state,data) {
         state.address = data;
@@ -227,8 +227,8 @@ alert('okkkk');
             state.selectedad = address[i];
         }
           }
- 
-      
+
+
      }
 };
 

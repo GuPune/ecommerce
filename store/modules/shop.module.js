@@ -24,7 +24,7 @@ const actions = {
     async [GET_SHOP](context) {
 
         const { data } = await MyshopService.getshop();
-        console.log('data',data.data);
+
         return data.data;
     },
     async [GET_SHOP_BY_ITEM](context,payload) {
@@ -36,26 +36,25 @@ const actions = {
     async [GET_SHOP_LINE](context) {
 
         const { data } = await MyshopService.getshopline();
-   
+
         return data;
     },
     async [GET_CHECK_SHOP](context,payload) {
 
         const { data } = await MyshopService.checkshop(payload);
-   
+
         return data;
     },
 
     async [FETCH_FACEBOOK](context,payload) {
 
-        
+
         const { data } = await MyshopService.faceid(payload);
 
         return data.data;
     },
 
 
-    
 
 
 
@@ -63,13 +62,14 @@ const actions = {
 
 
 
-   
+
+
 };
 
 const mutations = {
     [SET_ADS](state,data) {
         state.ads = data;
-    }, 
+    },
 };
 
 export default {

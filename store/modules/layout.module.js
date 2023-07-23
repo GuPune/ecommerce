@@ -49,7 +49,7 @@ const actions = {
   },
     async [GET_NAVBAR_SHOP](context,payload) {
 
-        console.log('form_nav',payload)
+
         const { data } = await LayoutService.navbarshop(payload);
 
         await context.commit(SET_NAVBAR_SHOP,data);
@@ -57,10 +57,10 @@ const actions = {
 
     },
     async [GET_FOOTER](context,payload) {
-        console.log('footer',payload);
+
         const { data } = await LayoutService.footer(payload);
 
-        console.log('footer',data);
+
         await context.commit(SET_FOOTER,data);
         return data.data
 
@@ -85,7 +85,7 @@ const mutations = {
 
     },
     [SET_BG](state,data) {
-      console.log('bg',data);
+
 
 
       if(data == 'index'){
