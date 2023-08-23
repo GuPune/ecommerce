@@ -292,7 +292,7 @@ this.form.url = window.location.hostname;
 
        //  window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}`;
         //        window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}/con/${this.form.url}`;
-                  window.location.href = `https://back.halalthaimart.com/api/auth/login/${service}/con/${this.form.url}`;
+                  window.location.href = `https://back-emarketplace.e-dct.com/api/auth/login/${service}/con/${this.form.url}`;
         },
         async loginline(){
    this.$router.push('/1/form/register');
