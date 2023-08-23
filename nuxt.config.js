@@ -10,8 +10,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'UAT | Thailand ซื้อขายสินค้าออนไลน์'},
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     script: [
       { src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js' },
