@@ -4,22 +4,22 @@
                         <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 col-xs-12 about-company">
-                                 
-                                            <img src="../assets/logohori2.png" class="logofoot">
+
+                                            <!-- <img src="../assets/logohori2.png" class="logofoot"> -->
                                         <br>
-                                        <p class="font-weight-bold" style="color:#e67825; font-size:30px;">บริษัท ไอดีไดรฟ์ จำกัด</p><br>
-                                            <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
-                                            
-                                      
-                                        
+                                        <p class="font-weight-bold" style="color:#e67825; font-size:30px;">-</p><br>
+                                            <p>-</p>
+
+
+
                                         <!-- <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p> -->
                                         <!-- <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p> -->
                                     </div>
-                                    
+
                                     <div class="col-lg-3 col-xs-12 links" >
                                         <h4 class="mt-lg-0 mt-sm-3" style="color:#e67825;"></h4>
                                             <ul class="m-0 p-0">
-                                             <!-- 
+                                             <!--
                                             <li>- <a href="#">Lorem ipsum</a></li>
                                             <li>- <a href="#">Nam mauris velit</a></li>
                                             <li>- <a href="#">Etiam vitae mauris</a></li>
@@ -54,9 +54,9 @@
                         </div>
                     </div>
 
-         
-         
-            
+
+
+
 
 
 </section>
